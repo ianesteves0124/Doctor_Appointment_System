@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["global.scss"],"sourcesContent":["/* You can add global styles to this file, and also import other style files */\r\nbody{\r\n\tpadding: 0;\r\n\tmargin: 0;\r\n\theight: 100vh;\r\n\toverflow: auto;\r\n\tbackground-image: linear-gradient(to right,#6b9fe4,#fcfcfc);\r\n}"],"file":"global.css"}

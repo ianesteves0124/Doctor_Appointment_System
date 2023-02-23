@@ -1,0 +1,78 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: auto;
+  background-image: linear-gradient(to right, #6b9fe4, #fcfcfc);
+}
+
+.center_login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.center_login form {
+  padding: 0 40px;
+}
+
+.center_login h1 {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #a19e9e;
+  font-family: Helvetica;
+  font-style: italic;
+}
+
+.doctor_access button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 15px;
+  background: #2691d9;
+  font-family: Helvetica;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.doctor_access button:hover {
+  border: 0px;
+  border-radius: 15px;
+  background-color: #2691d9;
+  font-size: 20px;
+  transition: transform .5s;
+}
+
+.guest_access button {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 15px;
+  background: #eb9a22;
+  font-family: Helvetica;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.guest_access button:hover {
+  border: 0px;
+  border-radius: 15px;
+  background-color: #eb9a22;
+  font-size: 20px;
+  transition: transform .5s;
+}
+
+/*# sourceMappingURL=main_page.css.map */
