@@ -24,6 +24,5 @@
              </div>
 </form>
 </div>
- <!-- API CALL --><!-- API CALL --><!-- API CALL -->
 </body>
 </html>
