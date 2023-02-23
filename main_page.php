@@ -22,7 +22,6 @@
                 <input type="button" onclick="location.href='./topnav/login_form_patient.php';" value="GUEST / PATIENT" /> 
                 <!-- API CALL -->
              </div>
-             <!-- API CALL --><!-- API CALL --><!-- API CALL -->
 </form>
 </div>
 </body>
