@@ -19,8 +19,7 @@
     </div>
        <div class = "guest_access">
                 <!-- <input type="button" onclick="location.href='topnav/home_page.php';" value="GUEST / PATIENT" /> -->
-                <input type="button" onclick="location.href='./topnav/login_form_patient.php';" value="GUEST / PATIENT" /> 
-                <!-- API CALL -->
+                <input type="button" onclick="location.href='./topnav/login_form_patient.php';" value="GUEST / PATIENT" />
              </div>
 </form>
 </div>
