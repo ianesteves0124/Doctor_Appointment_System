@@ -21,6 +21,8 @@
                 <!-- <input type="button" onclick="location.href='topnav/home_page.php';" value="GUEST / PATIENT" /> -->
                 <input type="button" onclick="location.href='./topnav/login_form_patient.php';" value="GUEST / PATIENT" />
              </div>
+
+            <!-- Testing-->
 </form>
 </div>
 </body>
