@@ -2,8 +2,9 @@ body{
 	padding: 0;
 	margin: 0;
 	height: 100vh;
-	overflow: scroll;
+	overflow: hidden;
   background-image: linear-gradient(to right,#6b9fe4,#fcfcfc);
+  color: rgb(42, 41, 41);
 }
 
 .center_login
@@ -14,9 +15,18 @@ body{
   transform: translate(-50%,-50%);
   width: 400px;
   height: 400px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  /* background: rgba( 255, 255, 255, 0.4 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .center_login form 
 {
@@ -87,5 +97,6 @@ body{
   height: auto;
   padding-top: 25px;;
   padding-left: 70px;
+  opacity: 1000;
 
 }

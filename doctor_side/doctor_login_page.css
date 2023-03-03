@@ -4,6 +4,7 @@ body {
     height: 100vh;
     overflow: hidden;
 	background-image: linear-gradient(to right,#6b9fe4,#fcfcfc);
+    color: rgb(35, 34, 34);
 }
 
 .center {
@@ -12,9 +13,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: white;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
     border-radius: 10px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .center h1 {
@@ -152,6 +156,7 @@ button[type="submit"]
     font-weight: 700;
     cursor: pointer;
     outline: none;
+    margin-top: 25px;
 }
 button[type="submit"]:hover 
 {
