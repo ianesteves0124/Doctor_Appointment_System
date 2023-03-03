@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="center">
-<img class = "logo" src="../images/Doc App logo 2.png" alt="Website Logo" width="250" height="170">
+<img class = "logo" src="../images/DocApp Logo.png" alt="Website Logo" width="250" height="170">
     <h1>LOGIN ACCOUNT</h1>
     <form action = "database/login.php" method="post">
       <div class="txt_field">

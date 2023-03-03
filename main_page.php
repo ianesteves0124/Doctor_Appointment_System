@@ -11,7 +11,7 @@
     
 
 <div class = "center_login">
-<img class = "logo" src="./images/Doc App logo 2.png" alt="Website Logo" width="250" height="170">
+<img class = "logo" src="./images/DocApp logo.png" alt="Website Logo" width="250" height="170">
 <h1>WHAT END USER YOU WANT TO GO?</h1>
 <form action="auth_login">
        <div class = "doctor_access">

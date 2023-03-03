@@ -1,10 +1,8 @@
+<!-- <?php include('../topnav/header_nav.php'); ?>  -->
 <?php // FETCH DATA OF DOCTOR INFO AT DATABASE
 require_once('database/fetch_data.php');
 $query ="SELECT * FROM `doctor_info` WHERE `Specialty` = 'Primary Care & General Medicine';"; // BRIDGE TYPE TABLE SEPARATED DOCTOR INFO TO ITS SPECIALTY
 $result = mysqli_query($conn,$query);
-?>
-<?php
-include('../topnav/header_nav.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +36,13 @@ include('../topnav/header_nav.php');
                             {
                              ?>
                              <td><?php echo $row['ID'] ?></td>
+                             <td><img src="../images/profile icon.png" alt="profile icon" width="40" height="40"></td>
                              <td><?php echo $row['Name'] ?></td>
                              <td><?php echo $row['Specialty'] ?></td>
                              <td><?php echo $row['Description'] ?></td>
                              <td><?php echo $row['Contact'] ?></td>
                              <td><?php echo $row['Clinic Address'] ?></td>
-                             <td> <button>Select</button></td>
+                             <td> <button onclick = "location.href = '../topnav/book_form.php'">Select</button></td>
                         </tr>
                            <?php
                             }
