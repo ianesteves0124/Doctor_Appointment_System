@@ -38,7 +38,7 @@ $result = mysqli_query($conn,$query);
                              <td><?php echo $row['ID'] ?></td>
                              <td><img src="../images/profile icon.png" alt="profile icon" width="40" height="40"></td>
                              <td><?php echo $row['Name'] ?></td>
-                             <td><?php echo $row['Specialty'] ?></td>
+                             <td><?php echo $row['Specialty_Title'] ?></td>
                              <td><?php echo $row['Description'] ?></td>
                              <td><?php echo $row['Contact'] ?></td>
                              <td><?php echo $row['Clinic Address'] ?></td>
