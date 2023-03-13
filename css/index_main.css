@@ -1,0 +1,85 @@
+body{
+    background-image: url("../images/doc_1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+html,body{
+    height: 100%;
+    margin: 0;
+}
+table{
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.navigation-header{
+    background: rgba(26, 26, 26, 0.548);
+    background-attachment: fixed;
+    max-height: 100vh;
+    height: 100vh;
+}
+.title{
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: monospace;
+    padding-left: 20px;
+    animation: transition-Y-over 0.5s;
+}
+.title-line{
+    color: #3A98B9;
+}
+.sub-title{
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+}
+.nav-item{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 500;
+    animation: transition-Y-over 0.5s;
+}
+.nav-item:hover{
+    color: #3A98B9;
+    font-size: 21px;
+
+}
+.heading-text{
+    font-family: monospace;
+    color: white;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 64px;
+    margin-top: 15%;
+    margin-bottom: 0;
+}
+.sub-text{
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+}
+.register-btn{
+  margin-top: 1%;
+  color: #fff;
+  padding: 15px 25px;
+  background-color: #85CDFD;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
