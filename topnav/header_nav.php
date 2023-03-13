@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-<img class = "logo" src="../images/Doc App logo 2.png" alt="Website Logo" width="190" height="65">
+<img class = "logo" src="../images/DocApp Logo.png" alt="Website Logo" width="190" height="65">
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">≡</label>
