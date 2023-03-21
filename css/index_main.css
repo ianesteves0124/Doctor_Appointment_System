@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/doc bg 12.jpg");
+    background-image: url("../images/doc_1.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -62,7 +62,7 @@ table{
     font-family: monospace;
     font-size: 18px;
     line-height: 27px;
-    font-weight: 500;
+    font-weight: 300;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 0;
 }

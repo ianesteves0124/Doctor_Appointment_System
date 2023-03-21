@@ -11,11 +11,12 @@
 <body>
 
 <div class ="first_tab">
-    <center>
     <h1 class ="f_start_line">We are bridging the Patient-Doctor Communication Gap</h1>
     <h2 class = "f_second_line">You won't forget ever again your Doctor's Appointments!</h2>
     <button class = "bookbtn" onclick = "location.href = 'sechome_page.php'"><span>Book Now!</span></button>
-</center>
+    <!-- <button class = "prevbtn" onclick = "location.href = '#'">Previous</button>
+    <button class = "nxtbtn" onclick = "location.href = '#'">Next</button> -->
+   
     <!-- <div class="center">
   <div class="pagination">
    <a href="#">&laquo;</a> -->
