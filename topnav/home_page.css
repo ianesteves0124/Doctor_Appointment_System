@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
 body{
 	padding: 0;
 	margin: 0;
 	height: 100vh;
 	overflow:hidden;
-	background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3)),url("../images/bg plain 2.jpg");
+	background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../images/doc bg 11.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .first_tab{
-	margin-top: 10%;
+	margin-top: 8%;
 }
 
 .f_start_line{
@@ -27,45 +32,32 @@ body{
 }
 
 .bookbtn{
-	display: inline-block;
-  border-radius: 6px;
-  background-color: #0D4C92;
-  border: none;
-  color: #FFFFFF;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 220px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin-top: 40px;
-  margin-left: 600px;
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 20px;
+color: #fff;
+background-color: #1576d8;
+padding: 10px 30px;
+border: 1px solid white;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+margin-top: 25px;
 }
-.bookbtn span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-  }
-  
-  .bookbtn span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-  }
-  
-  .bookbtn:hover span {
-	padding-right: 25px;
-  }
-  
-  .bookbtn:hover span:after {
-	opacity: 1;
-	right: 0;
-  }
+
+.bookbtn:hover{
+  transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0066cc;
+border: solid 2px #0066cc;
+}
 
   .center {
 	text-align: center;
@@ -161,15 +153,7 @@ body{
         display: none;
 
     }
-    .f_start_line{
-      display:flex;
-      font-size-adjust: initial;
-    }
-    .f_second_line{
-      display:flex;
-      font-size-adjust: initial;
-
-    }
+   
   
 }
 
@@ -181,15 +165,7 @@ body{
         display: none;
 
     }
-    .f_start_line{
-      margin:60px;
-      display:inline-block;
-      font-size:xx-large;
-    }
-    .f_second_line{
-      display:inline-block;
-      font-size:larger;
-    }
+   
 
 }
 
