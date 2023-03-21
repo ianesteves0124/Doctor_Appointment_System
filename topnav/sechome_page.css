@@ -3,8 +3,10 @@ body{
 	margin: 0;
 	height: 100vh;
 	overflow: hidden;
-	background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url("../images/docpat.jpg");
-	
+	background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../images/doc bg 10.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .first_tab{
@@ -29,45 +31,33 @@ body{
 }
 
 .nxtbtn{
-	display: inline-block;
-  border-radius: 6px;
-  background-color: #0D4C92;
-  border: none;
-  color: #FFFFFF;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 750px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin-top: 45px;
-  margin-left: 460px;
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 20px;
+color: #fff;
+background-color: #0dc0b7;
+padding: 10px 30px;
+border: 1px solid white;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+margin-top: 20px;
+margin-left: 600px;
 }
-.nxtbtn span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-  }
-  
-  .nxtbtn span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-  }
-  
-  .nxtbtn:hover span {
-	padding-right: 25px;
-  }
-  
-  .nxtbtn:hover span:after {
-	opacity: 1;
-	right: 0;
-  }
+
+.nxtbtn:hover{
+  transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0dc0b7;
+border: solid 2px #0dc0b7;
+}
 
 
 

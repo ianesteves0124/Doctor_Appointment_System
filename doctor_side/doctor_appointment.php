@@ -9,7 +9,7 @@
     <title>Doctor Appointment</title>
 </head>
 <body>     
-<div class = "doc-menu-bar">
+<!-- <div class = "doc-menu-bar">
      <ul>
         <li><a href="doctor_dashboard.php"><i class="fas fa-home"></i>Home</a></li>
         <li><a href="doctor_appointment.php"><i class="fas fa-calendar-alt"></i>Agenda</a></li>
@@ -23,12 +23,35 @@
 </div>
     </li>
 </ul>
-        </div>
+        </div> -->
+
+        <div class="wrapper">
+         <input type="checkbox" id="btn" hidden>
+         <label for="btn" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         <i class="fas fa-times"></i>
+         </label>
+         <nav id="sidebar">
+            <div class="title">
+               Doctor Dashboard
+            </div>
+            <ul class="list-items">
+               <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+               <li><a href="#"><i class="fas fa-sliders-h"></i>Agenda</a></li>
+               <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+               <li><a href="#"><i class="fas fa-user"></i>About Me</a></li>
+               <li><a href="#"><i class="fas fa-envelope"></i>Contact Me</a></li>
+               <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+            </ul>
+         </nav>
+      </div>
+      </div>
+
 <div class="docappoint">
         <h1>APPOINTMENTS</h1>
 </div>
 <div class="docadapp">
-    <h2>Sucessful Added Appointments</h2>
+    <h2>Successfully Added Appointments</h2>
 </div>
     
 </body>

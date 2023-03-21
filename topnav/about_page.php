@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class = "bgheader">
+    <center>
     <h1 class = "aboutheader">About Us</h1>
     <h2 class = "aboutdesc">"Working to Make the World Healthy"</h2>
 </div>
@@ -31,7 +32,7 @@
    
     <button class = "trmandcondbtn" onclick = "location.href = ''"><span>Terms & Conditions</span></button>
 <button class = "pripolbtn" onclick = "location.href = ''"><span>Privacy & Policy</span></button>
-
+</center>
         <!-- <div class="center">
   <div class="pagination">
   <a href="#">&laquo;</a>
@@ -42,6 +43,7 @@
   <a href="about_page.php" class="active">5</a>
   <a href="#">&raquo;</a>
   </div> -->
+  <footer>
   <div class="pagination">
 
         <ul class="pagination--link">
@@ -57,8 +59,8 @@
 
         </ul>
     </div>
+</footer>
 </div>
-
 </div>
 </body>
 </html>
