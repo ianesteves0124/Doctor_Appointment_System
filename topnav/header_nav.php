@@ -30,8 +30,7 @@
                         <li><a href = "#">Privacy and Policy</a></li>
                     </ul>
                 </li>
-                    <!-- <li><a href = "login_form_patient.php">Login</a></li> -->
-                    <li><a href="../index_main.html"><i class="fas fa-user"></i>Change User</a></li>
+                    <li><a href="../logout.php"><i class="fas fa-user"></i>Log Out</a></li>
                 </ul>
             </nav>
 </header>
