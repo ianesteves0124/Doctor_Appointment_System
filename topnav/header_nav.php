@@ -33,6 +33,7 @@
                     <li><a href="../logout.php"><i class="fas fa-user"></i>Log Out</a></li>
                 </ul>
             </nav>
+            <!-- <img class="patientimg" src="../images/patient profile img.png" alt="patient image" width="70" height="70"> -->
 </header>
 </div>
 </body>

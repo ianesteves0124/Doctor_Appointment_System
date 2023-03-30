@@ -10,22 +10,33 @@
     <title>Doctor Dashboard</title>
   </head>
   <body>
-    <input type="checkbox" id="check">
+    <!-- <input type="checkbox" id="check">
     <label for="check">
       <i class="fas fa-bars" id="btn"></i>
       <i class="fas fa-times" id="cancel"></i>
-    </label>
+    </label> -->
+
+
+    
     <div class="sidebar">
-    <header><i class="fas fa-user-md"></i> | Doctor Dashboard</header>
+    <header class="title">Doctor Dashboard</header>
+    <center>
+    <div class="docprofileimg"><img src="/images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
+    <div class="docname">Dr. David Chrish</div>
+    <div class="specialty">Cardiologist</div>
+</center>
     <ul>
         <li><a href="#"><i class="fas fa-clinic-medical"></i>Home</a></li>
         <li><a href="#"><i class="fas fa-calendar"></i>Agenda</a></li>
-        <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+        <!-- <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li> -->
         <li><a href="#"><i class="fas fa-user"></i>About Me</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i>Contact Me</a></li>
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+        <li><a href="../index_main.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
     </ul>
    </div>
    <section></section>
-  </body>
+   <div id="calendar"></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</body>
+<script src="../doctor_side/event_calendar.js"></script>
 </html>
