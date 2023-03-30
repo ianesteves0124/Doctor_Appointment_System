@@ -9,44 +9,25 @@
     <title>Doctor Appointment</title>
 </head>
 <body>     
-<!-- <div class = "doc-menu-bar">
-     <ul>
-        <li><a href="doctor_dashboard.php"><i class="fas fa-home"></i>Home</a></li>
-        <li><a href="doctor_appointment.php"><i class="fas fa-calendar-alt"></i>Agenda</a></li>
-        <li><a href="doctor_account.php"><i class="fas fa-user-circle"></i>Account<i class="fas fa-sort-down"></i></a>
-    <div class = "accsubmenu">
-        <ul>
-            <li><a href = "doctor_login_page.php"><i class="fas fa-wrench"></i>Settings</a></li>
-            <li><a href = "doctor_login_page.php">Logout<i class="fas fa-sign-out-alt"></i></a></li>
-            
-</ul>
-</div>
-    </li>
-</ul>
-        </div> -->
 
-        <div class="wrapper">
-         <input type="checkbox" id="btn" hidden>
-         <label for="btn" class="menu-btn">
-         <i class="fas fa-bars"></i>
-         <i class="fas fa-times"></i>
-         </label>
-         <nav id="sidebar">
-            <div class="title">
-               Doctor Dashboard
-            </div>
-            <ul class="list-items">
-               <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-               <li><a href="#"><i class="fas fa-sliders-h"></i>Agenda</a></li>
-               <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
-               <li><a href="#"><i class="fas fa-user"></i>About Me</a></li>
-               <li><a href="#"><i class="fas fa-envelope"></i>Contact Me</a></li>
-               <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-            </ul>
-         </nav>
-      </div>
-      </div>
-
+        <div class="sidebar">
+    <header class="title">Doctor Dashboard</header>
+    <center>
+    <div class="docprofileimg"><img src="/images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
+    <div class="docname">Dr. David Chrish</div>
+    <div class="specialty">Cardiologist</div>
+</center>
+    <ul>
+        <li><a href="#"><i class="fas fa-clinic-medical"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-calendar"></i>Agenda</a></li>
+        <!-- <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li> -->
+        <li><a href="#"><i class="fas fa-user"></i>About Me</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact Me</a></li>
+        <li><a href="../index_main.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+    </ul>
+   </div>
+   <section></section>
+   
 <div class="docappoint">
         <h1>APPOINTMENTS</h1>
 </div>
