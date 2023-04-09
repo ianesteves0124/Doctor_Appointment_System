@@ -1,10 +1,11 @@
+<link rel="icon" type="image/png" href="../images/website icon.png">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAS:Administrator</title>
+    <title>DAS : Administrator</title>
 </head>
 <body>
     <div class = "navigation-header">

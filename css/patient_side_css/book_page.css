@@ -1,0 +1,133 @@
+body{
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	overflow: scroll;
+	background-color: rgb(248, 248, 248);
+}
+.appreq{
+	margin-top:80px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	  padding-left: 5%;
+	  padding-right: 70%;
+	background-color:#2f9090;
+	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.container {
+	max-width: 1300px;
+	background-color: rgb(248, 248, 248);
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 0px;	
+  }
+  
+ 
+  table {
+	text-align: left;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 1em;
+	color:black;
+  }
+  
+  thead th {
+	font-weight: 600;
+  }
+  
+  th {
+	padding: 10px;
+	font-weight: 400;
+  }
+  
+  tbody .list {
+	background: #fff;
+	box-shadow: 0 5px 20px #0001;
+  }
+  
+  tbody .user {
+	display: flex;
+	align-items: center;
+  }
+  
+  tbody .icon {
+	width: 34px;
+	height: 34px;
+	margin: 5px;
+	background: #eee;
+	border-radius: 50%;
+	margin-right: 15px;
+  }
+  
+  tbody .name {
+	font-weight: 600;
+  }
+  
+  tbody .user-name {
+	font-size: 12px;
+	color: #666;
+  }
+  
+  tbody .active,
+  tbody .inactive {
+	padding-left: 15px;
+	position: relative;
+  }
+  
+  tbody .active::before,
+  tbody .inactive::before {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	left: 0;
+	top: 25%;
+	background: #079400;
+  }
+  
+  tbody .inactive::before {
+	background: #f00;
+  }
+  
+  .button {
+	padding: 4px 10px;
+	background: #0084ff;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 12px;
+	text-align: center;
+  }
+  
+  .button:hover {
+	cursor: pointer;
+	background: #0060ba;
+  }
+  
+  .action-button {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	cursor: pointer;
+  }
+  
+  .action-button span {
+	display: block;
+	width: 3px;
+	height: 3px;
+	background: #222;
+	border-radius: 50%;
+	margin: 1px;
+  }
+  
+  .action-button:hover span {
+	background: #0084ff;
+  }
