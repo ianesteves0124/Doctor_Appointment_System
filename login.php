@@ -1,3 +1,4 @@
+<link rel="icon" type="image/png" href="../images/website icon.png">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,7 +149,7 @@ else
                 <td>
                     <br>
                     <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
-                    <a href="topnav/login_form_patient.php" class="link-item">Sign Up</a>
+                    <a href="patient_side/login_form_patient.php" class="link-item">Sign Up</a>
                     <br><br><br>
                 </td>
             </tr>       
