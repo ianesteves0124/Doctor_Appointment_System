@@ -1,0 +1,38 @@
+body{
+    font-family: monospace;
+}
+.sub_headings{
+    padding-top: 5%;
+    padding-left: 300px;
+    font-size: 18px;
+}
+.add_new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 800px;
+    font-size: 18px;
+    color: whitesmoke;
+    text-decoration: none;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	font-weight:bold;
+	padding:6px 24px;
+}
+
+.sub-table{
+    padding: 5%;
+    margin-left: 15%;
+    padding-bottom: 5%;
+    font-size: 16px;
+}
+
+.event-btn{
+    display: flex;
+    justify-content: center;
+    
+}

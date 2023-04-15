@@ -1,4 +1,4 @@
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/home_page.css">
-    <title>Doctor Appointment System indexhome page</title>
+    <title>Doctor Appointment System</title>
 </head>
 <body>
-
+<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <div class ="first_tab">
     <center>
     <h1 class ="f_start_line">We are bridging the Patient-Doctor Communication Gap</h1>

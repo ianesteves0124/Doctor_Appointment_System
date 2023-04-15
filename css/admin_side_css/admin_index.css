@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    font-family: monospace;
+}
+.navigation-sidebar{
+    position: fixed;
+    left: 0px;
+    width: 255px;
+    height: 100%;
+    background: rgb(244, 245, 247);
+    transition: all .5s ease;
+}
+.navigation-sidebar header{
+    font-size: 23px;
+    color: black;
+    margin-top: 10px;
+    line-height: 70px;
+    text-align: center;
+    background: rgb(244, 245, 247);
+    user-select: none;
+    text-transform: uppercase;
+    font-weight: 500px;
+}
+.adminprofile{
+    margin-top: 5px;
+}
+.navigation-sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: rgb(58, 58, 58);
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: .4s;
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+ul a i{
+    margin-right: 5px;
+}
+
+.calendar{
+    padding-top: 1%;
+    padding-right: 1%;
+}
+.calendar_header{
+    font-size: 20px;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.calendar_timezone{
+    font-size: 16px;
+    text-align: right;
+}

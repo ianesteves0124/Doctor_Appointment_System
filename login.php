@@ -46,7 +46,7 @@ if($_POST)
                 //   For Admin dashbord
                 $_SESSION['user']= $row['$email'];
                 $_SESSION['usertype']= $row['a'];
-                header('Location: admin_side/admin_index.php');
+                header('Location: admin_side/admin_dashboard.php');
 
             }
             else

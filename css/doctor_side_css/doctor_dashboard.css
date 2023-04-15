@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 *{
   padding: 0;
   margin: 0;
@@ -7,7 +6,7 @@
 
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: monospace;
 }
 .sidebar {
   position: fixed;
@@ -42,7 +41,7 @@ body {
   font-weight: 500px;
 }
 .docprofileimg{
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .docname{
   font-size: 22px;

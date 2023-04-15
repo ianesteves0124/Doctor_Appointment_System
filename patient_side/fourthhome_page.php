@@ -1,5 +1,3 @@
-<title>Common Conditions | Doctor Appointment System</title>
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/fourthhome_page.css">
+    <title>Common Conditions | Doctor Appointment System</title>
 </head>
 <body>
-
+<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
     <div class="comcodtitle">
         <h1>COMMON CONDITIONS</h1>
         <!-- <button class = "viewallbtn" href="#"><span>View All</span></button> -->

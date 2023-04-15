@@ -1,5 +1,3 @@
-<title>About Us | Doctor Appointment System</title>
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/about_page.css">
+    <title>About Us | Doctor Appointment System</title>
 </head>
 <body>
+<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <div class = "bgheader">
     <center>
     <h1 class = "aboutheader">About Us</h1>

@@ -1,5 +1,4 @@
-<title>Appointment Request | Doctor Appointment System</title>
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/book_page.css">
+    <title>Appointment Request | Doctor Appointment System</title>
 </head>
 <body>
+<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <div class="appreq">
         <h1>APPOINTMENT REQUEST</h1>
 </div>
@@ -30,7 +31,7 @@
         <tbody class="tbody">
             <tr class="list">
                 <th class="user">
-                    <img src="/images/doc profile img 2.png" alt="" class="icon">
+                    <img src="../images/doc profile img 2.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Dr. David Chrish</div>
                         <div class="user-name">dchrish@das.com</div>
@@ -56,7 +57,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/doc profile img 3.png" alt="" class="icon">
+                    <img src="../images/doc profile img 3.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Dr. Kristina Bellis M.D.</div>
                         <div class="user-name">krisbellis@gmail.com</div>
@@ -82,7 +83,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/doc profile img 2.png" alt="" class="icon">
+                    <img src="../images/doc profile img 2.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Dr. Stephen Marlo M.D.</div>
                         <div class="user-name">stephenmarlo@gmail.com</div>
@@ -108,7 +109,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/doc profile img 3.png" alt="" class="icon">
+                    <img src="../images/doc profile img 3.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Dr. Carla Port Ph.D.</div>
                         <div class="user-name">carlaport@gmail.com</div>

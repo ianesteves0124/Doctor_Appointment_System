@@ -34,7 +34,7 @@ document.getElementById("current_date").innerHTML = day + "-" + month + "-" + ye
    <div class="sidebar">
     <header class="title">Doctor Dashboard</header>
     <center>
-    <div class="docprofileimg"><img src="/images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
+    <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
     <div class="docname">Dr. David Chrish</div>
     <div class="specialty">Cardiologist</div>
 </center>

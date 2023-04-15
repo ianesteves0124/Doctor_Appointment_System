@@ -28,7 +28,7 @@
 <!-- Doctor 1 -->
       <div class="box">
       <div class="image">
-         ---<img src="/images/doc img.png">-----
+         ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. David Chrish</div>
         <h2 class="job">Cardiologist</h2>
@@ -118,7 +118,7 @@
       <!-- Doctor 2 -->
       <div class="box">
         <div class="image">
-        ---<img src="/images/doc img.png">-----
+        ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. Kristina Bellis M.D.</div>
         <h2 class="job">Ophthalmologist</h2>
@@ -155,7 +155,7 @@
 <!-- Doctor 3 -->
       <div class="box">
         <div class="image">
-        ---<img src="/images/doc img.png">-----
+        ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. Stephen Marlo M.D.</div>
         <h2 class="job">Pediatrician</h2>
@@ -192,7 +192,7 @@
 <!-- Doctor 4 -->
       <div class="box">
       <div class="image">
-      ---<img src="/images/doc img.png">-----
+      ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. Carla Port Ph.D.</div>
         <h2 class="job">Obstetrician</h2>
@@ -229,7 +229,7 @@
 <!-- Doctor 5 -->
       <div class="box">
       <div class="image">
-      ---<img src="/images/doc img.png">-----
+      ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. Karl Kentucky</div>
         <h2 class="job">Dermatology</h2>
@@ -266,7 +266,7 @@
 <!-- Doctor 6 -->
       <div class="box">
       <div class="image">
-      ---<img src="/images/doc img.png">-----
+      ---<img src="../images/doc img.png">-----
         </div>
         <div class="name_job">Dr. Sophia Turner</div>
         <h2 class="job">Ears, Nose and Throat</h2>
