@@ -1,5 +1,5 @@
 <?php
-include "../database/connection.php";
+include "database/connection.php";
 
 session_start();
 
@@ -13,16 +13,16 @@ if($_POST)
         return $data;
     }
 
-    $name= validate($_POST['doctor_name']);
-    $email= validate($_POST['doctor_email']);
-    $Description= validate($_POST['description']);
-    $Contact= validate($_POST['contact']);
-    $address= validate($_POST['clinic_address']);
-    $password= validate($_POST['doctor_password']);
-    $specialty = validate($_POST['specialty']);
+    $name= validate($_POST['patient_name']);
+    $email= validate($_POST['patient_email']);
+    $address = validate($_POST['patient_address']);
+    $Contact = validate($_POST['patient_contact']);
+    $password = validate($_POST['patient_password']);
+    $dob = validate(date('Y-m-d',strtotime($_POST['patient_dob'])));
 
-    $sql1= "INSERT INTO `doctor`(`doctor_name`, `doctor_email`, `doctor_password`, `description`, `contact`, `clinic_address`, `specialty`)
-     VALUES ('$name','$email','$password','$Description','$Contact','$address','$specialty')";
+
+    $sql1= "INSERT INTO `patient`(`patient_name`, `patient_email`, `patient_address`, `patient_contact`, `patient_password`, `patient_dob`) 
+    VALUES ('$name','$email','$address','$Contact','$password','$dob')";
     $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
     VALUES ('$email','p')";
 
@@ -30,7 +30,7 @@ if($_POST)
     $result = mysqli_query($conn,$sql2);
 
     if ($result) {
-        header("Location: add_doctor.php?msg=Doctor added successfully");
+        header("Location: login.php?msg=account created successfully");
     }
     else {
         echo "Failed: " . mysqli_error($conn);
@@ -66,81 +66,81 @@ if($_POST)
             </td>
         </tr>
         <tr>
-            <form action = "" method = "POST">
+            <form style = "font-family: monospace;" method = "POST">
                 <td class = "label-td">
-                    <label for="user_name" class = "form-label">Full Name:</label>
+                    <label class = "form-label">Full Name:</label>
                 </td>
         </tr>
 
         <tr>
             <td class = "label-td">
-                <input type="text" class = "input-text"name="user_name" id="user_name" required>
+                <input type="text" class = "input-text" name="patient_name" required>
             </td>
         </tr>
 
         <tr>
         <td class = "label-td">
-                    <label for="user_email" class = "form-label">Email:</label>
+                    <label class = "form-label">Email:</label>
                 </td>
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="email" class = "input-text"name="user_email" id="user_email" required>
+                <input type="email" class = "input-text" name="patient_email" required>
             </td>
         </tr>
 
         <tr>
         <td class = "label-td">
-                    <label for="user_address" class = "form-label">Address:</label>
+                    <label class = "form-label">Address:</label>
                 </td>
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="text" class = "input-text"name="user_address" id="user_address" required>
+                <input type="text" class = "input-text" name="patient_address" required>
             </td>
         </tr>
 
         <tr>
         <td class = "label-td">
-                    <label for="user_contact" class = "form-label">Contact Number:</label>
+                    <label class = "form-label">Contact Number:</label>
                 </td>
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="text" class = "input-text"name="user_contact" id="user_contact" required>
+                <input type="text" class = "input-text" name="patient_contact" required>
+            </td>
+        </tr>
+
+        <!-- <tr>
+        <td class = "label-td">
+                    <label class = "form-label">Password:</label>
+                </td>
+        </tr>
+        <tr>
+            <td class = "label-td">
+                <input type="password" class = "input-text" name="" required>
+            </td>
+        </tr> -->
+
+        <tr>
+        <td class = "label-td">
+                    <label class = "form-label">Password:</label>
+                </td>
+        </tr>
+        <tr>
+            <td class = "label-td">
+                <input type="password" class = "input-text" name="patient_password" required>
             </td>
         </tr>
 
         <tr>
         <td class = "label-td">
-                    <label for="user_password" class = "form-label">Password:</label>
+                    <label class = "form-label">Date of Birth:</label>
                 </td>
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="password" class = "input-text"name="user_password" id="user_password" required>
-            </td>
-        </tr>
-
-        <tr>
-        <td class = "label-td">
-                    <label for="user_password" class = "form-label">Confirm Password:</label>
-                </td>
-        </tr>
-        <tr>
-            <td class = "label-td">
-                <input type="password" class = "input-text"name="user_password" id="user_password" required>
-            </td>
-        </tr>
-
-        <tr>
-        <td class = "label-td">
-                    <label for="user_dob" class = "form-label">Date of Birth:</label>
-                </td>
-        </tr>
-        <tr>
-            <td class = "label-td">
-                <input type="date" class = "input-text" name="user_dob" id="user_dob" required>
+                <input type="date" class = "input-text" name="patient_dob" >
             </td>
         </tr>
     

@@ -73,11 +73,11 @@ if($_POST)
 
         }
         elseif ($utype === 'p') {
-            $sql = "";
+            $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) === 1)
             {
-                //  For Doctor dashbord
+                //  For Patient home_page
                 $_SESSION['user']= $row['$email'];
                 $_SESSION['usertype']= $row['p'];
                 header("Location: patient_side/home_page.php");
