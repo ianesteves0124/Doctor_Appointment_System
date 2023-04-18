@@ -36,35 +36,26 @@ include('admin_index.php');
 
     <tbody>
         <?php
-            // $sql = "SELECT * FROM `doctor`";
-            $sql = "SELECT * FROM `doctor`";
+
+            $sql = 'SELECT * FROM `doctor`';
             $result = mysqli_query($conn,$sql);
 
             while ($row = mysqli_fetch_assoc($result)) 
             {
-                
-               ?>
-               <tr class = "list_doctor">
-                <td><?php echo $row['doctor_name']?> </td>
-                <td><?php echo $row['doctor_email']?> </td>
-                <td><?php echo $row['specialty']?> </td>
-                <td><?php echo $row['contact']?> </td>
-                <td>
-                    <div class = "event-btn">
-                        <a href="edit_doctor.php">
-                            <i class = "far fa-edit"></i>UPDATE
-                        </a>
-                        <a href="delete_doctor.php">
-                            <i class = "far fa-trash-alt"></i>DELETE
-                        </a>
-                    </div>
-                </td>
-               </tr>
-               <?php
-               
+                 echo '<tr class = "list_doctor">';
+                 echo '<td>'. $row['doctor_name'].'</td>';
+                 echo '<td>'. $row['doctor_email'].'</td>';
+                 echo '<td>'. $row['specialty'].'</td>';
+                 echo '<td>'. $row['address'].'</td>';
+                 echo '<td>'. $row['contact'].'</td>';
+                 echo '<td>';
+                 echo ' <a  type="button" class="event-btn" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
+                 echo ' <a  type="button" class="event-btn" href="delete_doctor.php?type=doctor&delete & id=' . $row['doctor_id'].'">DELETE</a>';
+                 echo '</td>';
+                 echo '</tr> ';
             }
-            ?>
-        
+        ?>
+                            
     </tbody>
     </table>
 </center>

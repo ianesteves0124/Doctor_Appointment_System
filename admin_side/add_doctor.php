@@ -50,8 +50,8 @@ if($_POST)
 <body>
 <div class = "container my-5">
     <div class = "text-center mb-4">
-    <h2 style = "font-family: monospace;">Update Doctor Information</h2>
-    <p style = "font-family: monospace;" class = "text-muted">Click save after updating any information.</p>
+    <h2 style = "font-family: monospace;">Add New Doctor</h2>
+    <p style = "font-family: monospace;" class = "text-muted">Fill up the form below.</p>
     </div>
 
     <div class = "">

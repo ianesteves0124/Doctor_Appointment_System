@@ -2,18 +2,20 @@
 include "../database/connection.php";
 session_start();
 
-$id = $_POST['doctor_id'];
-$sql = "SELECT * FROM `doctor` WHERE doctor_id = $id LIMIT 1;";
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result);
-
+$query = "SELECT * FROM `doctor` WHERE `doctor_id` = '".$_GET['id']."'";
+$result = mysqli_query($conn,$query);
+while ($row = mysqli_fetch_array($result)) 
+{
     $name=$row['doctor_name'];
-    $email=['doctor_email'];
+    $email=$row['doctor_email'];
     $Description=$row['description'];
     $Contact=$row['contact'];
     $address=$row['clinic_address'];
     $password=$row['doctor_password'];
     $specialty =$row['specialty'];
+}
+
+$id = $_GET['id'];
 
 if($_POST)
 {
@@ -34,7 +36,7 @@ if($_POST)
     $specialty = validate($_POST['specialty']);
 
     $sql1= "UPDATE `doctor` SET `doctor_name`='$name',`doctor_email`='$email',`doctor_password`='$password',
-    `description`='$Description',`contact`='$Contact',`clinic_address`='$address',`specialty`='$specialty' WHERE doctor_id = $id";
+    `description`='$Description',`contact`='$Contact',`clinic_address`='$address',`specialty`='$specialty' WHERE doctor_id = '".$_GET['id']."'";
 
     $result = mysqli_query($conn,$sql1);
 
@@ -45,7 +47,6 @@ if($_POST)
         echo "Failed: " . mysqli_error($conn);
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +64,8 @@ if($_POST)
     <h2 style = "font-family: monospace;">Update Doctor Information</h2>
     <p style = "font-family: monospace;" class = "text-muted">Click save after updating any information.</p>
     </div>
-
-    
-
     <div class = "">
-    <form style = "font-family: monospace;" method="POST" >
+    <form style = "font-family: monospace;" method="POST">
             <div class = "row mb-3">
                 <label class = "col-sm-3 col-form-label">Name:</label>
                 <div class = "col-sm-6">
@@ -77,7 +75,7 @@ if($_POST)
             <div class = "row mb-3">
                 <label class = "col-sm-3 col-form-label">Email:</label>
                 <div class = "col-sm-6">
-                    <input type="email" class = "form-control" name="doctor_email" value="<?php echo $row['doctor_email']?>"required>
+                    <input type="email" class = "form-control" name="doctor_email" value="<?php echo $email?>"required>
                 </div>
             </div>
             <div class = "row mb-3">
@@ -97,8 +95,7 @@ if($_POST)
                 <label class = "col-sm-3 col-form-label">Specialty:</label>
                 <div class = "col-sm-6">
                 <select name="specialty" id="" class = "form-control">
-                    <option>Select Specialty</option>
-                    <!-- <?php echo $row['specialty']?> -->
+                    <option> <?php echo $specialty?></option>
                 <?php
                         $sql_list = "SELECT * FROM `Doctor_Specialty` ORDER BY `Specialty_Title` asc;";
                         $result = mysqli_query($conn,$sql_list);
@@ -132,7 +129,7 @@ if($_POST)
 
             <div class = "row mb-3">
                 <div class = "offset-sm-3 col-sm-3 d-grid">
-                    <button type = "submit" class = "btn btn-outline-primary">Update</button>
+                    <button type = "submit" class = "btn btn-outline-primary">Save</button>
                 </div>
                 <div class = "col-sm-3 d-grid">
                     <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">Cancel</a>

@@ -1,4 +1,3 @@
-<link rel="icon" type="image/png" href="../images/website icon.png">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/png" href="images/website icon.png">
     <title>Login Account</title>
     
 </head>
@@ -73,11 +73,18 @@ if($_POST)
 
         }
         elseif ($utype === 'p') {
-            if (condition) {
-                # code...
+            $sql = "";
+            $result = mysqli_query($conn,$sql);
+            if (mysqli_num_rows($result) === 1)
+            {
+                //  For Doctor dashbord
+                $_SESSION['user']= $row['$email'];
+                $_SESSION['usertype']= $row['p'];
+                header("Location: patient_side/home_page.php");
             }
-            else {
-                # code...
+            else
+            {
+                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
             }
         }
         
@@ -149,7 +156,7 @@ else
                 <td>
                     <br>
                     <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
-                    <a href="patient_side/login_form_patient.php" class="link-item">Sign Up</a>
+                    <a href="signup.php" class="link-item">Sign Up</a>
                     <br><br><br>
                 </td>
             </tr>       
