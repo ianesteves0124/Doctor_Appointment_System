@@ -16,7 +16,7 @@
 session_start();
 include("database/connection.php");
 
-if($_POST)
+if(isset($_POST['login']))
 {
     function validate($data)
     {
@@ -75,6 +75,7 @@ if($_POST)
         elseif ($utype === 'p') {
             $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
+
             if (mysqli_num_rows($result) === 1)
             {
                 //  For Patient home_page
@@ -82,9 +83,17 @@ if($_POST)
                 $_SESSION['usertype']= $row['p'];
                 header("Location: patient_side/home_page.php");
             }
+            $user = mysqli_fetch_object($result);
+            if(!password_verify($password,$user->password)){
+                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">PASSWORD IS NOT CORRECT</label>';
+            }
+            
+            if($user->email_verified_at == null){
+                die("Please verify your email to continue <a href = 'email-verification.php?email=".$email."'>from here</a>");
+            }
             else
             {
-                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                //$error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
             }
         }
         
@@ -147,7 +156,7 @@ else
 
             <tr>
                 <td>
-                    <input type="submit" value="Login" class="login-btn btn-primary btn"> <br>
+                    <input type="submit" name = "login" value="Login" class="login-btn btn-primary btn"> <br>
                     <input type="submit" value="Cancel" onclick = "location.href = 'index_main.html';" class="login-btn btn-primary btn">
                 </td>
             </tr>

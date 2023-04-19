@@ -1,9 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="icon" type="image/png" href="images/website icon.png">
+    <title>Create Account</title>
+</head>
+<body>
 <?php
 include "database/connection.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'vendor/autoload.php';
 
 session_start();
 
-if($_POST)
+if(isset($_POST['register']))
 {
     function validate($data)
     {
@@ -20,37 +41,50 @@ if($_POST)
     $password = validate($_POST['patient_password']);
     $dob = validate(date('Y-m-d',strtotime($_POST['patient_dob'])));
 
+    $v_email = new PHPMailer(true);
+    try
+    {
+        //SERVER Settings
+        $v_email->isSMTP();
+        $v_email->Host = 'smtp.gmail.com';
+        $v_email->SMTPAuth = true;
+        $v_email->Username   = 'user@example.com';
+        $v_email->Password   = 'secret'; 
+        $v_email->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $v_email->Port = 465;
 
-    $sql1= "INSERT INTO `patient`(`patient_name`, `patient_email`, `patient_address`, `patient_contact`, `patient_password`, `patient_dob`) 
-    VALUES ('$name','$email','$address','$Contact','$password','$dob')";
-    $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
-    VALUES ('$email','p')";
+        //RECIPIENTS
+        $v_email->setFrom('from@example.com','Doctors Appointment System');
+        $v_email->addAddress($email,$name);
+        $v_email->isHTML(true);
+        $verification_code = substr(number_format(time() * rand(), 0, '', '',), 0, 6);
 
-    $result = mysqli_query($conn,$sql1);
-    $result = mysqli_query($conn,$sql2);
+        //CONTENT
+        $v_email->Subject = 'Doctors Appointment System Email Verification';
+        $v_email->Body    = '<p>Your verification code is: <b style = "font-size: 30px;">' . $verification_code . '</b></p>';
 
-    if ($result) {
-        header("Location: login.php?msg=account created successfully");
+        $v_email->send();
+        //$encrypted_password = password_hash($password,PASSWORD_DEFAULT);
+        header("Location: email-verification.php?email=".$email."");
+
+        
+
+        $sql1= "INSERT INTO `patient`(`patient_name`, `patient_email`, `patient_address`, `patient_contact`, `patient_password`, `patient_dob`,  `verification_code`, `email_verified_at`) 
+        VALUES ('$name','$email','$address','$Contact','$password','$dob','$verification_code',NULL)";
+        $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
+        VALUES ('$email','p')";
+
+                mysqli_query($conn,$sql1);
+                mysqli_query($conn,$sql2);
+        
     }
-    else {
-        echo "Failed: " . mysqli_error($conn);
-    }
+
+    catch (Exception $e) 
+     {
+         echo "Message could not be sent. Mailer Error: {$v_email->ErrorInfo}";
+     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/signup.css">
-    <link rel="icon" type="image/png" href="images/website icon.png">
-    <title>Create Account</title>
-</head>
-<body>
     <center>
     <div class = "login_container">
     <table border = "0" style = "margin: 0; padding: 0; width: 60%;">
@@ -146,7 +180,7 @@ if($_POST)
     
         <tr>
             <td>
-            <input type="submit" value="Sign up" class="login-btn btn-primary btn"> <br>
+            <input type="submit"  name = "register" value="Sign up" class="login-btn btn-primary btn"> <br>
             <input type="submit" value="Cancel" onclick = "location.href = 'index_main.html';" class="login-btn btn-primary btn">
             </td>
         </tr>

@@ -63,7 +63,7 @@
         <tbody class="tbody">
             <tr class="list">
                 <th class="user">
-                    <img src="/images/patient male img.png" alt="" class="icon">
+                    <img src="../images/patient male img.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Karl Fredrick</div>
                         <div class="user-name">karlfredrick@gmail.com</div>
@@ -121,7 +121,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/patient female img.png" alt="" class="icon">
+                    <img src="../images/patient female img.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Sophia Lurk</div>
                         <div class="user-name">slurk@gmail.com</div>
@@ -147,7 +147,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/patient male img.png" alt="" class="icon">
+                    <img src="../images/patient male img.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Matthew Longley</div>
                         <div class="user-name">matthewlongley@gmail.com</div>
@@ -173,7 +173,7 @@
             </tr>
             <tr class="list">
                 <th class="user">
-                    <img src="/images/patient female img.png" alt="" class="icon">
+                    <img src="../images/patient female img.png" alt="" class="icon">
                     <div class="name-or-userName">
                         <div class="name">Catherine Turner</div>
                         <div class="user-name">kathturner@gmail.com</div>
