@@ -9,21 +9,127 @@ include('admin_index.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/admin_side_css/admin_doctor.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Doctors</title>
 </head>
 <body>
-    <table>
-    <tr>
-    <td>
-        <p class = "sub_headings">Add New Doctor</p>
-    </td>
-    <td>
-    <a href="add_doctor.php" class = "add_new"><i class = "fas fa-plus"></i> Add New</a>
-    </td>
-</tr>
-    </table>
+        <!-- <center>
+    <p class = "sub_headings">Add New Doctor</p>
+        </center> -->
+
+    <div class="title">
+        <h1 class="maintitle">Add New Doctor</h1>
+            <center>
+                <div class="button">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New <i class="fas fa-user-plus"></i></button></div>
+            </center>
+        <h2 class="subtitle">Include the physician's details with the best doctor appointment system.</h2>
+        
+</div>
+    <center>
+        <!-- <div class="button">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New</button> -->
+    <div class="modal" id="myModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Doctor</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div class = "">
+    <form style = "font-family: monospace;" method="post" >
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Name:</label>
+                <div class = "col-sm-6">
+                    <input type="text" class = "form-control" name="doctor_name" value=""required>
+                </div>
+            </div>
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Email:</label>
+                <div class = "col-sm-6">
+                    <input type="email" class = "form-control" name="doctor_email" value=""required>
+                </div>
+            </div>
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Description:</label>
+                <div class = "col-sm-6">
+                    <input type="text" class = "form-control" name="description" value=""required>
+                </div>
+            </div>
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Contact:</label>
+                <div class = "col-sm-6">
+                    <input type="text" class = "form-control" name="contact" value=""required>
+                </div>
+            </div>
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Specialty:</label>
+                <div class = "col-sm-6">
+                <select name="specialty" id="" class = "form-control">
+                    <option>Select Specialty</option>
+                <?php
+                        $sql_list = "SELECT * FROM `Doctor_Specialty` ORDER BY `Specialty_Title` asc;";
+                        $result = mysqli_query($conn,$sql_list);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                    
+                                    <option> <?php echo $row['Specialty_Title']?></option>
+                                    <?php
+                                }
+                            }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Clinic Address:</label>
+                <div class = "col-sm-6">
+                    <input type="text" class = "form-control" name="clinic_address" value=""required>
+                </div>
+            </div>
+            <div class = "row mb-3">
+                <label class = "col-sm-3 col-form-label">Password:</label>
+                <div class = "col-sm-6">
+                    <input type="password" class = "form-control" name="doctor_password"  value=""required>
+                </div>
+            </div>
+
+      </div>
+
+      <div class = "row mb-3">
+                <div class = "offset-sm-3 col-sm-3 d-grid">
+                    <button type = "submit" class = "btn btn-outline-primary">Create</button>
+                </div>
+                <div class = "col-sm-3 d-grid">
+                    <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">Cancel</a>
+                </div>
+            </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+        </div>
+
+    </center>
 <center>
-    <table  width = "89%" class="sub-table">
+        <center>
+    <table  width = "70%" class="sub-table">
     <thead>
         <tr>
             <th class = "header">Doctor Name</th>
@@ -46,7 +152,6 @@ include('admin_index.php');
                  echo '<td>'. $row['doctor_name'].'</td>';
                  echo '<td>'. $row['doctor_email'].'</td>';
                  echo '<td>'. $row['specialty'].'</td>';
-                 echo '<td>'. $row['address'].'</td>';
                  echo '<td>'. $row['contact'].'</td>';
                  echo '<td>';
                  echo ' <a  type="button" class="event-btn" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
@@ -58,6 +163,7 @@ include('admin_index.php');
                             
     </tbody>
     </table>
+        </center>
 </center>
 </body>
 </html>

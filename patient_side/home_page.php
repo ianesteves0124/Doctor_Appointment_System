@@ -15,16 +15,7 @@
     <h1 class ="f_start_line">We are bridging the Patient-Doctor Communication Gap</h1>
     <h2 class = "f_second_line">You won't forget ever again your Doctor's Appointments!</h2>
     <button class = "bookbtn" onclick = "location.href = 'sechome_page.php'"><span>Book Now!</span></button>
-</center>
-    <!-- <div class="center">
-  <div class="pagination">
-   <a href="#">&laquo;</a> -->
-  <!-- <a href="home_page.php" class="active">1</a>
-  <a href="sechome_page.php">2</a>
-  <a href="thirdhome_page.php">3</a>
-  <a href="fourthhome_page.php">4</a>
-  <a href="about_page.php">5</a> -->
-  <!-- <a href="#">&raquo;</a> -->
+    </center>
   </div>
 </div> 
 </div>
@@ -45,10 +36,6 @@
         </ul>
     </div>
 
-<!-- <div class = "second_tab">
-    <h1 class ="s_start_line">"WE ARE COMMITTED TO YOUR HEALTH, CARING FOR LIFE." </h1>
-    <h2 class = "s_second_line">View the various professionals and services we offer</h2> -->
-    <!-- <img class = "s_image" src="/images/Picture2.png" alt="DOCTOR 2"> -->
 </div>
 </div>
 </body>

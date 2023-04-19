@@ -71,7 +71,7 @@
         <center>
 		<div class="content">
             <br>
-            <h2>DOCTOR INFORMATION:</h2>
+            <!-- <h2>DOCTOR INFORMATION:</h2>
             <h3>Doctor:</h3>
                 <h4>Dr. David Chrish, Cardiologist</h4>
             <h3>Email Address:</h3>
@@ -81,9 +81,9 @@
             <h3>Clinic Location:</h3>
                 <h4>#12 St. New Kababae Olongapo City Zambales, Philippines</h4> 
             <h3>Availability:</h3>
-                <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M.</h4>
+                <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M.</h4> -->
         <form action="/action_page.php">
-            <br><br><br><br><br><br>
+            <br><br>
             <h2>APPOINTMENT INFORMATION:</h2>
             <h3>First Name:</h3>
                     <input type="text" id="fname" name="fname" placeholder="Your name..." required><br><br>
@@ -98,7 +98,7 @@
             <h3>Email Address:</h3>
                     <input type="email" id="email" name="email" placeholder="patient123@das.com" required><br><br>
             <h3>Appointment Date:</h3>
-                    <input type="date" id="bookdate" name="bookdate"  required><br><br><br>
+                    <input type="date" id="bookdate" name="bookdate" min="2023-01-01" max="2029-01-01" required><br><br><br>
                     <input type="submit"href="#" value="Submit">
 </form>
     </div>

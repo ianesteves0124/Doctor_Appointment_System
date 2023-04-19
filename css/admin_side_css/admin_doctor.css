@@ -1,10 +1,28 @@
 body{
     font-family: monospace;
+    overflow: hidden;
 }
-.sub_headings{
-    padding-top: 5%;
-    padding-left: 300px;
-    font-size: 18px;
+.title{
+    margin-top:10px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+      padding-left: 21%;
+      padding-right: 5%;
+    background-color:#0a3a87;
+    color:white;
+    font-family: monospace;
+    font-size:small;
+}
+.maintitle{
+    font-size:26px;
+    margin-top: 3px;
+    margin-bottom: -10px;
+}
+.subtitle{
+    margin-top: -45px;
+    margin-left: 10px;
+    font-size: 16px;
 }
 .add_new{
     display: flex;
@@ -35,4 +53,9 @@ body{
     display: flex;
     justify-content: center;
     
+}
+
+.button{
+    margin-left:900px;
+    margin-bottom:30px;
 }

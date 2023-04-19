@@ -8,7 +8,7 @@
 }
 body {
   overflow: scroll;
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: monospace;
   background-color: rgb(246, 246, 247);
 }
 .sidebar {
@@ -33,18 +33,24 @@ body {
   line-height: 65px;
   font-size: 20px;
   color: rgb(58, 58, 58);
-  padding-left: 40px;
+  padding-left: 60px;
   box-sizing: border-box;
   transition: .4s;
+  text-decoration: underline;
+}
+.calendar{
+  margin-top: 10px;
+  margin-left:1200px;
 }
 .title{
-  margin-top: -83px;
-  padding-bottom: 10px;
+  margin-top: -65px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   text-transform: uppercase;
   font-weight: 500px;
 }
 .docprofileimg{
-  margin-top: 25px;
+  margin-top: 50px;
 }
 .docname{
   font-size: 22px;
@@ -61,9 +67,9 @@ body {
   margin-bottom: 15px;
   color:black;
 }
-/* ul li:hover a{
-  background-color: #63bdbd;
-} */
+ul li:hover a{
+  background-color: #97ffff;
+}
 .sidebar ul a i{
   margin-right: 16px;
 }
@@ -82,7 +88,7 @@ section{
 	padding-left: 20%;
   background-color:#008080;
   color:white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
   font-size: 14px;
   
   }
@@ -93,7 +99,7 @@ section{
       padding-left: 20%;
     background-color: #98FB98;
     color:#006400;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-size: 12px;
   }
 
@@ -106,31 +112,31 @@ section{
     margin-left: 1180px;
     font-size: 13px;
     font-weight: 300;
+    font-family: monospace;
   }
 .displaydate{
     color:rgb(71, 71, 71);
     margin-top: 2px;
     margin-left: 1155px;
     font-size:16px;
-    font-family: Tahoma, Geneva, sans-serif;
+    font-family: monospace;
   }
 .displaytime{
   color:rgb(71, 71, 71);
   margin-top: 1px;
   margin-left: 1155px;
   font-size:16px;
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: monospace;
 }
 
 
-
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   background: rgb(246, 246, 247);
   padding: 20px;
   margin: 0 auto;
   margin-top: 10px;
-  margin-left: 290px;
+  margin-left: 250px;
 }
 
 
@@ -178,14 +184,14 @@ tbody .user-name {
   color: #666;
 }
 
-tbody .active,
-tbody .inactive {
+/* tbody .complete,
+tbody .incomplete {
   padding-left: 15px;
   position: relative;
 }
 
-tbody .active::before,
-tbody .inactive::before {
+tbody .complete::before,
+tbody .incomplete::before {
   content: "";
   position: absolute;
   width: 8px;
@@ -196,8 +202,16 @@ tbody .inactive::before {
   background: #079400;
 }
 
-tbody .inactive::before {
+tbody .incomplete::before {
   background: #f00;
+} */
+.complete{
+  color:#079400;
+  font-weight: 700px;
+}
+.incomplete{
+  color:#f00;
+  font-weight: 700px;
 }
 
 .button {
@@ -239,5 +253,86 @@ tbody .inactive::before {
   background: #0084ff;
 }
 
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+  }
+  .overlay:target {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+  .popup {
+	overflow:scroll;
+	margin: 100px auto;
+  margin-top: 35px;
+	padding: 20px;
+	background: #fff;
+	/* border-radius: 6px; */
+	width: 55%;
+	height:80%;
+	position: relative;
+	transition: all 5s ease-in-out;
+  }
+  .popup h1{
+	margin-top: 25px;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+	text-transform: uppercase;
+  }
+  .popup h2 {
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight: 600;
+  }
+  .popup h3{
+	margin-top: 25px;
+	text-transform: none;
+	font-size:20px;
+
+  }
+  .popup h4{
+	margin-top: 5px;
+	text-transform: none;
+	font-size:18px;
+	font-weight: 400;
+  }
+  .popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 40px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+  }
+  .popup .close:hover {
+	color: #0d9994;
+	font-weight: 400;
+  }
+  .popup .content {
+	max-height: 60%;
+	/* overflow: auto; */
+	color:black;
+	margin-top: 10px;
+  }
+  
+  @media screen and (max-width: 700px){
+
+	.popup{
+	  width: 70%;
+	}
+  }
 
   
