@@ -140,7 +140,7 @@ if($_POST)
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="date" class = "input-text" name="patient_dob" >
+                <input type="date" class = "input-text" name="patient_dob" ><br>
             </td>
         </tr>
     

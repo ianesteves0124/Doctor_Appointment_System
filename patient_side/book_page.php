@@ -22,10 +22,10 @@
                 <th class="specialty">Specialty</th>
                 <th class="status">Status</th>
                 <th class="date">Date</th>
+                <!-- <th class="location">Clinic Location</th> -->
                 <th class="location">Location</th>
                 <th class="phone">Phone</th>
-                <th class="contact">Contact</th>
-                <th class="action">Action</th>
+                <!-- <th class="action">Action</th> -->
             </tr>
         </thead>
         <tbody class="tbody">
@@ -42,18 +42,18 @@
                     <div class="active">Completed</div>
                 </th>
                 <th class="date">April 20, 2023</th>
-                <th class="location">Zambales</th>
-                <th class="phone">0939-123-4567</th>
-                <th class="contact">
-                    <div class="button">Contact</div>
+                <!-- <th class="location">3/F V Mall, Greenhills Shopping Center, Ortigas Avenue San Juan, Metro Manila, Philippines</th> -->
+                <th class="location">
+                <a class="button" target="_blank" href="https://goo.gl/maps/6z8TqXyz8SxV2XU16">View Map</a>    
                 </th>
-                <th class="action">
+                <th class="phone">0939-123-4567</th>
+                <!-- <th class="action">
                     <div class="action-button">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                </th>
+                </th> -->
             </tr>
             <tr class="list">
                 <th class="user">
@@ -68,9 +68,12 @@
                     <div class="active">Completed</div>
                 </th>
                 <th class="date">April 26, 2023</th>
-                <th class="location">Bataan</th>
+                <!-- <th class="location">2224 Paraiso Street Corner Arnaiz Avenue Dasmarinas Village 1222 Makati City, Metro Manila, Philippines</th> -->
+                <th class="location">
+                <a class="button" target="_blank" href="https://goo.gl/maps/yqH4w4uSxk4rNTzU9">View Map</a>    
+                </th>
                 <th class="phone">0919-133-9754</th>
-                <th class="contact">
+                <!-- <th class="contact">
                     <div class="button">Contact</div>
                 </th>
                 <th class="action">
@@ -79,7 +82,7 @@
                         <span></span>
                         <span></span>
                     </div>
-                </th>
+                </th> -->
             </tr>
             <tr class="list">
                 <th class="user">
@@ -94,9 +97,12 @@
                     <div class="active">Completed</div>
                 </th>
                 <th class="date">April 27, 2023</th>
-                <th class="location">Manila</th>
+                <!-- <th class="location">Gamaphael Building, Calderon corner Claudio Streets Baguio, Benguet, Philippines</th> -->
+                <th class="location">
+                <a class="button" target="_blank" href="https://goo.gl/maps/igAxM66GKZPi4iVMA">View Map</a>    
+                </th>
                 <th class="phone">0921-456-9876</th>
-                <th class="contact">
+                <!-- <th class="contact">
                     <div class="button">Contact</div>
                 </th>
                 <th class="action">
@@ -105,7 +111,7 @@
                         <span></span>
                         <span></span>
                     </div>
-                </th>
+                </th> -->
             </tr>
             <tr class="list">
                 <th class="user">
@@ -121,9 +127,12 @@
                 </th>
                 
                 <th class="date">May 10, 2023</th>
-                <th class="location">Davao</th>
+                <!-- <th class="location">Port Royale Building Makati City, Metro Manila, Philippines</th> -->
+                <th class="location">
+                <a class="button" target="_blank" href="https://goo.gl/maps/7hAmm6qLtyUW8Lr16">View Map</a>    
+                </th>
                 <th class="phone">0931-234-6543</th>
-                <th class="contact">
+                <!-- <th class="contact">
                     <div class="button">Contact</div>
                 </th>
                 <th class="action">
@@ -132,12 +141,15 @@
                         <span></span>
                         <span></span>
                     </div>
-                </th>
+                </th> -->
             </tr>
         </tbody>
     </table>
 </div>
 </center>
+
+
+
 
 </body>
 </html>

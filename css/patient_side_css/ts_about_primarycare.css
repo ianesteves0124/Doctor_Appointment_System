@@ -241,7 +241,7 @@ color: #17c0eb
   
   .overlay {
 	position: fixed;
-	top: 0;
+	top: 0px;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -260,7 +260,7 @@ color: #17c0eb
 	margin: 100px auto;
 	padding: 20px;
 	background: #fff;
-	border-radius: 6px;
+	/* border-radius: 6px; */
 	width: 60%;
 	height:80%;
 	position: relative;
