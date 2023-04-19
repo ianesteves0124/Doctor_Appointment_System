@@ -64,7 +64,6 @@ if(isset($_POST['register']))
         $v_email->Body    = '<p>Your verification code is: <b style = "font-size: 30px;">' . $verification_code . '</b></p>';
 
         $v_email->send();
-        //$encrypted_password = password_hash($password,PASSWORD_DEFAULT);
         header("Location: email-verification.php?email=".$email."");
 
         
