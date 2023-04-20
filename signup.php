@@ -14,13 +14,9 @@
 <?php
 include "database/connection.php";
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-require 'vendor/phpmailer/phpmailer/src/Exception.php';
-require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'vendor/autoload.php';
+
 
 session_start();
 
@@ -41,31 +37,31 @@ if(isset($_POST['register']))
     $password = validate($_POST['patient_password']);
     $dob = validate(date('Y-m-d',strtotime($_POST['patient_dob'])));
 
-    $v_email = new PHPMailer(true);
+    
     try
     {
+        $mail = new PHPMailer(true);
         //SERVER Settings
-        $v_email->isSMTP();
-        $v_email->Host = 'smtp.gmail.com';
-        $v_email->SMTPAuth = true;
-        $v_email->Username   = 'user@example.com';
-        $v_email->Password   = 'secret'; 
-        $v_email->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $v_email->Port = 465;
-
-        //RECIPIENTS
-        $v_email->setFrom('from@example.com','Doctors Appointment System');
-        $v_email->addAddress($email,$name);
-        $v_email->isHTML(true);
-        $verification_code = substr(number_format(time() * rand(), 0, '', '',), 0, 6);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'iantabs40@gmail.com';
+        $mail->Password = 'xwpgbfbnrjnhroyk';
+        $mail->Port = 465;
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPDebug = 2; // enable debug output
+        
 
         //CONTENT
-        $v_email->Subject = 'Doctors Appointment System Email Verification';
-        $v_email->Body    = '<p>Your verification code is: <b style = "font-size: 30px;">' . $verification_code . '</b></p>';
+        $mail->isHTML(true);
+        $mail->setFrom('iantabs40@gmail.com','Doctors Appointment System');
+        $mail->addAddress($email,$name);
+        $mail->Subject = 'Doctors Appointment System Email Verification';
+        $verification_code = substr(number_format(time() * rand(), 0, '', '',), 0, 6);
+        $mail->Body    = '<p>Your verification code is: <b style = "font-size: 30px;">' . $verification_code . '</b></p>';
 
-        $v_email->send();
-        header("Location: email-verification.php?email=".$email."");
-
+        $mail->send();
+        header("Location: login.php?msg=user-account-created-succesfully");
         
 
         $sql1= "INSERT INTO `patient`(`patient_name`, `patient_email`, `patient_address`, `patient_contact`, `patient_password`, `patient_dob`,  `verification_code`, `email_verified_at`) 
@@ -80,7 +76,7 @@ if(isset($_POST['register']))
 
     catch (Exception $e) 
      {
-         echo "Message could not be sent. Mailer Error: {$v_email->ErrorInfo}";
+         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
      }
 }
 ?>

@@ -75,25 +75,19 @@ if(isset($_POST['login']))
         elseif ($utype === 'p') {
             $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
+ 
+            $user = mysqli_fetch_object($result);
 
-            if (mysqli_num_rows($result) === 1)
-            {
-                //  For Patient home_page
+            if($user->email_verified_at == null){
+                die("Your account is not yet verified.<br>Please verify your email <a href='email-verification.php?email=".$email."'>HERE</a>");
+            }
+            if($user->email_verified_at != null){
                 $_SESSION['user']= $row['$email'];
                 $_SESSION['usertype']= $row['p'];
                 header("Location: patient_side/home_page.php");
             }
-            $user = mysqli_fetch_object($result);
-            if(!password_verify($password,$user->password)){
-                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">PASSWORD IS NOT CORRECT</label>';
-            }
-            
-            if($user->email_verified_at == null){
-                die("Please verify your email to continue <a href = 'email-verification.php?email=".$email."'>from here</a>");
-            }
-            else
-            {
-                //$error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+            else{
+                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
             }
         }
         

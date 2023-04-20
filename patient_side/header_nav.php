@@ -1,4 +1,4 @@
-<link rel="icon" type="image/png" href="../images/website icon.png">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/header_nav.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Doctor Appointment System</title>
 </head>
 <body>
@@ -34,7 +35,6 @@
                     <li><a href="../logout.php"><i class="fas fa-user"></i>Log Out</a></li>
                 </ul>
             </nav>
-            <!-- <img class="patientimg" src="../images/patient profile img.png" alt="patient image" width="70" height="70"> -->
 </header>
 </div>
 </body>
