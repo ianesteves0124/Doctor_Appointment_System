@@ -17,7 +17,7 @@ if (!isset($_GET['do']) || $_GET['do'] != 1) {
             $result = mysqli_query($conn,$sql1);
             
             if ($result) {
-                header("Location: admin_doctor.php?msg=Record has been deleted");
+                echo "<script> alert('Deleted Successfully!'); location.replace('admin_doctor.php') </script>";
             }
             else {
                 echo "Failed: " . mysqli_error($conn);

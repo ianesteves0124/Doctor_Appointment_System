@@ -24,7 +24,7 @@
     </center>
 
 <div class="sidebar">
- <header class="title">Doctor Dashboard</header>
+ <header class="title">DOCTOR</header>
  <center>
  <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
  <div class="docname">Dr. David Chrish</div>
@@ -97,8 +97,6 @@
                 <h4>Male</h4>
             <h3>Date of Birth:</h3>
                 <h4>January 12, 2002</h4>
-            <h3>Place of Birth:</h3>
-                <h4>250 General Kalentong Street, Mandaluyong City, Philippines</h4>
             <h3>Home Address:</h3>
                 <h4>711 T. Alonzo Street1003 Manila, Philippines</h4>
             <h3>Email Address:</h3>

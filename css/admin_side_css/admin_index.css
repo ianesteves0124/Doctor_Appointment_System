@@ -39,6 +39,7 @@ body{
     padding-left: 40px;
     box-sizing: border-box;
     transition: .4s;
+    text-decoration: underline;
 }
 ul li:hover a{
     padding-left: 50px;
@@ -49,7 +50,7 @@ ul a i{
 
 .calendar{
     padding-top: 1%;
-    padding-right: 1%;
+    padding-right: 2%;
 }
 .calendar_header{
     font-size: 20px;

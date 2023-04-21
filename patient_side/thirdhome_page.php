@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/thirdhome_page.css">
+    <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Top Specialties | Doctor Appointment System</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
     <div class="topspectitle">
         <h1>TOP SPECIALTIES</h1>
         <!-- <button class = "viewallbtn" href="#"><span>View All</span></button> -->
-        <h2>These specializations have been in high demand.</h2>
+        <h2 style="margin-top:10px; margin-left:10px;">These specializations have been in high demand.</h2>
         
 </div>
 

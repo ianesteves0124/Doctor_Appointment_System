@@ -3,7 +3,7 @@ body{
 	margin: 0;
 	height: 100vh;
 	overflow: hidden;
-	background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/doc bg 10.jpg");
+	background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/images/doc bg 10.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

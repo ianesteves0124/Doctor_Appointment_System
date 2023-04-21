@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/fourthhome_page.css">
+    <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Common Conditions | Doctor Appointment System</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
     <div class="comcodtitle">
         <h1>COMMON CONDITIONS</h1>
         <!-- <button class = "viewallbtn" href="#"><span>View All</span></button> -->
-        <h2>Doctors who treat these illnesses are easily accessible.</h2>
+        <h2 style="margin-top:10px; margin-left:10px;">Doctors who treat these illnesses are easily accessible.</h2>
         
 </div>
 

@@ -2,13 +2,34 @@ body{
     font-family: monospace;
     overflow: hidden;
 }
+
+::-webkit-scrollbar {
+    width:5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 12px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 .title{
     margin-top:10px;
     margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
-      padding-left: 21%;
-      padding-right: 5%;
+    padding-left: 21%;
+    padding-right: 5%;
     background-color:#0a3a87;
     color:white;
     font-family: monospace;
@@ -16,6 +37,7 @@ body{
 }
 .maintitle{
     font-size:26px;
+    font-weight: 700;
     margin-top: 3px;
     margin-bottom: -10px;
 }
@@ -23,6 +45,7 @@ body{
     margin-top: -45px;
     margin-left: 10px;
     font-size: 16px;
+    font-weight: 400;
 }
 .add_new{
     display: flex;
@@ -44,7 +67,8 @@ body{
 
 .sub-table{
     padding: 5%;
-    margin-left: 15%;
+    margin-top: 2%;
+    margin-left: 17%;
     padding-bottom: 5%;
     font-size: 16px;
 }
@@ -58,4 +82,10 @@ body{
 .button{
     margin-left:900px;
     margin-bottom:30px;
+    padding-bottom: 10px;
+}
+
+.btn{
+    margin-top: 3px;
+    margin-bottom: 4px;
 }

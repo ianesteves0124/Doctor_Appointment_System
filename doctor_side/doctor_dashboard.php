@@ -16,29 +16,9 @@
     <script src="../schedule/fullcalendar/lib/main.min.js"></script>
   </head>
   <body>
-  <!-- <center>   
-        <h1 class="datetimetitle">Today's Date and Time | <i class="fas fa-calendar-alt fa-2x"></i></h1>
-<h2 id="current_date" class="displaydate"></h2>
-<script>
-date = new Date();
-year = date.getFullYear();
-month = date.getMonth() + 1;
-day = date.getDate();
-document.getElementById("current_date").innerHTML = day + "-" + month + "-" + year;
-</script>
-
-<h2 id="current-time" class="displaytime">12:00:00</h2>
-<script>
-    let time=document.getElementById("current-time");
-    setInterval(()=>{
-        let d=new Date();
-        time.innerHTML=d.toLocaleTimeString();
-    },1000)
-    </script>
-    </center> -->
 <center>
     <div class = "calendar">
-    <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
+    <p class = "calendar_header" style="margin-bottom:-5px;"><i class = "far fa-calendar-alt"></i> Today's Date</p>
     <p class = "calendar_timezone">
         <?php
         date_default_timezone_set('Asia/Manila');
@@ -50,7 +30,7 @@ document.getElementById("current_date").innerHTML = day + "-" + month + "-" + ye
 </center>
 
    <div class="sidebar">
-    <header class="title">Doctor Dashboard</header>
+    <header class="title" style="margin-top:-80px;">DOCTOR</header>
     <center>
     <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
     <div class="docname">Dr. David Chrish</div>
@@ -64,6 +44,23 @@ document.getElementById("current_date").innerHTML = day + "-" + month + "-" + ye
    </div>
 </body>
    
+        <center>
+                    <table class="filter-container doctor-header" style="border: none;width:78%; margin-left:255px; border-radius:10px;" border="0" >
+                    <tr>
+                        <td >
+                            <h3 style="margin-top:40px; margin-left:40px; font-size:20px; font-weight:700;">Welcome!</h3>
+                            <!-- <h1><?php echo $username  ?>.</h1> -->
+                            <h1 style="margin-top:20px; margin-left:35px; font-weight:700;">Doctor.</h1>
+                            <p style="margin-top:20px; margin-left:35px; font-weight:450; font-size:16px;">I'm glad you could join us. We work hard to provide you with a thorough service.<br>
+                            Reach Doctor's Appointment System can be viewed from home together with everyday regular schedule!<br><br>
+                            </p>
+                            <a href="/doctor_side/doctor_appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:30%; margin-top:-10px; margin-bottom:10px; margin-left:35px; border-radius:7px; font-weight:500;">View My Appointments</button></a>
+                            <br>
+                            <br>
+                        </td>
+                    </tr>
+                    </table>
+        </center>
 
 <center>
    <body class="bg-light">
@@ -89,8 +86,6 @@ document.getElementById("current_date").innerHTML = day + "-" + month + "-" + ye
                                         <option value="Not Available">Not Available</option>
                                     </select>
 
-                                    <!-- <label for="title" class="control-label">Title</label>
-                                    <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required> -->
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="description" class="control-label">Description</label>
