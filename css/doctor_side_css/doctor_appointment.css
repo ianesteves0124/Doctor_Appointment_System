@@ -7,10 +7,30 @@
 
 }
 body {
-  overflow: scroll;
   font-family: monospace;
   background-color: rgb(246, 246, 247);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .sidebar {
   position: fixed;
   left: 0px;
@@ -63,7 +83,7 @@ body {
   font-size: 18px;
   font-weight: 150px;
   text-transform:none;
-  margin-top: 7px;
+  margin-top: 12px;
   margin-bottom: 15px;
   color:black;
 }

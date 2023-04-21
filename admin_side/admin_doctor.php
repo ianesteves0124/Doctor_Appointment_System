@@ -1,6 +1,45 @@
 <?php
-include('../database/connection.php');
 include('admin_index.php');
+include('../database/connection.php');
+
+
+// ADD DOCTOR
+session_start();
+if($_POST)
+{
+    function validate($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    $name= validate($_POST['doctor_name']);
+    $email= validate($_POST['doctor_email']);
+    $Description= validate($_POST['description']);
+    $Contact= validate($_POST['contact']);
+    $address= validate($_POST['clinic_address']);
+    $password= validate($_POST['doctor_password']);
+    $specialty = validate($_POST['specialty']);
+
+    $sql1= "INSERT INTO `doctor`(`doctor_name`, `doctor_email`, `doctor_password`, `description`, `contact`, `clinic_address`, `specialty`)
+     VALUES ('$name','$email','$password','$Description','$Contact','$address','$specialty')";
+    $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
+    VALUES ('$email','d')";
+
+    $result = mysqli_query($conn,$sql1);
+    $result = mysqli_query($conn,$sql2);
+
+    if ($result) {
+        // header("Location: admin_doctor.php?msg=Doctor added successfully");
+        echo "<script> alert('Added Successfully!'); location.replace('admin_doctor.php') </script>";
+    }
+    else {
+        echo "Failed: " . mysqli_error($conn);
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,12 +64,10 @@ include('admin_index.php');
                 <div class="button">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New <i class="fas fa-user-plus"></i></button></div>
             </center>
-        <h2 class="subtitle">Include the physician's details with the best doctor appointment system.</h2>
+        <h2 class="subtitle">Include the physician's details with the best Doctor's Appointment System.</h2>
         
-</div>
+    </div>
     <center>
-        <!-- <div class="button">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New</button> -->
     <div class="modal" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -108,12 +145,13 @@ include('admin_index.php');
 
       <div class = "row mb-3">
                 <div class = "offset-sm-3 col-sm-3 d-grid">
-                    <button type = "submit" class = "btn btn-outline-primary">Create</button>
+                    <button type = "submit" class = "btn btn-outline-primary">Done</button>
                 </div>
                 <div class = "col-sm-3 d-grid">
                     <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">Cancel</a>
                 </div>
             </div>
+        </form>
 
       <!-- Modal footer -->
       <div class="modal-footer">
@@ -129,7 +167,7 @@ include('admin_index.php');
     </center>
 <center>
         <center>
-    <table  width = "70%" class="sub-table">
+    <table  width = "75%" class="sub-table">
     <thead>
         <tr>
             <th class = "header">Doctor Name</th>
@@ -154,8 +192,8 @@ include('admin_index.php');
                  echo '<td>'. $row['specialty'].'</td>';
                  echo '<td>'. $row['contact'].'</td>';
                  echo '<td>';
-                 echo ' <a  type="button" class="event-btn" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
-                 echo ' <a  type="button" class="event-btn" href="delete_doctor.php?type=doctor&delete & id=' . $row['doctor_id'].'">DELETE</a>';
+                 echo ' <a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
+                 echo ' <a  type="button" class="btn btn-danger btn-sm" href="delete_doctor.php?type=doctor&delete & id=' . $row['doctor_id'].'">DELETE</a>';
                  echo '</td>';
                  echo '</tr> ';
             }

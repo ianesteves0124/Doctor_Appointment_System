@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="../images/website icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <title>Administrator Dashboard</title>
+    <title>Administrator</title>
 </head>
 <body>
     <div class = "navigation-sidebar">

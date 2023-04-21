@@ -1,5 +1,6 @@
 <?php
 include "../database/connection.php";
+
 session_start();
 
 $query = "SELECT * FROM `doctor` WHERE `doctor_id` = '".$_GET['id']."'";
@@ -41,7 +42,7 @@ if($_POST)
     $result = mysqli_query($conn,$sql1);
 
     if ($result) {
-        header("Location: admin_doctor.php?msg=UpdatedSuccessfully!");
+        echo "<script> alert('Updated Successfully!'); location.replace('admin_doctor.php') </script>";
     }
     else {
         echo "Failed: " . mysqli_error($conn);

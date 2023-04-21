@@ -1,3 +1,4 @@
+<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
     <title>Doctor Appointment System</title>
 </head>
 <body>
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <div class ="first_tab">
     <center>
     <h1 class ="f_start_line">We are bridging the Patient-Doctor Communication Gap</h1>

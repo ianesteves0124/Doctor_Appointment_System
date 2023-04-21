@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/patient_side_css/book_page.css">
+    <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Appointment Request | Doctor Appointment System</title>
 </head>
 <body>

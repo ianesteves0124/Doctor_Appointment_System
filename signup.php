@@ -45,8 +45,8 @@ if(isset($_POST['register']))
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'iantabs40@gmail.com';
-        $mail->Password = 'xwpgbfbnrjnhroyk';
+        $mail->Username = 'ianmiles.esteves@gmail.com';
+        $mail->Password = 'bsljrpaeiacloniw';
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPDebug = 2; // enable debug output
@@ -54,7 +54,7 @@ if(isset($_POST['register']))
 
         //CONTENT
         $mail->isHTML(true);
-        $mail->setFrom('iantabs40@gmail.com','Doctors Appointment System');
+        $mail->setFrom('ianmiles.esteves@gmail.com','Doctors Appointment System');
         $mail->addAddress($email,$name);
         $mail->Subject = 'Doctors Appointment System Email Verification';
         $verification_code = substr(number_format(time() * rand(), 0, '', '',), 0, 6);
@@ -69,11 +69,14 @@ if(isset($_POST['register']))
         $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
         VALUES ('$email','p')";
 
-                mysqli_query($conn,$sql1);
-                mysqli_query($conn,$sql2);
-        
+    mysqli_query($conn,$sql1);
+    mysqli_query($conn,$sql2);
+    
+    // if ($result) {
+    //     // header("Location: login.php?msg=account created successfully");
+    //     echo "<script> alert('Congratulations! your account has been successfully created.'); location.replace('login.php') </script>";
+    // }
     }
-
     catch (Exception $e) 
      {
          echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
