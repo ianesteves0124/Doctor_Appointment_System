@@ -143,17 +143,6 @@ if(isset($_POST['register']))
             </td>
         </tr>
 
-        <!-- <tr>
-        <td class = "label-td">
-                    <label class = "form-label">Password:</label>
-                </td>
-        </tr>
-        <tr>
-            <td class = "label-td">
-                <input type="password" class = "input-text" name="" required>
-            </td>
-        </tr> -->
-
         <tr>
         <td class = "label-td">
                     <label class = "form-label">Password:</label>

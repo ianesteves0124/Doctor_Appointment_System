@@ -1,45 +1,6 @@
 <?php
 include('admin_index.php');
 include('../database/connection.php');
-
-
-// ADD DOCTOR
-session_start();
-if($_POST)
-{
-    function validate($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    $name= validate($_POST['doctor_name']);
-    $email= validate($_POST['doctor_email']);
-    $Description= validate($_POST['description']);
-    $Contact= validate($_POST['contact']);
-    $address= validate($_POST['clinic_address']);
-    $password= validate($_POST['doctor_password']);
-    $specialty = validate($_POST['specialty']);
-
-    $sql1= "INSERT INTO `doctor`(`doctor_name`, `doctor_email`, `doctor_password`, `description`, `contact`, `clinic_address`, `specialty`)
-     VALUES ('$name','$email','$password','$Description','$Contact','$address','$specialty')";
-    $sql2= "INSERT INTO `website_user`(`Email`, `usertype`) 
-    VALUES ('$email','d')";
-
-    $result = mysqli_query($conn,$sql1);
-    $result = mysqli_query($conn,$sql2);
-
-    if ($result) {
-        // header("Location: admin_doctor.php?msg=Doctor added successfully");
-        echo "<script> alert('Added Successfully!'); location.replace('admin_doctor.php') </script>";
-    }
-    else {
-        echo "Failed: " . mysqli_error($conn);
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,23 +15,19 @@ if($_POST)
     <title>Doctors</title>
 </head>
 <body>
-        <!-- <center>
-    <p class = "sub_headings">Add New Doctor</p>
-        </center> -->
-
     <div class="title">
         <h1 class="maintitle">Add New Doctor</h1>
             <center>
                 <div class="button">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New <i class="fas fa-user-plus"></i></button></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New <i class="fas fa-user-plus"></i></button>
+                </div>
             </center>
-        <h2 class="subtitle">Include the physician's details with the best Doctor's Appointment System.</h2>
-        
+        <h2 class="subtitle">Include the physician's details with the best Doctor's Appointment System.</h2>    
     </div>
-    <center>
+<center>
     <div class="modal" id="myModal">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+        <div class="modal-dialog modal-xl">
+             <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
@@ -81,7 +38,7 @@ if($_POST)
       <!-- Modal body -->
       <div class="modal-body">
       <div class = "">
-    <form style = "font-family: monospace;" method="post" >
+    <form style = "font-family: monospace;" method="post" action = "add_doctor.php">
             <div class = "row mb-3">
                 <label class = "col-sm-3 col-form-label">Name:</label>
                 <div class = "col-sm-6">
@@ -118,7 +75,6 @@ if($_POST)
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
-                                    
                                     <option> <?php echo $row['Specialty_Title']?></option>
                                     <?php
                                 }
@@ -145,7 +101,7 @@ if($_POST)
 
       <div class = "row mb-3">
                 <div class = "offset-sm-3 col-sm-3 d-grid">
-                    <button type = "submit" class = "btn btn-outline-primary">Done</button>
+                    <button type = "submit" name = "add" class = "btn btn-outline-primary">Done</button>
                 </div>
                 <div class = "col-sm-3 d-grid">
                     <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">Cancel</a>
@@ -163,44 +119,43 @@ if($_POST)
 </div>
 
         </div>
-
-    </center>
+</center>
+    
 <center>
         <center>
-    <table  width = "75%" class="sub-table">
-    <thead>
-        <tr>
-            <th class = "header">Doctor Name</th>
-            <th class = "header">Email</th>
-            <th class = "header">Specialty</th>
-            <th class = "header">Contact</th>
-            <th class = "header">Actions</th>
-        </tr>
-    </thead>
+            <table  width = "75%" class="sub-table">
+                <thead>
+                    <tr>
+                        <th class = "header">Doctor Name</th>
+                        <th class = "header">Email</th>
+                        <th class = "header">Specialty</th>
+                        <th class = "header">Contact</th>
+                        <th class = "header">Actions</th>
+                    </tr>
+                </thead>
 
-    <tbody>
-        <?php
+                <tbody>
+                    <?php
 
-            $sql = 'SELECT * FROM `doctor`';
-            $result = mysqli_query($conn,$sql);
+                        $sql = 'SELECT * FROM `doctor`';
+                        $result = mysqli_query($conn,$sql);
 
-            while ($row = mysqli_fetch_assoc($result)) 
-            {
-                 echo '<tr class = "list_doctor">';
-                 echo '<td>'. $row['doctor_name'].'</td>';
-                 echo '<td>'. $row['doctor_email'].'</td>';
-                 echo '<td>'. $row['specialty'].'</td>';
-                 echo '<td>'. $row['contact'].'</td>';
-                 echo '<td>';
-                 echo ' <a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
-                 echo ' <a  type="button" class="btn btn-danger btn-sm" href="delete_doctor.php?type=doctor&delete & id=' . $row['doctor_id'].'">DELETE</a>';
-                 echo '</td>';
-                 echo '</tr> ';
-            }
-        ?>
-                            
-    </tbody>
-    </table>
+                        while ($row = mysqli_fetch_assoc($result)) 
+                        {
+                            echo '<tr class = "list_doctor">';
+                            echo '<td>'. $row['doctor_name'].'</td>';
+                            echo '<td>'. $row['doctor_email'].'</td>';
+                            echo '<td>'. $row['specialty'].'</td>';
+                            echo '<td>'. $row['contact'].'</td>';
+                            echo '<td>';
+                            echo ' <a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
+                            echo ' <a  type="button" class="btn btn-danger btn-sm" href="delete_doctor.php?type=doctor&delete & id=' . $row['doctor_id'].'">DELETE</a>';
+                            echo '</td>';
+                            echo '</tr> ';
+                        }
+                    ?>                
+                </tbody>
+            </table>
         </center>
 </center>
 </body>

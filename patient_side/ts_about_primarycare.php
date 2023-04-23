@@ -1,5 +1,8 @@
 <title>Primary Care & General Medicine | Top Specialties| Doctor Appointment System</title>
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
+<?php 
+include('header_nav.php'); 
+include '../database/connection.php';
+?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,8 @@
 <div class="about">
     <h1>Top Specialties | About Primary Care & General Medicine</h1>
 </div>
+
+<div>
     <h1 class = "headertitle">Primary Care & General Medicine</h1>
     <h1 class = "aboutdef">DEFINITION</h1>
     <h2 class = "def1">Primary health care is based on caring for people rather than specific diseases. This means that 
@@ -21,290 +26,112 @@
     <h2 class = "def2">General medicine, sometimes known as internal medicine, is a field of medicine that focuses on the 
         prevention, diagnosis, and non-surgical treatment of illnesses that are connected to the internal organs.</h2>
 </div>
+    
 <center>
-<div class="titlelist">
-<h1>DOCTOR'S LIST</h1></div>
-<div class="container">
-<!-- Doctor 1 -->
-      <div class="box">
-      <div class="image">
-         ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. David Chrish</div>
-        <h2 class="job">Cardiologist</h2>
-        <h3 class="desc">2 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Zambales</h3>
-        <p class="available">Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M.</p>
-        
+    <div class="titlelist"><h1>DOCTORS LIST</h1></div>
+    <?php
+        $sql = "SELECT * FROM `doctor` WHERE `specialty` = 'Primary Care &amp; General Medicine';";
+        $result = mysqli_query($conn,$sql);
 
-    <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc1">View More</a>
-<a class="buttonvm" href="#bookdoc1">Book Now!</a>
-<!-- <button>Book Now!</button> -->
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $d_id = $row['doctor_id'];
+            $name = $row['doctor_name'];
+            $des = $row['description'];
+            $con = $row['contact'];
+            $addr = $row['clinic_address'];
+            $spe = $row['specialty'];
+    ?>
+                <!-- DOCTOR LIST TABULAR FORM  (CHANGE DESIGN POSITION)-->
+            <div class="container">
+                <div class="box">
+                    <div class="image">
+                        <img src="../images/doc img.png">
+                    </div>
 
-<div id="doc1" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. David Chrish</h1>
-        <h2>Cardiologist</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>2 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#12 St. New Kababae Olongapo City Zambales, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
+                    <div class="name_job">
+                        <?php echo $name ?>
+                    </div>
 
-<div id="bookdoc1" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>APPOINTMENT FORM</h1>
-        <h2>Fill up all the field to proceed from booking</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <br>
-            <!-- <h2>DOCTOR INFORMATION:</h2>
-            <h3>Doctor:</h3>
-                <h4>Dr. David Chrish, Cardiologist</h4>
-            <h3>Email Address:</h3>
-                <h4>dchrish@das.com</h4>
-            <h3>Contact Number:</h3>
-                <h4>0939-123-4567</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#12 St. New Kababae Olongapo City Zambales, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M.</h4> -->
-        <form action="/action_page.php">
-            <br><br>
-            <h2>APPOINTMENT INFORMATION:</h2>
-            <h3>First Name:</h3>
-                    <input type="text" id="fname" name="fname" placeholder="Your name..." required><br><br>
-            <h3>Last Name:</h3>
-                    <input type="text" id="lname" name="lname" placeholder="Your last name..." required><br><br>
-            <h3>City or Municipality:</h3>
-                    <input type="text" id="city" name="city" placeholder="ex. Subic" required><br><br>
-            <h3>Province:</h3>
-                    <input type="text" id="province" name="province" placeholder="ex. Zambales" required><br><br>
-            <h3>Contact Number:</h3>
-                    <input type="tel" id="phone" name="phone" placeholder="09*********" required><br><br>
-            <h3>Email Address:</h3>
-                    <input type="email" id="email" name="email" placeholder="patient123@das.com" required><br><br>
-            <h3>Appointment Date:</h3>
-                    <input type="date" id="bookdate" name="bookdate" min="2023-01-01" max="2029-01-01" required><br><br><br>
-                    <input type="submit"href="#" value="Submit">
-</form>
-    </div>
-    </center>
-	</div>
-</div>
+                        <h2 class="job"><?php echo $spe ?></h2>
+                        <h3 class="desc"><?php echo $des ?></h3>
+                        <h3 class="loc">Clinic location: <?php echo $addr ?></h3>
+                        <p class="available">Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 05:00 P.M</p>
 
-        </div>
-      </div>
+                        <!-- popup button -->
+                    <div class ="btns">
+                        <a class="buttonvm" href="#doc<?php echo $d_id?>">View More</a>
+                        <a class="buttonvm" href="#book-doc#<?php echo $d_id?>">Book Now!</a>
+                    </div>
+                </div>
+            </div>
 
+                <!-- view more popup -->
+            <div id="doc<?php echo $d_id?>" class="overlay">
+                <div class="popup">
+                    <center>
+                        <h1><?php echo $name ?></h1>
+                        <h2><?php echo $spe ?></h2>
+                        <a class="close" href="#">&times;</a>
+                    </center>
+                        <center>
+                            <div class="content">
+                                <h3>Professional Experience:</h3>
+                                    <h4><?php echo $des ?></h4>
+                                <h3>Clinic Location:</h3>
+                                    <h4><?php echo $addr ?></h4> 
+                                <h3>Availability:</h3>
+                                    <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M</h4>
+                                <h3>Contact Number:</h3>
+                                    <h4><?php echo $con ?></h4>
+                            </div>
+                        </center>
+                </div>
+            </div>
 
+                <!-- book now popup -->
+            <div id="book-doc#<?php echo $d_id?>" class="overlay">
+                <div class="popup">
+                    <center>
+                        <h1>APPOINTMENT FORM</h1>
+                        <h2>Fill up all the field to proceed from booking</h2>
+                        <a class="close" href="#">&times;</a>
+                    </center>
 
+                    <center>
+                        <?php
 
+                        ?>
+                        <div class="content">
+                            <form action="actions/booking.php" method = "post">
+                                <h2>APPOINTMENT INFORMATION:</h2>
+                                <h3>Full Name:</h3>
+                                        <input type="text" name="fname" required><br>
+                                <h3>Age:</h3>
+                                        <input type="text" name="lname" required><br>
+                                <h3>Gender:</h3>
+                                        <input type="text" name="city" required><br>
+                                <h3>Date of Birth:</h3>
+                                        <input type="text" name="province" required><br>
+                                <h3>Home Address:</h3>
+                                        <input type="text" name="province" required><br>
+                                <h3>Email Address:</h3>
+                                        <input type="email" name="email" required><br>
+                                <h3>Contact Number:</h3>
+                                        <input type="tel" name="phone" required><br>
+                                <h3>Appointment Date:</h3>
+                                        <input type="date" name="bookdate" min="2023-01-01" max="2029-01-01" required><br>
+                                        <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </center>
+                </div>
+            </div>
 
-
-
-      <!-- Doctor 2 -->
-      <div class="box">
-        <div class="image">
-        ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. Kristina Bellis M.D.</div>
-        <h2 class="job">Ophthalmologist</h2>
-        <h3 class="desc">10 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Bataan</h3>
-        <p class="available">Monday 08:00 A.M. to 05:00 P.M. | Tuesday-Saturday 10:00 A.M. to 07:00 P.M.</p>
-        
-         <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc2">View More</a>
-<button>Book Now!</button>
-
-<div id="doc2" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. Kristina Bellis M.D.</h1>
-        <h2>Ophthalmologist</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>10 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#64 St. New Jersey Bataan, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday 08:00 A.M. to 05:00 P.M. | Tuesday-Saturday 10:00 A.M. to 07:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
-        </div>
-      </div>
-
-<!-- Doctor 3 -->
-      <div class="box">
-        <div class="image">
-        ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. Stephen Marlo M.D.</div>
-        <h2 class="job">Pediatrician</h2>
-        <h3 class="desc">7 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Metro Manila</h3>
-        <p class="available">Monday-Wednesday 08:00 A.M. to 05:00 P.M. | Friday 11:00 A.M. to 08:00 P.M.</p>
-        
-        <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc3">View More</a>
-<button>Book Now!</button>
-
-<div id="doc3" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. Stephen Marlo M.D.</h1>
-        <h2>Pediatrician</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>7 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#16 St. Makati City Metro Manila, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday-Wednesday 08:00 A.M. to 05:00 P.M. | Friday 11:00 A.M. to 08:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
-        </div>
-      </div>
-
-<!-- Doctor 4 -->
-      <div class="box">
-      <div class="image">
-      ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. Carla Port Ph.D.</div>
-        <h2 class="job">Obstetrician</h2>
-        <h3 class="desc">13 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Davao City</h3>
-        <p class="available">Monday-Friday 09:00 A.M. to 04:00 P.M.</p>
-        
-        <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc4">View More</a>
-<button>Book Now!</button>
-
-<div id="doc4" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. Carla Port Ph.D.</h1>
-        <h2>Obstetrician</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>13 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#1 St. Davao City Mindanao, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday-Friday 09:00 A.M. to 04:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
-        </div>
-      </div>
-
-<!-- Doctor 5 -->
-      <div class="box">
-      <div class="image">
-      ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. Karl Kentucky</div>
-        <h2 class="job">Dermatology</h2>
-        <h3 class="desc">3 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Ilocos Norte</h3>
-        <p class="available">Monday-Friday 11:00 A.M. to 04:00 P.M.</p>
-        
-      <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc5">View More</a>
-<button>Book Now!</button>
-
-<div id="doc5" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. Karl Kentucky</h1>
-        <h2>Dermatology</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>3 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#24 St. San Pedro ilocos Norte, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday-Friday 11:00 A.M. to 04:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
-        </div>
-      </div>
-
-<!-- Doctor 6 -->
-      <div class="box">
-      <div class="image">
-      ---<img src="../images/doc img.png">-----
-        </div>
-        <div class="name_job">Dr. Sophia Turner</div>
-        <h2 class="job">Ears, Nose and Throat</h2>
-        <h3 class="desc">20 years Professional Experience</h3>
-        <h3 class="loc">Clinic location: Zambales</h3>
-        <p class="available">Monday-Friday 08:00 A.M. to 04:00 P.M.</p>
-        
-        <!-- popup window -->
-<div class ="btns">
-<a class="buttonvm" href="#doc6">View More</a>
-<button>Book Now!</button>
-
-<div id="doc6" class="overlay">
-	<div class="popup">
-    <center>
-		<h1>Dr. Sophia Turner</h1>
-        <h2>Ears, Nose and Throat</h2>
-		<a class="close" href="#">&times;</a></center>
-        <center>
-		<div class="content">
-            <h3>Professional Experience:</h3>
-                <h4>20 years</h4>
-            <h3>Clinic Location:</h3>
-                <h4>#23 St. San Marcelino Zambales, Philippines</h4> 
-            <h3>Availability:</h3>
-                <h4>Monday-Friday 08:00 A.M. to 04:00 P.M.</h4>
-    </div>
-    </center>
-	</div>
-</div>
-
-
-        </div>
-      </div>
-    </div>
-</div>
+            <?php  
+        }
+            ?>
 </center>
-
-</div>
 </body>
 </html>
+

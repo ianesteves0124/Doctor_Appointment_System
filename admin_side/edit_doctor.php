@@ -66,7 +66,7 @@ if($_POST)
     <p style = "font-family: monospace;" class = "text-muted">Click save after updating any information.</p>
     </div>
     <div class = "">
-    <form style = "font-family: monospace;" method="POST">
+    <form style = "font-family: monospace;" method="POST" action = "">
             <div class = "row mb-3">
                 <label class = "col-sm-3 col-form-label">Name:</label>
                 <div class = "col-sm-6">
