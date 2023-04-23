@@ -14,6 +14,10 @@
 <body>
 <?php
 session_start();
+
+$_SESSION["user"]="";
+$_SESSION["usertype"]="";
+
 include("database/connection.php");
 
 if(isset($_POST['login']))
