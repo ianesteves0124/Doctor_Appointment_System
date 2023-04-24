@@ -29,7 +29,7 @@ include('../database/connection.php');
 
     <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "SELECT * FROM `doctor` WHERE `specialty` = 'Primary Care &amp; General Medicine';";
+        $sql = "SELECT * FROM doctor WHERE specialty = 'Primary Care &amp; General Medicine';";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))
@@ -93,31 +93,33 @@ include('../database/connection.php');
 
                     <center>
                                 <div class="content">
-                                    <form action="" method = "POST">
+                                    <form action="booking.php" method = "POST">
                                         <h2>APPOINTMENT INFORMATION:</h2>
                                         <h3>Selected Doctor:<p><?php echo $name?></p></h3>
-                                        <input type="hidden" name="doc_id" value = "<?php echo $d_id?>">
-                                        <h3>Full Name:</h3>
+                                                <input type="hidden" name="doc_id" value = "<?php echo $d_id?>">
+                                         <h3>Full Name:</h3>
                                                 <input type="text" name="patient_name"  value = "" required><br>
-                                        <!-- <h3>Age:</h3>
-                                                <input type="text" name="patient_age" value = "" required><br> -->
-                                        <!-- <h3>Gender:</h3>
+                                         <h3>Age:</h3>
+                                                <input type="text" name="patient_age" value = "" required><br>
+                                         <h3>Gender:</h3>
                                                 <select name="patient_gender">
                                                     <option>Select Gender</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
-                                                </select> -->
-                                        <!-- <h3>Date of Birth:</h3>
-                                                <input type="date" name="patient_dob" value = "<?php echo $row['patient_dob']?>" disabled><br>
-                                        <h3>Home Address:</h3>
-                                                <input type="text" name="patient_address" value = "<?php echo $row['patient_address']?>" disabled><br>
-                                        <h3>Email Address:</h3>
-                                                <input type="email" name="patient_email" value = "<?php echo $row['patient_email']?>" disabled><br>
-                                        <h3>Contact Number:</h3>
-                                                <input type="tel" name="patient_contact" value = "<?php echo $row['patient_contact']?>" disabled><br>
-                                        <h3>Appointment Date:</h3>
-                                                <input type="date" name="appointment-date" min="2023-01-01" max="2029-12-31" required><br> -->
-                                                <input type="submit" value="Submit">
+                                                </select>
+                                          <h3>Date of Birth:</h3>
+                                                <input type="date" name="patient_dob" value = "" required><br>
+                                          <h3>Home Address:</h3>
+                                                <input type="text" name="patient_address" value = "" required><br>
+                                          <h3>Email Address:</h3>
+                                                    <input type="email" name="patient_email" value = "" required><br>
+                                          <h3>Contact Number:</h3>
+                                                    <input type="tel" name="patient_contact" value = "" required><br>
+                                          <h3>Appointment Date:</h3>
+                                                    <input type="date" name="appointment-date" min="2023-04-24" max="2029-12-31" required><br>
+                                                <div>
+                                                    <input type="submit" name = "appointment" value="Submit">
+                                                </div>
                                     </form>
                                  </div>
                     </center>
@@ -129,4 +131,3 @@ include('../database/connection.php');
             ?>
 </body>
 </html>
-
