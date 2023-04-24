@@ -34,14 +34,6 @@ if (isset($_POST["verify"]))
         exit();
     }
 ?>
-  <!-- <form method = "POST">
-    <input type="hidden" name = "email" value = "<?php echo $_GET['email']; ?>" required>
-    <input type="text" name="verification_code" placeholder = "Enter code here" required>
-    <input type="submit" name="verify" value="Verify Email">
-  </form>   -->
-
-
-  
 
   <center>
     <div class="login_container" style="margin-top:50px; padding-top:20px; padding-bottom:20px;">
@@ -51,42 +43,30 @@ if (isset($_POST["verify"]))
                     <p class="header-text" style="font-size:30px; margin-bottom:30px;">Welcome to our the best Doctor's Appointment System</p>
                 </td>
             </tr>
-        <div class="form-body">
-            <tr>
-                <td>
-                    <p class="sub-text" style="font-size:15px; font-weight:400; letter-spacing: 1px;">Before you access the website, let's first validate your email.</p>
-                </td>
-            </tr>
-            <!-- <tr>
-                <form action="" method="POST">
-                <td class="label-td">
-                    <label for="email" class="form-label">Email: </label>
-                </td>
-            </tr>
-            <tr>
-                <td class="label-td">
-                <input type="hidden" name = "email" value = "<?php echo $_GET['email']; ?>" required>
-                </td>
-            </tr> -->
-            <tr>
-                <td class="label-td" style="text-align:center;">
-                    <label for="verification_code" class="form-label">Verification Code:</label>
-                </td>
-            </tr>
+            <div class="form-body">
+                <tr>
+                    <td>
+                        <p class="sub-text" style="font-size:15px; font-weight:400; letter-spacing: 1px;">Before you access the website, let's first validate your email.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-td" style="text-align:center;">
+                        <label for="verification_code" class="form-label">Verification Code:</label>
+                    </td>
+                </tr>
 
-            <tr>
-                <td class="label-td" style="text-align:center;">
-                    <input type="text" name="verification_code" class="form-control" placeholder="Enter the code here" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br><br>
-                    <input type="submit" class="btn btn-primary" name="verify" value="Verify Email">
-                </td>
-            </tr>
-        </div>   
-                  </form>
+                <tr>
+                    <td class="label-td" style="text-align:center;">
+                    <form method = "POST">
+                        <input type="hidden" name = "email" value = "<?php echo $_GET['email']; ?>" required>
+                        <input type="text" name="verification_code" class="form-control" placeholder="Enter the code here" required>
+                        <br>
+                        <input type="submit"  class="btn btn-primary" name="verify" value="Verify Email">
+                        <br>
+                    </form>
+                    </td>
+                </tr>
+            </div>   
         </table>
     </div>
   </center>
