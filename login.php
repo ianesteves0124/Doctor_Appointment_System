@@ -83,7 +83,8 @@ if(isset($_POST['login']))
             $user = mysqli_fetch_object($result);
 
             if($user->email_verified_at == null){
-                die("Your account is not yet verified.<br>Please verify your email <a href='email-verification.php?email=".$email."'>HERE</a>");
+                // die("Your account is not yet verified.<br>Please verify your email <a href='email-verification.php?email=".$email."'>HERE</a>");
+                echo "<script> alert('Your account is not yet verified. Please verify your email account.'); location.replace('email-verification.php?email=".$email."') </script>";
             }
             if($user->email_verified_at != null){
                 $_SESSION['user']= $row['$email'];
@@ -109,7 +110,7 @@ else
 ?>
 
     <center>
-    <div class="login_container">
+    <div class="login_container" style="cursor: default;">
         <table border="0" style="margin: 0;padding: 0;width: 60%;">
             <tr>
                 <td>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/patient_side_css/ts_about_cardiology.css">
     <title>Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 <div class="about">
     <h1>Top Specialties | About Cardiology</h1>
 </div>

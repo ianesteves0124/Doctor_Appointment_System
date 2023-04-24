@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class = "navigation-sidebar">
-    <header class = "title">Administrator</header>
+    <header class = "title" style="cursor: default;">Administrator</header>
     <center>
         <div class = "adminprofile"><img src="../images/adminprofile.png" alt="administrator profile" width = "120" height = "120"></div>
     </center>
@@ -26,7 +26,7 @@
     </div>
     </div>
 
-    <div class = "calendar">
+    <div class = "calendar" style="cursor: default;">
     <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
     <p class = "calendar_timezone">
         <?php

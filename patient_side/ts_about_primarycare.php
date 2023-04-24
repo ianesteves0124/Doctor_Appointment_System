@@ -1,7 +1,7 @@
 <title>Primary Care & General Medicine | Top Specialties| Doctor Appointment System</title>
 <?php 
 include('header_nav.php'); 
-include '../database/connection.php';
+include('../database/connection.php');
 ?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +27,8 @@ include '../database/connection.php';
         prevention, diagnosis, and non-surgical treatment of illnesses that are connected to the internal organs.</h2>
 </div>
     
-<center>
-    <div class="titlelist"><h1>DOCTORS LIST</h1></div>
+
+    <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
     <?php
         $sql = "SELECT * FROM `doctor` WHERE `specialty` = 'Primary Care &amp; General Medicine';";
         $result = mysqli_query($conn,$sql);
@@ -45,6 +45,7 @@ include '../database/connection.php';
                 <!-- DOCTOR LIST TABULAR FORM  (CHANGE DESIGN POSITION)-->
             <div class="container">
                 <div class="box">
+                    <center>
                     <div class="image">
                         <img src="../images/doc img.png">
                     </div>
@@ -63,8 +64,10 @@ include '../database/connection.php';
                         <a class="buttonvm" href="#doc<?php echo $d_id?>">View More</a>
                         <a class="buttonvm" href="#book-doc#<?php echo $d_id?>">Book Now!</a>
                     </div>
+                    </center>
                 </div>
             </div>
+        
 
                 <!-- view more popup -->
             <div id="doc<?php echo $d_id?>" class="overlay">
@@ -134,7 +137,7 @@ include '../database/connection.php';
             <?php  
         }
             ?>
-</center>
+
 </body>
 </html>
 

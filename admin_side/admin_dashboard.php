@@ -19,10 +19,10 @@ include('admin_index.php');
                     <table class="filter-container doctor-header" style="border: none;width:78%; margin-left:255px; border-radius:10px;" border="0" >
                     <tr>
                         <td >
-                            <h3 style="margin-top:40px; margin-left:40px; font-size:20px; font-weight:700;">Welcome!</h3>
+                            <h3 style="margin-top:40px; margin-left:40px; font-size:20px; font-weight:700; cursor: default;">Welcome!</h3>
                             <!-- <h1><?php echo $username  ?>.</h1> -->
-                            <h1 style="margin-top:20px; margin-left:35px; font-weight:700;">Administrator.</h1>
-                            <p style="margin-top:40px; margin-left:35px; font-weight:450; font-style:italic; font-size:18px;">"An administrator in a bureaucratic world is a man who can feel big by merging his non-entity in an abstraction.<br>
+                            <h1 style="margin-top:20px; margin-left:35px; font-weight:700; cursor: default;">Administrator.</h1>
+                            <p style="margin-top:40px; margin-left:35px; font-weight:450; font-style:italic; font-size:18px; cursor: default;">"An administrator in a bureaucratic world is a man who can feel big by merging his non-entity in an abstraction.<br>
                               A real person in touch with real things inspires terror in him". ~ Marshall McLuhan<br><br>
                             </p>
                             <!-- <a href="appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:30%">View My Appointments</button></a> -->
@@ -34,7 +34,7 @@ include('admin_index.php');
         </center>
 
     <center>
-                        <table class="filter-container" style="border: none; width:65%; margin-top:20px; margin-left:50px;" border="0">
+                        <table class="filter-container" style="border: none; width:65%; margin-top:20px; margin-left:50px; cursor:default;" border="0">
                             <tr>
                                 <td colspan="4">
                                     <p style="font-size: 24px;font-weight:700;padding-left: 12px; margin-top:-10px;">Status</p>

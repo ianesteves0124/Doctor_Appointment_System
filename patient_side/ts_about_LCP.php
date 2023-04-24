@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="t../css/patient_side_css/s_about_LCP.css">
     <title>Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 <div class="about">
     <h1>Top Specialties | About Lungs, Chest and Pulmonology</h1>
 </div>
