@@ -128,27 +128,18 @@
 </div>
 
 <div class="clearfix"></div>
-
-
-
   </div>
 </div> 
-<div class="pagination">
-
+<center>
+    <div class="pagination">
         <ul class="pagination--link">
-
-            
             <li> <a href="home_page.php"> 1 </a></li>
             <li> <a href="sechome_page.php"> 2 </a></li>
             <li> <a href="thirdhome_page.php" class="active"> 3 </a></li>
-            <li> <a href="fourthhome_page.php"> 4 </a></li>
-            <li> <a href="about_page.php"> 5 </a></li>
-            
-
+            <li> <a href="about_page.php"> 4 </a></li>
         </ul>
     </div>
-
-</div>
+    </center>
 </div>
 </body>
 </html>

@@ -24,7 +24,6 @@
                     <li><a href="home_page.php">Home<i class="fas fa-sort-down"></i></a>
                     <ul>
                         <li><a href = "thirdhome_page.php">Top Specialties</a></li>
-                        <li><a href = "fourthhome_page.php">Common Conditions</a></li>
                     </ul>
                 </li>
                     <li><a href="book_page.php">Book</a></li>

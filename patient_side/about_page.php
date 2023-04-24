@@ -27,41 +27,19 @@
         they lack the resources needed to carry out their everyday duties and expand their practice or hospital. 
         We're at a standstill, some may argue. Even yet, at Doctor Appointment, we are confident that technology can 
         assist both patients and health professionals in overcoming this challenge.</p>
-
-    
-    
-   
     <button class = "trmandcondbtn" onclick = "location.href = ''"><span>Terms & Conditions</span></button>
-<button class = "pripolbtn" onclick = "location.href = ''"><span>Privacy & Policy</span></button>
+    <button class = "pripolbtn" onclick = "location.href = ''"><span>Privacy & Policy</span></button>
+</div>
 </center>
-        <!-- <div class="center">
-  <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="home_page.php">1</a>
-  <a href="sechome_page.php">2</a>
-  <a href="thirdhome_page.php">3</a>
-  <a href="fourthhome_page.php">4</a>
-  <a href="about_page.php" class="active">5</a>
-  <a href="#">&raquo;</a>
-  </div> -->
-  <footer>
-  <div class="pagination">
-
+<center>
+    <div class="pagination">
         <ul class="pagination--link">
-
-            <!-- <li> <a href="#" class="prev"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> </a></li> -->
             <li> <a href="home_page.php"> 1 </a></li>
             <li> <a href="sechome_page.php"> 2 </a></li>
             <li> <a href="thirdhome_page.php"> 3 </a></li>
-            <li> <a href="fourthhome_page.php"> 4 </a></li>
-            <li> <a href="about_page.php" class="active"> 5 </a></li>
-            <!-- <li> <a href="#"> ... </a></li>
-            <li> <a href="#" class="next"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a></li> -->
-
+            <li> <a href="about_page.php" class="active"> 4 </a></li>
         </ul>
     </div>
-</footer>
-</div>
-</div>
+    </center>
 </body>
 </html>

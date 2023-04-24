@@ -49,7 +49,7 @@ include('../database/connection.php');
                     <h3><?php echo $spe ?></h3><br>
                     <h4><?php echo $des ?></h4><br>
                     <center>
-                    <h5>Clinic Location:</h5><br>
+                    <h5>Clinic Location & Schedule:</h5><br>
                     <h6><?php echo $addr ?></h6><br>
                     <p>Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 05:00 P.M</p>
                     </center>
