@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/patient_side_css/cc_about_headache.css">
     <title>Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 <div class="about">
     <h1>Common Conditions | About Headache & Migraine</h1>
 </div>

@@ -15,7 +15,7 @@
     <script src="../schedule/js/bootstrap.min.js"></script>
     <script src="../schedule/fullcalendar/lib/main.min.js"></script>
   </head>
-  <body>
+  <body style="cursor: default;">
 <center>
     <div class = "calendar">
     <p class = "calendar_header" style="margin-bottom:-5px;"><i class = "far fa-calendar-alt"></i> Today's Date</p>
@@ -30,7 +30,7 @@
 </center>
 
    <div class="sidebar">
-    <header class="title" style="margin-top:-80px;">DOCTOR</header>
+    <header class="title" style="margin-top:-60px;">DOCTOR</header>
     <center>
     <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
     <div class="docname">Dr. David Chrish</div>

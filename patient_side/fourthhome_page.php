@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Common Conditions | Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 <?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
     <div class="comcodtitle">
         <h1>COMMON CONDITIONS</h1>

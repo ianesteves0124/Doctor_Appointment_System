@@ -130,10 +130,10 @@ if($_POST)
 
             <div class = "row mb-3">
                 <div class = "offset-sm-3 col-sm-3 d-grid">
-                    <button type = "submit" class = "btn btn-outline-primary">Save</button>
+                    <button type = "submit" class = "btn btn-outline-primary">SAVE</button>
                 </div>
                 <div class = "col-sm-3 d-grid">
-                    <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">Cancel</a>
+                    <a class = "btn btn-outline-primary" href="admin_doctor.php" role = "button">CANCEL</a>
                 </div>
             </div>
         </form>

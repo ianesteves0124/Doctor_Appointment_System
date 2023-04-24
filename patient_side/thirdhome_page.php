@@ -8,11 +8,10 @@
     <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Top Specialties | Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default; background-color: rgb(240, 240, 240);">
   <?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
     <div class="topspectitle">
         <h1>TOP SPECIALTIES</h1>
-        <!-- <button class = "viewallbtn" href="#"><span>View All</span></button> -->
         <h2 style="margin-top:10px; margin-left:10px;">These specializations have been in high demand.</h2>
         
 </div>
@@ -131,31 +130,20 @@
 <div class="clearfix"></div>
 
 
-<!-- </div>
 
-    <div class="center">
-  <div class="pagination">
-   <a href="#">&laquo;</a>
-  <a href="home_page.php">1</a>
-  <a href="sechome_page.php">2</a>
-  <a href="thirdhome_page.php" class="active">3</a>
-  <a href="fourthhome_page.php">4</a>
-  <a href="about_page.php">5</a>
- <a href="#">&raquo;</a> -->
   </div>
 </div> 
 <div class="pagination">
 
         <ul class="pagination--link">
 
-            <!-- <li> <a href="#" class="prev"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> </a></li> -->
+            
             <li> <a href="home_page.php"> 1 </a></li>
             <li> <a href="sechome_page.php"> 2 </a></li>
             <li> <a href="thirdhome_page.php" class="active"> 3 </a></li>
             <li> <a href="fourthhome_page.php"> 4 </a></li>
             <li> <a href="about_page.php"> 5 </a></li>
-            <!-- <li> <a href="#"> ... </a></li>
-            <li> <a href="#" class="next"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a></li> -->
+            
 
         </ul>
     </div>

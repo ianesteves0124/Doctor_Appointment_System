@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="../images/website icon.png">
     <title>Appointment Request | Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 <?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
 <div class="appreq">
         <h1>APPOINTMENT REQUEST</h1>

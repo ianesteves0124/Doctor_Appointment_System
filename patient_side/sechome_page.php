@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/patient_side_css/sechome_page.css">
     <title>Doctor Appointment System</title>
 </head>
-<body>
+<body style="cursor: default;">
 
 <div class="bg-image"> 
 <div class ="first_tab">

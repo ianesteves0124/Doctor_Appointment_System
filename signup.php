@@ -84,7 +84,7 @@ if(isset($_POST['register']))
 }
 ?>
     <center>
-    <div class = "login_container">
+    <div class = "login_container" style="cursor: default;">
     <table border = "0" style = "margin: 0; padding: 0; width: 60%;">
         <tr>
             <td>

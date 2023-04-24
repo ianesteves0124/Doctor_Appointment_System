@@ -1,7 +1,7 @@
 <title>Primary Care & General Medicine | Top Specialties| Doctor Appointment System</title>
 <?php 
 include('header_nav.php'); 
-include '../database/connection.php';
+include('../database/connection.php');
 ?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +26,9 @@ include '../database/connection.php';
     <h2 class = "def2">General medicine, sometimes known as internal medicine, is a field of medicine that focuses on the 
         prevention, diagnosis, and non-surgical treatment of illnesses that are connected to the internal organs.</h2>
 </div>
-    
-<center>
-    <div class="titlelist"><h1>DOCTORS LIST</h1></div>
-    <?php
+
+    <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
+        <?php
         $sql = "SELECT * FROM `doctor` WHERE `specialty` = 'Primary Care &amp; General Medicine';";
         $result = mysqli_query($conn,$sql);
 
@@ -41,32 +40,26 @@ include '../database/connection.php';
             $con = $row['contact'];
             $addr = $row['clinic_address'];
             $spe = $row['specialty'];
-    ?>
-                <!-- DOCTOR LIST TABULAR FORM  (CHANGE DESIGN POSITION)-->
-            <div class="container">
-                <div class="box">
-                    <div class="image">
-                        <img src="../images/doc img.png">
-                    </div>
-
-                    <div class="name_job">
-                        <?php echo $name ?>
-                    </div>
-
-                        <h2 class="job"><?php echo $spe ?></h2>
-                        <h3 class="desc"><?php echo $des ?></h3>
-                        <h3 class="loc">Clinic location: <?php echo $addr ?></h3>
-                        <p class="available">Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 05:00 P.M</p>
-
-                        <!-- popup button -->
+        
+        ?>
+            <div class="doctor-container">
+                <div class="doctor-info">
+                    <img src="../images/doc img.png" alt="Doctor Profile Picture">
+                    <h2><?php echo $name ?></h2><br>
+                    <h3><?php echo $spe ?></h3><br>
+                    <h4><?php echo $des ?></h4><br>
+                    <center>
+                    <h5>Clinic Location:</h5><br>
+                    <h6><?php echo $addr ?></h6><br>
+                    <p>Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 05:00 P.M</p>
+                    </center>
                     <div class ="btns">
                         <a class="buttonvm" href="#doc<?php echo $d_id?>">View More</a>
-                        <a class="buttonvm" href="#book-doc#<?php echo $d_id?>">Book Now!</a>
+                        <a class="buttonvm" style="background-color:#0d9994; color:white;" href="#book-doc#<?php echo $d_id?>">Book Now!</a>
                     </div>
                 </div>
             </div>
 
-                <!-- view more popup -->
             <div id="doc<?php echo $d_id?>" class="overlay">
                 <div class="popup">
                     <center>
@@ -87,7 +80,7 @@ include '../database/connection.php';
                             </div>
                         </center>
                 </div>
-            </div>
+            </div> -->
 
                 <!-- book now popup -->
             <div id="book-doc#<?php echo $d_id?>" class="overlay">
@@ -134,7 +127,6 @@ include '../database/connection.php';
             <?php  
         }
             ?>
-</center>
 </body>
 </html>
 

@@ -14,13 +14,13 @@ include('admin_index.php');
     <title>Appointment</title>
 </head>
 <body>
-    <div class="title">
+    <div class="title" style="cursor: default;">
         <h1 class="maintitle">Appointments</h1>
             <h2 class="subtitle">Peek at the schedule of events with the best Doctor's Appointment System.</h2>
     </div>
 
 <center>
-    <table class="table table-hover" style="width:80%; margin-left:250px; margin-top:-10px;">
+    <table class="table table-hover" style="width:80%; margin-left:250px; margin-top:-10px; cursor:default;">
   <thead>
     <tr>
       <th scope="col" style="width:15%;">Appt Number</th>
