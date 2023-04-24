@@ -116,43 +116,318 @@ body{
   }
 
 
-  .bookbtn{
-	display: inline-block;
-  border-radius: 6px;
-  background-color: #0D4C92;
-  border: none;
-  color: #FFFFFF;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  text-align: center;
-  font-size: 16px;
-  padding: 20px;
-  width: 240px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin-top: 15px;
-
+  ::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888; 
+	border-radius: 12px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+  }
+.doctor-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 -20px;
+	margin-left:100px;
+	margin-right: 100px;
+  }
+  
+  .doctor-info {
+	color:black;
+	flex: 1 1 300px;
+	padding: 10px;
+	border: 1px solid #e3e2e2;
+	border-radius: 7px;
+	text-align: center;
+	margin: 10px;
+	box-sizing: border-box;
+	background-color: white;
+	margin-bottom:-20px;
+  }
+  
+  .doctor-info img {
+	border-radius: 50%;
+	height: 120px;
+	width: 120px;
+	object-fit: cover;
+	margin-bottom: 10px;
+	display: flex;
+  }
+  
+  .doctor-info h2 {
+	font-size: 24px;
+	margin-top: -110px;
+	margin-bottom: 10px;
+	margin-right: 600px;
+	display: inline-flex;
+  }
+  .doctor-info h3 {
+	font-size: 16px;
+	font-weight: 400;
+	margin-top: -70px;
+	margin-bottom: 10px;
+	margin-right: 600px;
+	display: inline-flex;
+  }
+  .doctor-info h4 {
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: -47px;
+	margin-bottom: 10px;
+	margin-right: 600px;
+	display: inline-flex;
+  }
+  .doctor-info h5{
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: -100px;
+	margin-bottom: 10px;
+	margin-right: -100px;
+	display: inline-flex;
+  }
+  .doctor-info h6{
+	font-size: 16px;
+	font-weight: 400;
+	margin-top: -77px;
+	margin-bottom: 10px;
+	margin-right: -200px;
+	display: inline-flex;
+  }
+  .doctor-info p {
+	font-size: 16px;
+	margin-top: -50px;
+	margin-bottom: 5px;
+	margin-right: -515px;
+	display: inline-flex;
+  }
+  @media screen and (max-width: 768px) {
+	.doctor-info {
+	  flex-basis: 45%;
+	}
+  }
+  
+.btns{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
 }
-.bookbtn span {
+.btns button{
+  background: #0d9994;
+  width: 100%;
+  padding: 9px 0px;
+  outline: none;
+  border: 2px solid #0d9994;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: #0d9994;
+  transition: all 0.3s linear;
+}
+.btns button:first-child{
+  background: none;
+  margin-right: 5px;
+}
+.btns button:last-child{
+  color: #fff;
+  margin-left: 5px;
+}
+.btns button:first-child:hover{
+  background: #0b7e56;
+  color: #fff;
+}
+.btns button:hover{
+  color: #fff;
+}
+@media (max-width:1080px){
+  .container .box{
+    width:auto;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width:710px){
+  .container .box{
+    width: 100%;
+  }
+}
+
+
+
+
+  .buttonvm {
+	color: #0d9994;
+	border: 2px solid #0d9994;
+	text-decoration: none;
 	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
+ 	 width: 100%;
+  	padding: 9px 0px;
+ 	 outline: none;
+ 	 border-radius: 5px;
+  	font-size: 18px;
+  	font-weight: 400;
+  	transition: all 0.3s linear;
+	margin-right: 10px;
+  }
+  .buttonvm:hover {
+	background: #0d9994;
+	color:white;
   }
   
-  .bookbtn span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-  }
-  
-  .bookbtn:hover span {
-	padding-right: 25px;
-  }
-  
-  .bookbtn:hover span:after {
-	opacity: 1;
+  .overlay {
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	left: 0;
 	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+  }
+  .overlay:target {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+  .popup {
+	overflow:scroll;
+	margin: 100px auto;
+	padding: 20px;
+	background: #fff;
+	/* border-radius: 6px; */
+	width: 60%;
+	height:80%;
+	position: relative;
+	transition: all 5s ease-in-out;
+  }
+  .popup h1{
+	margin-top: 25px;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+	text-transform: uppercase;
+  }
+  .popup h2 {
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight: 600;
+  }
+  .popup h3{
+	margin-top: 25px;
+	text-transform: none;
+	font-size:20px;
+
+  }
+  .popup h4{
+	margin-top: 5px;
+	text-transform: none;
+	font-size:18px;
+	font-weight: 400;
+  }
+  .popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 40px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+  }
+  .popup .close:hover {
+	color: #0d9994;
+	font-weight: 400;
+  }
+  .popup .content {
+	max-height: 60%;
+	/* overflow: auto; */
+	color:black;
+	margin-top: 10px;
+  }
+  
+  @media screen and (max-width: 700px){
+
+	.popup{
+	  width: 70%;
+	}
+  }
+
+
+
+  input[type=text], select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	box-sizing: border-box;
+	font-size:16px;
+  }
+
+  input[type=tel], select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	box-sizing: border-box;
+	font-size:16px;
+  }
+
+  input[type=email], select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	box-sizing: border-box;
+	font-size:16px;
+  }
+
+  input[type=date], select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	box-sizing: border-box;
+	font-size:16px;
+  }
+
+  
+  input[type=submit] {
+	width: 80%;
+	background-color: #0d9994;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size:20px;
+  }
+  
+  input[type=submit]:hover {
+	background: #056461;
+	color:white;
   }
