@@ -80,7 +80,7 @@ include('../database/connection.php');
                             </div>
                         </center>
                 </div>
-            </div> -->
+            </div>
 
                 <!-- book now popup -->
             <div id="book-doc#<?php echo $d_id?>" class="overlay">

@@ -24,7 +24,7 @@ if(isset($_POST['appointment']))
     $appt_date = validate(date('Y-m-d',strtotime($_POST['appointment-date'])));
 
 
-    $sqladd = "INSERT INTO booking`(doc_id`, patient_name, patient_age, patient_gender, patient_dob, patient_address, patient_email, patient_contact, patient_app-date)
+    $sqladd = "INSERT INTO booking(`doc_id`, `patient_name`, `patient_age`, `patient_gender`, `patient_dob`, `patient_address`, `patient_email`, `patient_contact`, `patient_app-date`)
      VALUES ('$id','$name','$p_age','$gender','$dob','$address','$email','$contact','$appt_date')";
     $query = mysqli_query($conn,$sqladd);
    
