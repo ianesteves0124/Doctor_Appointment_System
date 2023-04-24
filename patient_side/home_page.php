@@ -20,14 +20,15 @@
         </center>
     </div>
 
+    <center>
     <div class="pagination">
         <ul class="pagination--link">
             <li> <a href="home_page.php" class="active"> 1 </a></li>
             <li> <a href="sechome_page.php"> 2 </a></li>
             <li> <a href="thirdhome_page.php"> 3 </a></li>
-            <li> <a href="fourthhome_page.php"> 4 </a></li>
-            <li> <a href="about_page.php"> 5 </a></li>
+            <li> <a href="about_page.php"> 4 </a></li>
         </ul>
     </div>
+    </center>
 </body>
 </html>

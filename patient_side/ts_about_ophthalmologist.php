@@ -1,4 +1,7 @@
-<?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
+<?php 
+include('header_nav.php');
+include('../database/connection.php');
+?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +15,114 @@
 <div class="about">
     <h1>Top Specialties | About Ophthalmologist & Optician</h1>
 </div>
+<div>
     <h1 class = "headertitle">Ophthalmologist & Optician</h1>
     <h1 class = "aboutdef">DEFINITION</h1>
     <h2 class = "def1">A specialist in eye care is called an ophthalmologist. Ophthalmologists, in contrast to optometrists and 
    opticians, are MDs or DOs with specialized education and experience in the diagnosis and treatment of eye and vision disorders.</h2>
     <h2 class = "def2">Those who dispense eyeglasses, contact lenses and other vision aids are known as opticians.</h2>
 </div>
-<button class = "gobackbtn" onclick = "location.href = 'thirdhome_page.php'"><span>Go Back</span></button>    
-<button class = "bookbtn" onclick = "location.href = ''"><span>Seek a Doctor!</span></button>
+<div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
+        <?php
+        $sql = "SELECT * FROM doctor WHERE specialty = 'Ophthalmology &amp; Optician';";
+        $result = mysqli_query($conn,$sql);
 
-</div>
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $d_id = $row['doctor_id'];
+            $name = $row['doctor_name'];
+            $des = $row['description'];
+            $con = $row['contact'];
+            $addr = $row['clinic_address'];
+            $spe = $row['specialty'];
+        
+        ?>
+            <div class="doctor-container">
+                <div class="doctor-info">
+                    <img src="../images/doc img.png" alt="Doctor Profile Picture">
+                    <h2><?php echo $name ?></h2><br>
+                    <h3><?php echo $spe ?></h3><br>
+                    <h4><?php echo $des ?></h4><br>
+                    <center>
+                    <h5>Clinic Location & Schedule:</h5><br>
+                    <h6><?php echo $addr ?></h6><br>
+                    <p>Monday-Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 05:00 P.M</p>
+                    </center>
+                    <div class ="btns">
+                        <a class="buttonvm" href="#doc<?php echo $d_id?>">View More</a>
+                        <a class="buttonvm" style="background-color:#0d9994; color:white;" href="#book-doc#<?php echo $d_id?>">Book Now!</a>
+                    </div>
+                </div>
+            </div>
 
-</div>
+            <div id="doc<?php echo $d_id?>" class="overlay">
+                <div class="popup">
+                    <center>
+                        <h1><?php echo $name ?></h1>
+                        <h2><?php echo $spe ?></h2>
+                        <a class="close" href="#">&times;</a>
+                    </center>
+                        <center>
+                            <div class="content">
+                                <h3>Professional Experience:</h3>
+                                    <h4><?php echo $des ?></h4>
+                                <h3>Clinic Location:</h3>
+                                    <h4><?php echo $addr ?></h4> 
+                                <h3>Availability:</h3>
+                                    <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M</h4>
+                                <h3>Contact Number:</h3>
+                                    <h4><?php echo $con ?></h4>
+                            </div>
+                        </center>
+                </div>
+            </div>
+
+                <!-- book now popup -->
+            <div id="book-doc#<?php echo $d_id?>" class="overlay">
+                <div class="popup">
+                    <center>
+                        <h1>APPOINTMENT FORM</h1>
+                        <h2>Fill up all the field to proceed from booking</h2>
+                        <a class="close" href="#">&times;</a>
+                    </center>
+
+                    <center>
+                                <div class="content">
+                                    <form action="booking.php" method = "POST">
+                                        <h2>APPOINTMENT INFORMATION:</h2>
+                                        <h3>Selected Doctor:<p><?php echo $name?></p></h3>
+                                                <input type="hidden" name="doc_id" value = "<?php echo $d_id?>">
+                                         <h3>Full Name:</h3>
+                                                <input type="text" name="patient_name"  value = "" required><br>
+                                         <h3>Age:</h3>
+                                                <input type="text" name="patient_age" value = "" required><br>
+                                         <h3>Gender:</h3>
+                                                <select name="patient_gender">
+                                                    <option>Select Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                          <h3>Date of Birth:</h3>
+                                                <input type="date" name="patient_dob" value = "" required><br>
+                                          <h3>Home Address:</h3>
+                                                <input type="text" name="patient_address" value = "" required><br>
+                                          <h3>Email Address:</h3>
+                                                    <input type="email" name="patient_email" value = "" required><br>
+                                          <h3>Contact Number:</h3>
+                                                    <input type="tel" name="patient_contact" value = "" required><br>
+                                          <h3>Appointment Date:</h3>
+                                                    <input type="date" name="appointment-date" min="2023-04-24" max="2029-12-31" required><br>
+                                                <div>
+                                                    <input type="submit" name = "appointment" value="Submit">
+                                                </div>
+                                    </form>
+                                 </div>
+                    </center>
+                </div>
+            </div>
+
+            <?php  
+        }
+            ?>
 </body>
 </html>
