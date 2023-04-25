@@ -15,28 +15,22 @@
 <?php
 session_start();
 
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
 
-include("database/connection.php");
+    $_SESSION["user"]="";
+    $_SESSION["usertype"]="";
 
-if(isset($_POST['login']))
+    include("database/connection.php");
+
+if($_POST)
 {
-    function validate($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
-    $email = validate($_POST['useremail']);
-    $password = validate($_POST['userpassword']);
+    $email = $_POST['useremail'];
+    $password = $_POST['userpassword'];
 
-   $sql = "SELECT * FROM website_user WHERE Email ='$email'";
-   $result = mysqli_query($conn,$sql);
+    $sql = "SELECT * FROM website_user WHERE Email ='$email'";
+    $result = mysqli_query($conn,$sql);
 
-    if(mysqli_num_rows($result) === 1)
+    if(mysqli_num_rows($result) == 1)
     {
         $row = mysqli_fetch_assoc($result);
         $utype=$row['usertype'];
@@ -48,8 +42,9 @@ if(isset($_POST['login']))
             if (mysqli_num_rows($result) === 1)
             {
                 //   For Admin dashbord
-                $_SESSION['user']= $row['$email'];
-                $_SESSION['usertype']= $row['a'];
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='a';
+
                 header('Location: admin_side/admin_dashboard.php');
 
             }
@@ -63,12 +58,15 @@ if(isset($_POST['login']))
         {
             $sql = "SELECT * FROM doctor WHERE doctor_email='$email' AND doctor_password='$password'";
             $result = mysqli_query($conn,$sql);
-            if (mysqli_num_rows($result) === 1)
+            if (mysqli_num_rows($result) == 1)
             {
                 //  For Doctor dashbord
-                $_SESSION['user']= $row['$email'];
-                $_SESSION['usertype']= $row['d'];
-                header("Location: doctor_side/doctor_dashboard.php");
+                // $record = mysqli_fetch_assoc($result);
+                // $u_data = array($record['doctor_id'],$record['doctor_name'],$record['doctor_email'],$record['specialty'],$_SESSION['usertype']='d');
+                // $_SESSION['u_data'] = $u_data;
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='d';
+                header("Location: doctor_side/doctor_dashboard.php?");
             }
             else
             {
@@ -79,16 +77,15 @@ if(isset($_POST['login']))
         elseif ($utype === 'p') {
             $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
- 
             $user = mysqli_fetch_object($result);
-
-            if($user->email_verified_at == null){
-                // die("Your account is not yet verified.<br>Please verify your email <a href='email-verification.php?email=".$email."'>HERE</a>");
+            if($user->email_verified_at == null)
+            {
                 echo "<script> alert('Your account is not yet verified. Please verify your email account.'); location.replace('email-verification.php?email=".$email."') </script>";
             }
-            if($user->email_verified_at != null){
-                $_SESSION['user']= $row['$email'];
-                $_SESSION['usertype']= $row['p'];
+            if($user->email_verified_at != null)
+            {
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='p';
                 header("Location: patient_side/home_page.php");
             }
             else{

@@ -28,33 +28,33 @@
     </p>
     </div>
 </center>
-
-   <div class="sidebar">
-    <header class="title" style="margin-top:-60px;">DOCTOR</header>
-    <center>
-    <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
-    <div class="docname">Dr. David Chrish</div>
-    <div class="specialty">Cardiologist</div>
-</center>
-    <ul>
-        <li><a href="../doctor_side/doctor_dashboard.php" class="active"><i class="fas fa-clinic-medical"></i>Home</a></li>
-        <li><a href="../doctor_side/doctor_appointment.php"><i class="fas fa-calendar"></i>Agenda</a></li>
-        <li><a href="../index_main.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-    </ul>
-   </div>
 </body>
+
+<div class="sidebar">
+            <header class="title" style="margin-top:-60px;">DOCTOR</header>
+            <center>
+            <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
+            <div class="docname"></div>
+            <div class="specialty"></div>
+            </center>
+            <ul>
+                <li><a href="../doctor_side/doctor_dashboard.php" class="active"><i class="fas fa-clinic-medical"></i>Home</a></li>
+                <li><a href="../doctor_side/doctor_appointment.php"><i class="fas fa-calendar"></i>Agenda</a></li>
+                <li><a href="../index_main.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+            </ul>
+        </div>
+
    
         <center>
                     <table class="filter-container doctor-header" style="border: none;width:78%; margin-left:255px; border-radius:10px;" border="0" >
                     <tr>
                         <td >
                             <h3 style="margin-top:40px; margin-left:40px; font-size:20px; font-weight:700;">Welcome!</h3>
-                            <!-- <h1><?php echo $username  ?>.</h1> -->
-                            <h1 style="margin-top:20px; margin-left:35px; font-weight:700;">Doctor.</h1>
+                            <h3 style="margin-top:20px; margin-left:35px; font-weight:700;"><?php  ?></h1>
                             <p style="margin-top:20px; margin-left:35px; font-weight:450; font-size:16px;">I'm glad you could join us. We work hard to provide you with a thorough service.<br>
                             Reach Doctor's Appointment System can be viewed from home together with everyday regular schedule!<br><br>
                             </p>
-                            <a href="/doctor_side/doctor_appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:30%; margin-top:-10px; margin-bottom:10px; margin-left:35px; border-radius:7px; font-weight:500;">View My Appointments</button></a>
+                            <a href="doctor_appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:30%; margin-top:-10px; margin-bottom:10px; margin-left:35px; border-radius:7px; font-weight:500;">View My Appointments</button></a>
                             <br>
                             <br>
                         </td>
@@ -146,6 +146,8 @@
     </div>
     <!-- Event Details Modal -->
 </center>
+
+
 <?php 
 $conn=new mysqli("localhost","root","","id20335682_appointment_system");
 $schedules = $conn->query("SELECT * FROM `schedule_list`");
