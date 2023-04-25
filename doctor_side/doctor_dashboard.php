@@ -17,10 +17,8 @@
   </head>
 <body style="cursor: default;">
         <?php 
-            session_start();
-            $useremail = $_SESSION['usermemail'];
-
             include('../database/security.php');
+            $useremail = $_SESSION['usermemail'];
             $docsql = "SELECT * FROM doctor WHERE doctor_email = '".$_SESSION['usermemail']."'";
             $usersql = mysqli_query($conn,$docsql);
             $user_fetch = mysqli_fetch_assoc($usersql);
@@ -31,7 +29,7 @@
         ?>
 
         <div class="sidebar">
-            <header class="title" style="margin-top:-20px;">DOCTOR</header>
+            <header class="title" style="margin-top:-40px;">DOCTOR</header>
             <center>
                 <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
                 <div class="docname"><?php echo substr($username,0,50)?></div>

@@ -40,8 +40,6 @@ header.logo{
 
 header .navbar ul{
   list-style: none;
-
-
 }
 
 header .navbar ul li{
@@ -51,13 +49,13 @@ header .navbar ul li{
 
 header .navbar ul li a{
   font-size: 17px;
-  padding:20px;
+  padding:12px;
   color:#333;
   display: block;
 }
 
 header .navbar ul li a:hover{
-  background:rgb(247, 247, 247);
+  background:#BDCDD6;
   color: rgb(12, 12, 156);
 }
 

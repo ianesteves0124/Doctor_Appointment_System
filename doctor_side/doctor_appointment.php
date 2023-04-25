@@ -1,14 +1,12 @@
 <?php 
-            session_start();
+             include('../database/security.php');
             $useremail = $_SESSION['usermemail'];
-
-            include('../database/security.php');
             $docsql = "SELECT * FROM doctor WHERE doctor_email = '".$_SESSION['usermemail']."'";
             $usersql = mysqli_query($conn,$docsql);
             $user_fetch = mysqli_fetch_assoc($usersql);
             $userid = $user_fetch['doctor_id'];
-            $username = $user_fetch["doctor_name"];
-            $user_spe = $user_fetch["specialty"];
+            $username = $user_fetch['doctor_name'];
+            $user_spe = $user_fetch['specialty'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Agenda | Doctor Dashboard | Doctor Appointment System</title>
 </head>
-<body style="cursor: default;">     
+<body style="cursor: default; font-family:monospace;">     
 <center>
     <div class = "calendar">
     <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
@@ -76,7 +74,6 @@
 
         <tbody class="tbody">
             <?php
-                include '../database/security.php';
 
                 $patient_list = "SELECT * FROM `booking`
                 INNER JOIN doctor ON booking.doc_id = $userid LIMIT 1";
