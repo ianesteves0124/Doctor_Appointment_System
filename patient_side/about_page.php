@@ -27,8 +27,8 @@
         they lack the resources needed to carry out their everyday duties and expand their practice or hospital. 
         We're at a standstill, some may argue. Even yet, at Doctor Appointment, we are confident that technology can 
         assist both patients and health professionals in overcoming this challenge.</p>
-    <button class = "trmandcondbtn" onclick = "location.href = ''"><span>Terms & Conditions</span></button>
-    <button class = "pripolbtn" onclick = "location.href = ''"><span>Privacy & Policy</span></button>
+    <button class = "trmandcondbtn" target="_black" onclick = "location.href = 'Terms&Conditions.php'"><span>Terms & Conditions</span></button>
+    <button class = "pripolbtn" target="_black" onclick = "location.href = 'Privacy&Policy.php'"><span>Privacy & Policy</span></button>
 </div>
 </center>
 <center>
