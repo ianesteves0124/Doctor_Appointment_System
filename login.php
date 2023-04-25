@@ -20,6 +20,7 @@ if(isset($_POST['login']))
 
     $email = $_POST['useremail'];
     $password = $_POST['userpassword'];
+    $_SESSION['useremail'] = $email;
 
     $sql = "SELECT * FROM website_user WHERE Email = '$email'";
     $result = mysqli_query($conn,$sql);

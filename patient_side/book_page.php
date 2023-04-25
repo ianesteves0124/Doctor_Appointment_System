@@ -1,9 +1,9 @@
 <?php 
             session_start();
-            $useremail = $_SESSION['usermemail'];
+            $useremail = $_SESSION['user'];
 
             include('../database/security.php');
-            $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['usermemail']."'";
+            $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
             $usersql = mysqli_query($conn,$patientsql);
             $user_fetch = mysqli_fetch_assoc($usersql);
             $userid = $user_fetch['patient_id'];

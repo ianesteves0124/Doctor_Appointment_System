@@ -18,8 +18,8 @@
 <body style="cursor: default;">
         <?php 
             include('../database/security.php');
-            $useremail = $_SESSION['usermemail'];
-            $docsql = "SELECT * FROM doctor WHERE doctor_email = '".$_SESSION['usermemail']."'";
+            $useremail = $_SESSION['user'];
+            $docsql = "SELECT * FROM doctor WHERE doctor_email = '".$_SESSION['user']."'";
             $usersql = mysqli_query($conn,$docsql);
             $user_fetch = mysqli_fetch_assoc($usersql);
             $userid = $user_fetch['doctor_id'];
