@@ -75,34 +75,30 @@
         <tbody class="tbody">
             <?php
 
-                $patient_list = "SELECT * FROM `booking`
-                INNER JOIN doctor ON booking.doc_id = $userid LIMIT 1";
+                $patient_list = "SELECT * FROM `booking` WHERE doc_id = $userid";
                 $fetch_data = mysqli_query($conn,$patient_list);
                 while ($row = mysqli_fetch_assoc($fetch_data)) {
                     echo '
                         <tr class="list">
-                <th class="user">
-                    <img src="../images/patient male img.png" alt="" class="icon">
-                    <div class="name-or-userName">
-                        <div class="name">'.$row['patient_name'].'</div><br>
-                        <div class="user-name">'.$row['patient_email'].'</div>
-                    </div>
-                </th>
-                <th class="status">
-                    <div class="complete">Accepted</div>
-                </th>
-                <th class="date">'.$row['patient_app-date'].'</th>
-                <th class="home address">'.$row['patient_address'].'</th>
-                <th class="phone">'.$row['patient_contact'].'</th>
-                <th class="viewmore">
-                    <a class="btn btn-light  btn-sm" href="#pat1">View More</a>
-                </th>
-                        <!-- <th class="action">
-                            <center>
-                        <button type="button" class="btn btn-success btn-sm" style="margin-bottom:5px;">ACCEPT</button>
-                        <button type="button" class="btn btn-danger btn-sm">REJECT</button>
-                            </center>
-                        </th> -->
+                            <th class="user">
+                                <img src="../images/patient male img.png" alt="" class="icon">
+                                <div class="name-or-userName">
+                                    <div class="name">'.$row['patient_name'].'</div><br>
+                                    <div class="user-name">'.$row['patient_email'].'</div>
+                                </div>
+                            </th>
+
+                            <th class="status">
+                                <div class="complete">Accepted</div>
+                            </th>
+
+                            <th class="date">'.$row['patient_app-date'].'</th>
+                            <th class="home address">'.$row['patient_address'].'</th>
+                            <th class="phone">'.$row['patient_contact'].'</th>
+                            <th class="viewmore">
+                                <a class="btn btn-light  btn-sm" href="#pat1">View More</a>
+                            </th>
+                        </tr>
             
                 <!-- Popup View More -->
                     <div id="pat1" class="overlay">
@@ -113,7 +109,7 @@
                             </center>
                             <center>
                                 <div class="content">
-                                    <h3>Full Name:</h3>
+                                    <h3>Patient Name:</h3>
                                         <h4>'.$row['patient_name'].'</h4>
                                     <h3>Age:</h3>
                                         <h4>'.$row['patient_age'].'</h4> 
@@ -131,7 +127,6 @@
                             </center>
                         </div>
                     </div>
-            </tr> 
                     ';
                 }
 

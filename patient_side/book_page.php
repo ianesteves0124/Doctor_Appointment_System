@@ -45,26 +45,26 @@
 
               $query = "SELECT * FROM booking
               INNER JOIN website_user ON booking.patient_email = '".$useremail."'
-              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id LIMIT 1;";
+              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id;";
               $result = mysqli_query($conn,$query);
 
               while ($row = mysqli_fetch_assoc($result))
               {
-                echo 
-                '
-                <tr class="list">
-                    <th class="user">
-                        <img src="../images/doc profile img 2.png" alt="" class="icon">
-                        <div class="name-or-userName">
-                            <div class="name">'. $row['doctor_name'].'</div>
-                            <div class="user-name">'. $row['specialty'].'</div>
-                        </div>
-                    </th>
-                    <th class="specialty">'. $row['specialty'].'</th>
-                    <th class="date">'. $row['patient_app-date'].'</th>
-                    <th class="phone">'. $row['contact'].'</th>
-                    <th><a class="button" href="#doc1">View More</a></th>
-                    
+                echo  '<tr class="list">';
+                echo '<th class="user">';
+                echo '<img src="../images/doc profile img 2.png" alt="" class="icon">';
+                echo '<div class="name-or-userName">';
+                echo '<div class="name">'. $row['doctor_name'].'</div>';
+                echo '<div class="user-name">'. $row['specialty'].'</div>';
+                echo ' </div>';
+                echo ' </th>';
+                echo '<th class="specialty">'. $row['specialty'].'</th>';
+                echo ' <th class="date">'. $row['patient_app-date'].'</th>';
+                echo '<th class="phone">'. $row['contact'].'</th>';
+                echo ' <th><a class="button" href="#doc1">View More</a></th>';
+                echo '</tr>';
+
+                echo '
                     <!-- Popup View More -->
                     <div id="doc1" class="overlay">
                         <div class="popup">
@@ -90,7 +90,7 @@
                             </center>
                         </div>
                     </div>
-                 </tr>
+                 
                 ';
               }
             ?>
