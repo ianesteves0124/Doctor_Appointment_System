@@ -18,10 +18,10 @@
 if(isset($_POST['login']))
 {
 
-    $_SESSION['usermemail'] = $_POST['useremail'];
+    $email = $_POST['useremail'];
     $password = $_POST['userpassword'];
 
-    $sql = "SELECT * FROM website_user WHERE Email ='".$_SESSION['usermemail']."'";
+    $sql = "SELECT * FROM website_user WHERE Email = '$email'";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result) == 1)
@@ -31,12 +31,12 @@ if(isset($_POST['login']))
 
         if($utype=='a')
         {
-            $sql = "SELECT * FROM admin WHERE admin_email='".$_SESSION['usermemail']."' AND admin_password='$password'";
+            $sql = "SELECT * FROM admin WHERE admin_email='$email' AND admin_password='$password'";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) == 1)
             {
                 //   For Admin dashbord
-                $_SESSION['user']=$_SESSION['usermemail'];
+                $_SESSION['user']=$email;
                 $_SESSION['usertype']='a';
 
                 header('Location: admin_side/admin_dashboard.php');
@@ -50,12 +50,12 @@ if(isset($_POST['login']))
         }
         elseif($utype =='d')
         {
-            $sql = "SELECT * FROM doctor WHERE doctor_email='".$_SESSION['usermemail']."' AND doctor_password='$password'";
+            $sql = "SELECT * FROM doctor WHERE doctor_email='$email' AND doctor_password='$password'";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) == 1)
             {
                 //  For Doctor dashbord
-                $_SESSION['user']=$_SESSION['usermemail'];
+                $_SESSION['user']=$email;
                 $_SESSION['usertype']='d';
                 header("Location: doctor_side/doctor_dashboard.php?");
             }
@@ -66,7 +66,7 @@ if(isset($_POST['login']))
 
         }
         elseif ($utype == 'p') {
-            $sql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['usermemail']."' AND patient_password = '$password'";
+            $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
             $user = mysqli_fetch_object($result);
             if($user->email_verified_at == null)
@@ -75,9 +75,9 @@ if(isset($_POST['login']))
             }
             if($user->email_verified_at != null)
             {
-                $_SESSION['user']=$_SESSION['usermemail'];
+                $_SESSION['user']=$email;
                 $_SESSION['usertype']='p';
-                header("Location: patient_side/home_page.php?acc='".$_SESSION['usermemail']."'");
+                header("Location: patient_side/home_page.php?");
             }
             else{
                 $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
