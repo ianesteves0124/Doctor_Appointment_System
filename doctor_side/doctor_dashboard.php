@@ -148,8 +148,8 @@
                 </div>
                 <div class="modal-footer rounded-0">
                     <div class="text-end">
-                        <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Delete</button>
+                        <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="<?php echo $userid ?>">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="<?php echo $userid ?>">Delete</button>
                         <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
 
 <?php 
 $conn=new mysqli("localhost","root","","id20335682_appointment_system");
-$schedules = $conn->query("SELECT * FROM `schedule_list`");
+$schedules = $conn->query("SELECT * FROM `schedule_list` WHERE sched_doc_id = '$userid'");
 $sched_res = [];
 foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
     $row['sdate'] = date("F d, Y h:i A",strtotime($row['start_datetime']));

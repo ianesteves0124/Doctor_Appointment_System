@@ -44,12 +44,13 @@
               include '../database/connection.php';
 
               $query = "SELECT * FROM booking
-              INNER JOIN website_user ON booking.patient_email = '".$useremail."'
-              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id;";
+              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id
+              WHERE booking.patient_email = '$useremail'";
               $result = mysqli_query($conn,$query);
 
               while ($row = mysqli_fetch_assoc($result))
               {
+                $doc_id = $row['doc_id'];
                 echo  '<tr class="list">';
                 echo '<th class="user">';
                 echo '<img src="../images/doc profile img 2.png" alt="" class="icon">';
@@ -61,12 +62,12 @@
                 echo '<th class="specialty">'. $row['specialty'].'</th>';
                 echo ' <th class="date">'. $row['patient_app-date'].'</th>';
                 echo '<th class="phone">'. $row['contact'].'</th>';
-                echo ' <th><a class="button" href="#doc1">View More</a></th>';
+                echo ' <th><a class="button" href="#doc1'.$doc_id.'">View More</a></th>';
                 echo '</tr>';
 
                 echo '
                     <!-- Popup View More -->
-                    <div id="doc1" class="overlay">
+                    <div id="doc1'.$doc_id.'" class="overlay">
                         <div class="popup">
                             <center>
                                 <h1>DOCTOR INFORMATION</h1>
@@ -75,17 +76,28 @@
                             <center>
                                 <div class="content">
                                     <h3>Doctor Name:</h3>
-                                        <h4>Doc Name</h4>
+                                        <h4>'. $row['doctor_name'].'</h4>
                                     <h3>Specialty:</h3>
-                                        <h4>Specialty</h4> 
+                                        <h4>'. $row['specialty'].'</h4> 
                                     <h3>Description:</h3>
-                                        <h4>Description</h4>
+                                        <h4>'. $row['description'].'</h4>
                                     <h3>Email:</h3>
-                                        <h4>Email</h4>
+                                        <h4>'. $row['doctor_email'].'</h4>
                                     <h3>Clinic Location:</h3>
-                                        <h4>Clinic Location</h4>
+                                        <h4>'. $row['clinic_address'].'</h4>
                                     <h3>Schedule:</h3>
-                                        <h4>Schedule</h4>
+                                        <h4>'. $row['patient_app-date'].'</h4>
+                                </div>
+                                     <h1>PATIENT INFORMATION</h1>
+                                <div class="content">
+                                    <h3>Patient Name:</h3>
+                                        <h4>'. $row['patient_name'].'</h4>
+                                    <h3>Contact:</h3>
+                                        <h4>'. $row['patient_contact'].'</h4> 
+                                    <h3>Address:</h3>
+                                        <h4>'. $row['patient_address'].'</h4>
+                                    <h3>Email:</h3>
+                                        <h4>'. $row['patient_email'].'</h4>
                                 </div>
                             </center>
                         </div>

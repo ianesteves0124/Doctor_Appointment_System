@@ -20,39 +20,35 @@ include('admin_index.php');
     </div>
 
 <center>
-    <table class="table table-hover" style="width:80%; margin-left:250px; margin-top:-10px; cursor:default;">
-  <thead>
-    <tr>
-      <th scope="col" style="width:15%;">Appt Number</th>
-      <th scope="col">Patient Name</th>
-      <th scope="col">Doctor</th>
-      <th scope="col">Appointment Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Joe Doe</td>
-      <td>Dr. Ian Miles Esteves</td>
-      <td>2023-04-20</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Michael Goat</td>
-      <td>Dr. Nathaniel Pagulayan</td>
-      <td>2023-04-29</td>
-    </tr>
-    <tr>
-      <!-- <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td> -->
-      <th scope="row">3</th>
-      <td>Kobe Venom</td>
-      <td>Dr. Appointment</td>
-      <td>2023-05-06</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-hover" style="width:80%; margin-left:250px; margin-top:-10px; cursor:default;">
+    <thead>
+      <tr>
+        <th scope="col" style="width:15%;">Appt Number</th>
+        <th scope="col">Patient Name</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Appointment Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <?php
+        include '../database/security.php';
+        $sql = 'SELECT booking.appointment_id ,booking.doc_id, booking.patient_name, booking.`patient_app-date`, 
+        doctor.doctor_name FROM booking
+        INNER JOIN doctor ON  booking.doc_id = doctor.doctor_id;';
+        $result = mysqli_query($conn,$sql);
+
+        while($row = mysqli_fetch_assoc($result)){
+          echo '<tr>';
+          echo '<th scope="row">'.$row['appointment_id'].'</th>';
+          echo '<td>'.$row['patient_name'].'</td>';
+          echo '<td>'.$row['doctor_name'].'</td>';
+          echo ' <td>'.$row['patient_app-date'].'</td>';
+          echo '</tr>';
+        }
+      ?>
+    </tbody>
+  </table>
 </center>
 
 </body>

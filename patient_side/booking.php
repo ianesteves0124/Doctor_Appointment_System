@@ -19,7 +19,7 @@ if(isset($_POST['appointment']))
     $gender = validate($_POST['patient_gender']);
     $dob = validate(date('Y-m-d',strtotime($_POST['patient_dob'])));
     $address = validate($_POST['patient_address']);
-    $email = validate($_POST['patient_email']);
+    $email = validate($_SESSION['user']);
     $contact = validate($_POST['patient_contact']);
     $appt_date = validate(date('Y-m-d',strtotime($_POST['appointment-date'])));
 

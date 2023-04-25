@@ -78,6 +78,7 @@
                 $patient_list = "SELECT * FROM `booking` WHERE doc_id = $userid";
                 $fetch_data = mysqli_query($conn,$patient_list);
                 while ($row = mysqli_fetch_assoc($fetch_data)) {
+                    $patient_name = $row['patient_name'];
                     echo '
                         <tr class="list">
                             <th class="user">
@@ -96,12 +97,12 @@
                             <th class="home address">'.$row['patient_address'].'</th>
                             <th class="phone">'.$row['patient_contact'].'</th>
                             <th class="viewmore">
-                                <a class="btn btn-light  btn-sm" href="#pat1">View More</a>
+                                <a class="btn btn-light  btn-sm" href="#pat'.$patient_name.'">View More</a>
                             </th>
                         </tr>
             
                 <!-- Popup View More -->
-                    <div id="pat1" class="overlay">
+                    <div id="pat'.$patient_name.'" class="overlay">
                         <div class="popup">
                             <center>
                                 <h1>PATIENT INFORMATION</h1>

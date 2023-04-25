@@ -23,53 +23,35 @@ include('admin_index.php');
     <table class="table table-hover" style="width:80%; margin-left:255px; margin-top:-10px; cursor:default;">
   <thead>
     <tr>
+      <th scope ="cole">Patient ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">Gender</th>
       <th scope="col">Birth Date</th>
       <th scope="col">Contact Num</th>
       <th scope="col">Home Address</th>
       <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th> -->
     </tr>
   </thead>
   <tbody>
+    <?php
+      include '../database/security.php';
+      $query = "SELECT * FROM patient";
+      $result = mysqli_query($conn,$query);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+       echo '<tr>' ;
+       echo '<th scope="row">'.$row['patient_id'].'</th>';
+       echo '<td>'.$row['patient_name'].'</td>';
+       echo '<td>'.$row['patient_dob'].'</td>';
+       echo '<td>'.$row['patient_contact'].'</td>';
+       echo '<td>'.$row['patient_address'].'</td>';
+       echo ' <td>'.$row['patient_email'].'</td>';
+      //  echo '<td><a  type="button" class="btn btn-danger">Delete</a></td>';
+       echo ' </tr>';
+
+      }
+    ?>
     <tr>
-      <!-- <th scope="row">1</th> -->
-      <td>Joe Doe</td>
-      <td>21</td>
-      <td>Male</td>
-      <td>2002-04-20</td>
-      <td>09614565232</td>
-      <td>Kalaklan 14 St. Olongapo City</td>
-      <td>jd@gmail.com</td>
-      <td><a  type="button" class="btn btn-danger">Delete</a></td>
-    </tr>
-    <tr>
-    <!-- <th scope="row">2</th> -->
-      <td>Michael Goat</td>
-      <td>25</td>
-      <td>Male</td>
-      <td>1995-02-29</td>
-      <td>09664214678</td>
-      <td>New Kababae 9 St. Olongapo City</td>
-      <td>mg@gmail.com</td>
-      <td><a  type="button" class="btn btn-danger">Delete</a></td>
-    </tr>
-    <tr>
-      <!-- <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td> -->
-      <!-- <th scope="row">3</th> -->
-      <td>Kobe Venom</td>
-      <td>23</td>
-      <td>Male</td>
-      <td>1998-01-15</td>
-      <td>09998334123</td>
-      <td>Pag-asa 17 St. Olongapo City</td>
-      <td>kobe@gmail.com</td>
-      <td><a  type="button" class="btn btn-danger">Delete</a></td>
-    </tr>
   </tbody>
 </table>
 </center>

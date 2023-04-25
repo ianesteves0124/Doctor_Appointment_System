@@ -20,12 +20,11 @@ include('admin_index.php');
                     <tr>
                         <td >
                             <h3 style="margin-top:40px; margin-left:40px; font-size:20px; font-weight:700; cursor: default;">Welcome!</h3>
-                            <!-- <h1><?php echo $username  ?>.</h1> -->
                             <h1 style="margin-top:20px; margin-left:35px; font-weight:700; cursor: default;">Administrator.</h1>
-                            <p style="margin-top:40px; margin-left:35px; font-weight:450; font-style:italic; font-size:18px; cursor: default;">"An administrator in a bureaucratic world is a man who can feel big by merging his non-entity in an abstraction.<br>
+                            <p style="margin-top:40px; margin-left:35px; font-weight:450; font-style:italic; font-size:18px; cursor: default;">
+                            "An administrator in a bureaucratic world is a man who can feel big by merging his non-entity in an abstraction.<br>
                               A real person in touch with real things inspires terror in him". ~ Marshall McLuhan<br><br>
                             </p>
-                            <!-- <a href="appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:30%">View My Appointments</button></a> -->
                             <br>
                             <br>
                         </td>
@@ -41,63 +40,60 @@ include('admin_index.php');
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 25%;">
+                                <td style="width: 15%;">
+                                <?php
+                                    include '../database/connection.php';
+                                    $sql = "SELECT COUNT(doctor_id) AS doctor_count FROM doctor";
+                                    $result = mysqli_query($conn,$sql);
+                                    $row =mysqli_fetch_assoc($result);
+                                    $count = $row['doctor_count'];
+                                ?>
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                         <div>
-                                                <div class="h1-dashboard">
-                                                    <!-- <?php    echo $doctorrow->num_rows  ?> -->
-                                                    2
-                                                </div><br>
+                                                <div class="h1-dashboard"><?php echo $count ?></div><br>
                                                 <div class="h3-dashboard">
                                                     Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 </div>
                                         </div>
-                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('/images/doctors-hover.svg');"></div>
+                                        <i class='fas fa-user-md' style='font-size:48px;'></i>
                                     </div>
                                 </td>
-                                <td style="width: 25%;">
+                                <td style="width: 15%;">
+                                <?php
+                                    include '../database/connection.php';
+                                    $sql = "SELECT COUNT(patient_id) AS patient_count FROM patient";
+                                    $result = mysqli_query($conn,$sql);
+                                    $row =mysqli_fetch_assoc($result);
+                                    $count = $row['patient_count'];
+                                ?>
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;">
                                         <div>
-                                                <div class="h1-dashboard">
-                                                    <!-- <?php    echo $patientrow->num_rows  ?> -->
-                                                    3
-                                                </div><br>
+                                                <div class="h1-dashboard"><?php echo $count ?></div><br>
                                                 <div class="h3-dashboard">
                                                     Patients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 </div>
                                         </div>
-                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('/images/patients-hover.svg');"></div>
+                                        <i class='fab fa-accessible-icon' style='font-size:48px;'></i>
                                     </div>
                                 </td>
-                                <td style="width: 25%;">
+                                <?php
+                                    include '../database/connection.php';
+                                    $sql = "SELECT COUNT(appointment_id) AS appointment_count FROM booking";
+                                    $result = mysqli_query($conn,$sql);
+                                    $row =mysqli_fetch_assoc($result);
+                                    $count = $row['appointment_count'];
+                                ?>
+                                <td style="width: 15%;">
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex; ">
                                         <div>
-                                                <div class="h1-dashboard" >
-                                                    <!-- <?php    echo $appointmentrow ->num_rows  ?> -->
-                                                    1
-                                                </div><br>
+                                                <div class="h1-dashboard" ><?php echo $count ?></div><br>
                                                 <div class="h3-dashboard">
                                                     Overall Booking &nbsp;&nbsp;
                                                 </div>
                                         </div>
-                                                <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('/images/book-hover.svg');"></div>
+                                        <i class='fas fa-address-book' style='font-size:48px;'></i>
                                     </div>
                                 </td>
-                                <td style="width: 25%;">
-                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;padding-top:26px;padding-bottom:26px;">
-                                        <div>
-                                                <div class="h1-dashboard">
-                                                    <!-- <?php    echo $schedulerow ->num_rows  ?> -->
-                                                    1
-                                                </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px">
-                                                    Today Sessions
-                                                </div>
-                                        </div>
-                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('/images/session-iceblue.svg');"></div>
-                                    </div>
-                                </td>
-                                
                             </tr>
                         </table>
     </center>

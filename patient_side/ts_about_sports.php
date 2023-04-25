@@ -1,7 +1,7 @@
 <?php 
-include('header_nav.php');
-include('../database/connection.php');
- ?> <!-- TO CALL TOP NAVIGATIONS -->
+include('header_nav.php'); 
+include('../database/security.php');
+?> <!-- TO CALL TOP NAVIGATIONS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,13 +65,27 @@ include('../database/connection.php');
                         <a class="close" href="#">&times;</a>
                     </center>
                         <center>
+                            <?php
+                                $doctor_sched = "SELECT * FROM doctor
+                                INNER JOIN schedule_list ON schedule_list.sched_doc_id = doctor.doctor_id
+                                WHERE schedule_list.sched_doc_id = '$d_id' ;";
+                                $result = mysqli_query($conn,$doctor_sched);
+                                $sched_row = mysqli_fetch_assoc($result); 
+                            ?>
                             <div class="content">
                                 <h3>Professional Experience:</h3>
                                     <h4><?php echo $des ?></h4>
                                 <h3>Clinic Location:</h3>
                                     <h4><?php echo $addr ?></h4> 
-                                <h3>Availability:</h3>
+                                <h3>Local Clinic Hours:</h3>
                                     <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M</h4>
+                                <?php if ($sched_row) { // Check if schedule data exists ?>
+                                    <h3>Availability</h3>
+                                    <h4><?php echo $sched_row['title'] ?></h4>
+                                    <h4>From: <?php echo $sched_row['start_datetime'] ?> To <?php echo $sched_row['end_datetime'] ?></h4>
+                                <?php } else { // If schedule data does not exist ?>
+                                    <h4></h4> <!-- Display N/A or None or any other message you prefer -->
+                                <?php } ?>
                                 <h3>Contact Number:</h3>
                                     <h4><?php echo $con ?></h4>
                             </div>
@@ -89,6 +103,16 @@ include('../database/connection.php');
                     </center>
 
                     <center>
+                                <?php 
+                                    session_start();
+                                    $useremail = $_SESSION['user'];
+                                    $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
+                                    $usersql = mysqli_query($conn,$patientsql);
+                                    $user_fetch = mysqli_fetch_assoc($usersql);
+                                    $useremail = $user_fetch["patient_email"];
+                                    $usercontact = $user_fetch["patient_contact"];
+                                ?>
+
                                 <div class="content">
                                     <form action="booking.php" method = "POST">
                                         <h2>APPOINTMENT INFORMATION:</h2>
@@ -109,9 +133,9 @@ include('../database/connection.php');
                                           <h3>Home Address:</h3>
                                                 <input type="text" name="patient_address" value = "" required><br>
                                           <h3>Email Address:</h3>
-                                                    <input type="email" name="patient_email" value = "" required><br>
+                                                    <input type="email" name="patient_email" value = "<?php echo $useremail?>" disabled><br>
                                           <h3>Contact Number:</h3>
-                                                    <input type="tel" name="patient_contact" value = "" required><br>
+                                                    <input type="tel" name="patient_contact" value = "<?php echo $usercontact?>" required><br>
                                           <h3>Appointment Date:</h3>
                                                     <input type="date" name="appointment-date" min="2023-04-24" max="2029-12-31" required><br>
                                                 <div>
