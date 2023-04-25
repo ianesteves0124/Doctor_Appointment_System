@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
 <body>
 <header>
 <img class = "logo" src="../images/DocApp Logo.png" alt="Website Logo" width="190" height="65">
-
+<!-- <p style = "color:black; text-align:center; font-size:15px;">Welcome<br><?php echo $username?></p> -->
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">≡</label>
 

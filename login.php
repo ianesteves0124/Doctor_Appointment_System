@@ -13,21 +13,15 @@
 </head>
 <body>
 <?php
-session_start();
+    include("database/security.php");
 
-
-    $_SESSION["user"]="";
-    $_SESSION["usertype"]="";
-
-    include("database/connection.php");
-
-if($_POST)
+if(isset($_POST['login']))
 {
 
-    $email = $_POST['useremail'];
+    $_SESSION['usermemail'] = $_POST['useremail'];
     $password = $_POST['userpassword'];
 
-    $sql = "SELECT * FROM website_user WHERE Email ='$email'";
+    $sql = "SELECT * FROM website_user WHERE Email ='".$_SESSION['usermemail']."'";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result) == 1)
@@ -37,12 +31,12 @@ if($_POST)
 
         if($utype=='a')
         {
-            $sql = "SELECT * FROM admin WHERE admin_email='$email' AND admin_password='$password'";
+            $sql = "SELECT * FROM admin WHERE admin_email='".$_SESSION['usermemail']."' AND admin_password='$password'";
             $result = mysqli_query($conn,$sql);
-            if (mysqli_num_rows($result) === 1)
+            if (mysqli_num_rows($result) == 1)
             {
                 //   For Admin dashbord
-                $_SESSION['user']=$email;
+                $_SESSION['user']=$_SESSION['usermemail'];
                 $_SESSION['usertype']='a';
 
                 header('Location: admin_side/admin_dashboard.php');
@@ -54,17 +48,14 @@ if($_POST)
             }
 
         }
-        elseif($utype=='d')
+        elseif($utype =='d')
         {
-            $sql = "SELECT * FROM doctor WHERE doctor_email='$email' AND doctor_password='$password'";
+            $sql = "SELECT * FROM doctor WHERE doctor_email='".$_SESSION['usermemail']."' AND doctor_password='$password'";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) == 1)
             {
                 //  For Doctor dashbord
-                // $record = mysqli_fetch_assoc($result);
-                // $u_data = array($record['doctor_id'],$record['doctor_name'],$record['doctor_email'],$record['specialty'],$_SESSION['usertype']='d');
-                // $_SESSION['u_data'] = $u_data;
-                $_SESSION['user']=$email;
+                $_SESSION['user']=$_SESSION['usermemail'];
                 $_SESSION['usertype']='d';
                 header("Location: doctor_side/doctor_dashboard.php?");
             }
@@ -74,8 +65,8 @@ if($_POST)
             }
 
         }
-        elseif ($utype === 'p') {
-            $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
+        elseif ($utype == 'p') {
+            $sql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['usermemail']."' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
             $user = mysqli_fetch_object($result);
             if($user->email_verified_at == null)
@@ -84,9 +75,9 @@ if($_POST)
             }
             if($user->email_verified_at != null)
             {
-                $_SESSION['user']=$email;
+                $_SESSION['user']=$_SESSION['usermemail'];
                 $_SESSION['usertype']='p';
-                header("Location: patient_side/home_page.php");
+                header("Location: patient_side/home_page.php?acc='".$_SESSION['usermemail']."'");
             }
             else{
                 $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';

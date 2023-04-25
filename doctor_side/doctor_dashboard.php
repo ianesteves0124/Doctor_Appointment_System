@@ -15,27 +15,27 @@
     <script src="../schedule/js/bootstrap.min.js"></script>
     <script src="../schedule/fullcalendar/lib/main.min.js"></script>
   </head>
-  <body style="cursor: default;">
-<center>
-    <div class = "calendar">
-    <p class = "calendar_header" style="margin-bottom:-5px;"><i class = "far fa-calendar-alt"></i> Today's Date</p>
-    <p class = "calendar_timezone">
-        <?php
-        date_default_timezone_set('Asia/Manila');
-        $date = date('Y-m-d');
-        echo $date;
-        ?>
-    </p>
-    </div>
-</center>
-</body>
+<body style="cursor: default;">
+        <?php 
+            session_start();
+            $useremail = $_SESSION['usermemail'];
 
-<div class="sidebar">
-            <header class="title" style="margin-top:-60px;">DOCTOR</header>
+            include('../database/security.php');
+            $docsql = "SELECT * FROM doctor WHERE doctor_email = '".$_SESSION['usermemail']."'";
+            $usersql = mysqli_query($conn,$docsql);
+            $user_fetch = mysqli_fetch_assoc($usersql);
+            $userid = $user_fetch['doctor_id'];
+            $username = $user_fetch["doctor_name"];
+            $user_spe = $user_fetch["specialty"];
+
+        ?>
+
+        <div class="sidebar">
+            <header class="title" style="margin-top:-20px;">DOCTOR</header>
             <center>
-            <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
-            <div class="docname"></div>
-            <div class="specialty"></div>
+                <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
+                <div class="docname"><?php echo substr($username,0,50)?></div>
+                <div class="specialty"><?php echo substr($user_spe,0,50)?></div>
             </center>
             <ul>
                 <li><a href="../doctor_side/doctor_dashboard.php" class="active"><i class="fas fa-clinic-medical"></i>Home</a></li>
@@ -44,7 +44,19 @@
             </ul>
         </div>
 
-   
+        <center>
+                <div class = "calendar">
+                    <p class = "calendar_header" style="margin-bottom:-5px;"><i class = "far fa-calendar-alt"></i> Today's Date</p>
+                    <p class = "calendar_timezone">
+                        <?php
+                        date_default_timezone_set('Asia/Manila');
+                        $date = date('Y-m-d');
+                        echo $date;
+                        ?>
+                    </p>
+                </div>
+        </center>
+
         <center>
                     <table class="filter-container doctor-header" style="border: none;width:78%; margin-left:255px; border-radius:10px;" border="0" >
                     <tr>
@@ -61,6 +73,8 @@
                     </tr>
                     </table>
         </center>
+</body>
+
 
 <center>
    <body class="bg-light">

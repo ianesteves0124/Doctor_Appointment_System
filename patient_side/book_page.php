@@ -1,3 +1,15 @@
+<?php 
+            session_start();
+            $useremail = $_SESSION['usermemail'];
+
+            include('../database/security.php');
+            $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['usermemail']."'";
+            $usersql = mysqli_query($conn,$patientsql);
+            $user_fetch = mysqli_fetch_assoc($usersql);
+            $userid = $user_fetch['patient_id'];
+            $username = $user_fetch["patient_name"];
+            $useremail = $user_fetch["patient_email"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +44,8 @@
               include '../database/connection.php';
 
               $query = "SELECT * FROM booking
-              INNER JOIN website_user ON booking.patient_email = website_user.Email
-              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id;";
+              INNER JOIN website_user ON booking.patient_email = '".$useremail."'
+              INNER JOIN doctor ON booking.doc_id = doctor.doctor_id LIMIT 1;";
               $result = mysqli_query($conn,$query);
 
               while ($row = mysqli_fetch_assoc($result))

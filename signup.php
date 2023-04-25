@@ -46,7 +46,7 @@ if(isset($_POST['register']))
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'das.online2023@gmail.com';
-        $mail->Password = 'fsidifhnqdwdjvqe';
+        $mail->Password = 'ujhjngkccyatcnxh';
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPDebug = 2; // enable debug output
@@ -54,7 +54,7 @@ if(isset($_POST['register']))
 
         //CONTENT
         $mail->isHTML(true);
-        $mail->setFrom('ianmiles.esteves@gmail.com','Doctors Appointment System');
+        $mail->setFrom('das.online2023@gmail.com','Doctors Appointment System');
         $mail->addAddress($email,$name);
         $mail->Subject = 'Doctors Appointment System Email Verification';
         $verification_code = substr(number_format(time() * rand(), 0, '', '',), 0, 6);
