@@ -63,7 +63,33 @@
                     <th class="specialty">'. $row['specialty'].'</th>
                     <th class="date">'. $row['patient_app-date'].'</th>
                     <th class="phone">'. $row['contact'].'</th>
-                    <th><a class="button" href="#">View More</a></th>
+                    <th><a class="button" href="#doc1">View More</a></th>
+                    
+                    <!-- Popup View More -->
+                    <div id="doc1" class="overlay">
+                        <div class="popup">
+                            <center>
+                                <h1>DOCTOR INFORMATION</h1>
+                                <a class="close" href="#">&times;</a>
+                            </center>
+                            <center>
+                                <div class="content">
+                                    <h3>Doctor Name:</h3>
+                                        <h4>Doc Name</h4>
+                                    <h3>Specialty:</h3>
+                                        <h4>Specialty</h4> 
+                                    <h3>Description:</h3>
+                                        <h4>Description</h4>
+                                    <h3>Email:</h3>
+                                        <h4>Email</h4>
+                                    <h3>Clinic Location:</h3>
+                                        <h4>Clinic Location</h4>
+                                    <h3>Schedule:</h3>
+                                        <h4>Schedule</h4>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
                  </tr>
                 ';
               }
