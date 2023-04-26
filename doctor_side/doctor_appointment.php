@@ -44,7 +44,7 @@
     <ul style="margin-left:-20px;">
         <li><a href="../doctor_side/doctor_dashboard.php" ><i class="fas fa-clinic-medical"></i>Home</a></li>
         <li><a href="../doctor_side/doctor_appointment.php" class="active"><i class="fas fa-calendar"></i>Agenda</a></li>
-        <li><a href="../index_main.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+        <li><a href="../logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
     </ul>
 </div>
    <section>
