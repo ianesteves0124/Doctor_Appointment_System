@@ -70,19 +70,20 @@ if(isset($_POST['login']))
             $sql = "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'";
             $result = mysqli_query($conn,$sql);
             $user = mysqli_fetch_object($result);
-            if($user->email_verified_at == null)
-            {
-                echo "<script> alert('Your account is not yet verified. Please verify your email account.'); location.replace('email-verification.php?email=".$email."') </script>";
-            }
-            if($user->email_verified_at != null)
-            {
-                $_SESSION['user']=$email;
-                $_SESSION['usertype']='p';
-                header("Location: patient_side/home_page.php?");
-            }
-            else{
-                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
-            }
+            
+               
+                    if ($user){
+                        if($user->email_verified_at != null)
+                        {
+                            $_SESSION['user']=$email;
+                            $_SESSION['usertype']='p';
+                            header("Location: patient_side/home_page.php?");
+                        }
+                    }
+                    else{
+                        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                    }
+                    
         }
         
     }

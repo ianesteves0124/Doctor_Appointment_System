@@ -66,12 +66,17 @@ include('../database/security.php');
                         <a class="close" href="#">&times;</a>
                     </center>
                         <center>
-                        <?php
+                            <?php
                                 $doctor_sched = "SELECT * FROM doctor
                                 INNER JOIN schedule_list ON schedule_list.sched_doc_id = doctor.doctor_id
                                 WHERE schedule_list.sched_doc_id = '$d_id' ;";
                                 $result = mysqli_query($conn,$doctor_sched);
                                 $sched_row = mysqli_fetch_assoc($result); 
+                                // Convert start_datetime to a formatted string
+                                $start_datetime = date("F j, Y g:i A", strtotime($sched_row['start_datetime']));
+
+                                // Convert end_datetime to a formatted string
+                                $end_datetime = date("F j, Y g:i A", strtotime($sched_row['end_datetime']));
                             ?>
                             <div class="content">
                                 <h3>Professional Experience:</h3>
@@ -83,7 +88,7 @@ include('../database/security.php');
                                 <?php if ($sched_row) { // Check if schedule data exists ?>
                                     <h3>Availability</h3>
                                     <h4><?php echo $sched_row['title'] ?></h4>
-                                    <h4>From: <?php echo $sched_row['start_datetime'] ?> To <?php echo $sched_row['end_datetime'] ?></h4>
+                                    <h4>From: <?php echo $start_datetime . ' To ' . $end_datetime; ?></h4>
                                 <?php } else { // If schedule data does not exist ?>
                                     <h4></h4> <!-- Display N/A or None or any other message you prefer -->
                                 <?php } ?>
@@ -106,8 +111,6 @@ include('../database/security.php');
                     <center>
                                 <?php 
                                     $useremail = $_SESSION['user'];
-
-                                    include('../database/security.php');
                                     $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
                                     $usersql = mysqli_query($conn,$patientsql);
                                     $user_fetch = mysqli_fetch_assoc($usersql);
@@ -119,7 +122,7 @@ include('../database/security.php');
                                         <h2>APPOINTMENT INFORMATION:</h2>
                                         <h3>Selected Doctor:<p><?php echo $name?></p></h3>
                                                 <input type="hidden" name="doc_id" value = "<?php echo $d_id?>">
-                                         <h3>Full Name:</h3>
+                                         <h3>Patient Name:</h3>
                                                 <input type="text" name="patient_name"  value = "" required><br>
                                          <h3>Age:</h3>
                                                 <input type="text" name="patient_age" value = "" required><br>

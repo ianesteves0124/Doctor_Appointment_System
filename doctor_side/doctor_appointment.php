@@ -78,7 +78,12 @@
                 $patient_list = "SELECT * FROM `booking` WHERE doc_id = $userid";
                 $fetch_data = mysqli_query($conn,$patient_list);
                 while ($row = mysqli_fetch_assoc($fetch_data)) {
+                    $timestamp = strtotime($row['patient_app-date']);
+                    $calendarDate = date('F j, Y', $timestamp);
+                    $p_timestamp = strtotime($row['patient_dob']);
+                    $p_calendar = date('F j, Y', $p_timestamp);
                     $patient_name = $row['patient_name'];
+                    
                     echo '
                         <tr class="list">
                             <th class="user">
@@ -93,7 +98,7 @@
                                 <div class="complete">Accepted</div>
                             </th>
 
-                            <th class="date">'.$row['patient_app-date'].'</th>
+                            <th class="date">'.$calendarDate.'</th>
                             <th class="home address">'.$row['patient_address'].'</th>
                             <th class="phone">'.$row['patient_contact'].'</th>
                             <th class="viewmore">
@@ -117,7 +122,7 @@
                                     <h3>Gender:</h3>
                                         <h4>'.$row['patient_gender'].'</h4>
                                     <h3>Date of Birth:</h3>
-                                        <h4>'.$row['patient_dob'].'</h4>
+                                        <h4>'.$p_calendar.'</h4>
                                     <h3>Home Address:</h3>
                                         <h4>'.$row['patient_address'].'</h4>
                                     <h3>Email Address:</h3>

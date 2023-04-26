@@ -50,6 +50,8 @@
 
               while ($row = mysqli_fetch_assoc($result))
               {
+                $timestamp = strtotime($row['patient_app-date']);
+                $calendarDate = date('F j, Y', $timestamp);
                 $doc_id = $row['doc_id'];
                 echo  '<tr class="list">';
                 echo '<th class="user">';
@@ -60,7 +62,7 @@
                 echo ' </div>';
                 echo ' </th>';
                 echo '<th class="specialty">'. $row['specialty'].'</th>';
-                echo ' <th class="date">'. $row['patient_app-date'].'</th>';
+                echo ' <th class="date">'. $calendarDate.'</th>';
                 echo '<th class="phone">'. $row['contact'].'</th>';
                 echo ' <th><a class="button" href="#doc1'.$doc_id.'">View More</a></th>';
                 echo '</tr>';
@@ -86,7 +88,7 @@
                                     <h3>Clinic Location:</h3>
                                         <h4>'. $row['clinic_address'].'</h4>
                                     <h3>Schedule:</h3>
-                                        <h4>'. $row['patient_app-date'].'</h4>
+                                        <h4>'. $calendarDate.'</h4>
                                 </div>
                                      <h1>PATIENT INFORMATION</h1>
                                 <div class="content">

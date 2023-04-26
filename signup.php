@@ -61,7 +61,8 @@ if(isset($_POST['register']))
         $mail->Body    = '<p>Your verification code is: <b style = "font-size: 30px;">' . $verification_code . '</b></p>';
 
         $mail->send();
-        header("Location: login.php?msg=user-account-created-succesfully");
+        //header("Location: login.php?msg=user-account-created-succesfully");
+        echo "<script> alert('Your account is not yet verified. Please verify your email account.'); location.replace('email-verification.php?email=".$email."') </script>";
         
 
         $sql1= "INSERT INTO `patient`(`patient_name`, `patient_email`, `patient_address`, `patient_contact`, `patient_password`, `patient_dob`,  `verification_code`, `email_verified_at`) 
