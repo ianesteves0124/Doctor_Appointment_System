@@ -90,6 +90,7 @@
                                     <h3>Schedule:</h3>
                                         <h4>'. $calendarDate.'</h4>
                                 </div>
+                                    <br><br><br><br><br><br><br><br>
                                      <h1>PATIENT INFORMATION</h1>
                                 <div class="content">
                                     <h3>Patient Name:</h3>
