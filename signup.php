@@ -169,7 +169,7 @@ if(isset($_POST['register']))
         <tr>
             <td>
             <input type="submit"  name = "register" value="Sign up" class="login-btn btn-primary btn"> <br>
-            <input type="submit" value="Cancel" onclick = "location.href = 'index_main.html';" class="login-btn btn-primary btn">
+            <input type="submit" value="Cancel" onclick = "location.href = 'index.html';" class="login-btn btn-primary btn">
             </td>
         </tr>
         </div>
