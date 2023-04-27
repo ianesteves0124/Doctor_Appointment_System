@@ -71,7 +71,7 @@ include('../database/connection.php');
                 <select name="specialty" id="" class = "form-control">
                     <option>Select Specialty</option>
                 <?php
-                        $sql_list = "SELECT * FROM `Doctor_Specialty` ORDER BY `Specialty_Title` asc;";
+                        $sql_list = "SELECT * FROM doctor_specialty ORDER BY doctor_specialty.Specialty_Title asc";
                         $result = mysqli_query($conn,$sql_list);
 
                             if (mysqli_num_rows($result) > 0) {
@@ -173,7 +173,7 @@ include('../database/connection.php');
                 <select name="specialty" id="" class = "form-control">
                     <option> <?php echo $specialty?></option>
                 <?php
-                        $sql_list = "SELECT * FROM `Doctor_Specialty` ORDER BY `Specialty_Title` asc;";
+                        $sql_list = "SELECT * FROM doctor_specialty ORDER BY doctor_specialty.Specialty_Title asc";
                         $result = mysqli_query($conn,$sql_list);
 
                             if (mysqli_num_rows($result) > 0) {
@@ -243,7 +243,7 @@ include('../database/connection.php');
                 <tbody>
                     <?php
 
-                        $sql = 'SELECT * FROM `doctor`';
+                        $sql = 'SELECT * FROM doctor;';
                         $result = mysqli_query($conn,$sql);
 
                         while ($row = mysqli_fetch_assoc($result)) 

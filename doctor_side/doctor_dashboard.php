@@ -161,7 +161,7 @@
 
 
 <?php 
-$conn=new mysqli("localhost","root","","id20335682_appointment_system");
+$conn=new mysqli("localhost","db_das","xcZaNsWYCRDxRhcR","db_das");
 $schedules = $conn->query("SELECT * FROM `schedule_list` WHERE sched_doc_id = '$userid'");
 $sched_res = [];
 foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){

@@ -3,7 +3,7 @@ include "../database/connection.php";
 
 session_start();
 
-$query = "SELECT * FROM `doctor` WHERE `doctor_id` = '".$_GET['id']."'";
+$query = "SELECT * FROM `doctor` WHERE `doctor_id` = '".$_GET['id']."';";
 $result = mysqli_query($conn,$query);
 while ($row = mysqli_fetch_array($result)) 
 {
@@ -98,7 +98,7 @@ if($_POST)
                 <select name="specialty" id="" class = "form-control">
                     <option> <?php echo $specialty?></option>
                 <?php
-                        $sql_list = "SELECT * FROM `Doctor_Specialty` ORDER BY `Specialty_Title` asc;";
+                        $sql_list = "SELECT * FROM doctor_specialty ORDER BY doctor_specialty.Specialty_Title ASC;";
                         $result = mysqli_query($conn,$sql_list);
 
                             if (mysqli_num_rows($result) > 0) {
