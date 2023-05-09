@@ -192,11 +192,13 @@ include('../database/connection.php');
                             echo '<td>'. $row['doctor_email'].'</td>';
                             echo '<td>'. $row['specialty'].' </td>';
                             echo '<td>'. $row['contact'].'</td>';
+                            // echo '<td>';
+                            // // echo ' <a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
+                            // // echo ' <a  type="button" class="btn btn-danger btn-sm" href="edit_doctor.php?action=delete & id='.$row['doctor_id'].'">EDIT</a> ';
+                            // echo '</td>';
                             echo '<td>';
-                            // echo ' <a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id='.$row['doctor_id'].'">EDIT</a> ';
-                            // echo ' <a  type="button" class="btn btn-danger btn-sm" href="edit_doctor.php?action=delete & id='.$row['doctor_id'].'">EDIT</a> ';
-                            echo ' <a type="button" class="btn btn-success btn-sm" href="enable_doctor.php?type=doctor&id=' . $row['doctor_id'].'">ENABLE</a>';
-                            echo ' <a type="button" class="btn btn-danger btn-sm" href="disable_doctor.php?type=doctor&id=' . $row['doctor_id'].'">DISABLE</a>';
+                            echo '<a type="button" class="btn btn-danger btn-sm" href="disable_doctor.php?id=' . $row['doctor_id'].'">DISABLE</a>';
+                            echo '<a type="button" class="btn btn-success btn-sm" href="enable_doctor.php?id=' . $row['doctor_id'].'">ENABLE</a>';
                             echo '</td>';
                             echo '</tr> ';
                         }

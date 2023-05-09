@@ -51,7 +51,7 @@ if(isset($_POST['login']))
         }
         elseif($utype =='d')
         {
-            $sql = "SELECT * FROM doctor WHERE doctor_email='$email' AND doctor_password='$password'";
+            $sql = "SELECT * FROM doctor WHERE doctor_email='$email' AND doctor_password='$password' AND is_disabled = 0";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) == 1)
             {
@@ -62,7 +62,7 @@ if(isset($_POST['login']))
             }
             else
             {
-                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password or account is disabled</label>';
             }
 
         }
@@ -89,7 +89,7 @@ if(isset($_POST['login']))
     }
     else
     {
-        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">We cant found any acount for this email.</label>';
+        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">We can\'t found any acount for this email.</label>';
     }
 
 }
