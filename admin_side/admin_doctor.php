@@ -197,8 +197,13 @@ include('../database/connection.php');
                             // // echo ' <a  type="button" class="btn btn-danger btn-sm" href="edit_doctor.php?action=delete & id='.$row['doctor_id'].'">EDIT</a> ';
                             // echo '</td>';
                             echo '<td>';
-                            echo '<a type="button" class="btn btn-danger btn-sm" href="disable_doctor.php?id=' . $row['doctor_id'].'">DISABLE</a>';
                             echo '<a type="button" class="btn btn-success btn-sm" href="enable_doctor.php?id=' . $row['doctor_id'].'">ENABLE</a>';
+                            if ($row['is_disabled'] == 1) {
+                                echo '<span class = "btn btn-warning btn-sm">DISABLED</span>';
+                            }
+                            else{
+                                echo '<a type="button" class="btn btn-danger btn-sm" href="disable_doctor.php?id=' . $row['doctor_id'].'">DISABLE</a>';
+                            }
                             echo '</td>';
                             echo '</tr> ';
                         }
