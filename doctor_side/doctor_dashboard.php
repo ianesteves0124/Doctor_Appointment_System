@@ -25,6 +25,8 @@
             $userid = $user_fetch['doctor_id'];
             $username = $user_fetch["doctor_name"];
             $user_spe = $user_fetch["specialty"];
+            $user_spe2 = $user_fetch["specialty2"];
+            $user_spe3 = $user_fetch["specialty3"];
 
         ?>
 
@@ -33,7 +35,7 @@
             <center>
                 <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
                 <div class="docname"><?php echo substr($username,0,50)?></div>
-                <div class="specialty"><?php echo substr($user_spe,0,50)?></div>
+                <div class="edit-account"><a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id=<?php echo $userid;?>">EDIT ACCOUNT</a></div>
             </center>
             <ul>
                 <li><a href="../doctor_side/doctor_dashboard.php" class="active"><i class="fas fa-clinic-medical"></i>Home</a></li>
@@ -161,7 +163,8 @@
 
 
 <?php 
-$conn=new mysqli("localhost","db_das","xcZaNsWYCRDxRhcR","db_das");
+// $conn=new mysqli("localhost","db_das","xcZaNsWYCRDxRhcR","db_das");
+$conn=new mysqli("localhost","root","","id20335682_appointment_system");
 $schedules = $conn->query("SELECT * FROM `schedule_list` WHERE sched_doc_id = '$userid'");
 $sched_res = [];
 foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){

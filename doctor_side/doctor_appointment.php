@@ -39,7 +39,7 @@
     <center>
         <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
         <div class="docname"><?php echo substr($username,0,50)?></div>
-        <div class="specialty"><?php echo substr($user_spe,0,50)?></div>
+        <div class="edit-account"><a  type="button" class="btn btn-success btn-sm" href="edit_doctor.php?action=edit & id=<?php echo $userid;?>">EDIT ACCOUNT</a></div>
     </center>
     <ul style="margin-left:-20px;">
         <li><a href="../doctor_side/doctor_dashboard.php" ><i class="fas fa-clinic-medical"></i>Home</a></li>
@@ -52,7 +52,7 @@
    </section>
    
 <div class="docappoint">
-        <h1 style="font-weight:700; font-size:32px; margin-top:3px;">APPOINTMENTS</h1>
+        <h1 style="font-weight:700; font-size:32px; margin-top:1px;">APPOINTMENTS</h1>
 </div>
 <div class="docadapp">
     <h2 style="font-weight:700; font-size:16px; margin-top:3px;">Successfully Added Appointments</h2>
@@ -68,7 +68,6 @@
                 <th class="home address">Home Address</th>
                 <th class="phone">Phone</th>
                 <th class="viewmore">Details</th>
-                <!-- <th class="action" style="text-align:center;">Action</th> -->
             </tr>
         </thead>
 

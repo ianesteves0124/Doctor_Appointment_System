@@ -140,7 +140,7 @@ if(isset($_POST['register']))
         </tr>
         <tr>
             <td class = "label-td">
-                <input type="text" class = "input-text" name="patient_contact" required>
+                <input type="contact"  class = "input-text" name="patient_contact" required>
             </td>
         </tr>
 
