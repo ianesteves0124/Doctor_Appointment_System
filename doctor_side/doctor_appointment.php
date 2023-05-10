@@ -21,20 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Agenda | Doctor Dashboard | Doctor Appointment System</title>
 </head>
-<body style="cursor: default; font-family:monospace;">     
-<center>
-    <div class = "calendar">
-    <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
-    <p class = "calendar_timezone" style="margin-top:-20px;">
-        <?php
-        date_default_timezone_set('Asia/Manila');
-        $date = date('Y-m-d');
-        echo $date;
-        ?>
-    </p>
-    </div>
-</center>
-<div class="sidebar" style="margin-top:-20px;">
+<body style="cursor: default; font-family:monospace;">
+<div class="sidebar" style="margin-top:25px;">
     <header class="title">DOCTOR</header>
     <center>
         <div class="docprofileimg"><img src="../images/doc profile img 2.png"  alt="doctor image profile" width="120" height="120"></div>
@@ -47,20 +35,38 @@
         <li><a href="../logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
     </ul>
 </div>
+<center>
+        <div class = "calendar" style="cursor: default;">
+            <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
+            <p class = "calendar_timezone">
+                <?php
+                date_default_timezone_set('Asia/Manila');
+                $date = date('Y-m-d');
+                echo $date;
+                ?>
+            </p>
+        </div>
+</center>
    <section>
 
    </section>
     
 <div class="docappoint">
         <h1 style="font-weight:700; font-size:32px; margin-top:1px;">APPOINTMENTS</h1>
-        <button type="button" class="btn btn-primary"> Generate Report </button>
+        <button onclick="generateReport(<?php echo $userid; ?>)" class="btn btn-primary">Generate Report</button>
 
+<script>
+    function generateReport(userId) {
+        window.open('report.php?doc_id=' + userId);
+    }
+</script>
 </div>
+
 <div class="docadapp">
-    <h2 style="font-weight:700; font-size:16px; margin-top:3px;">Successfully Added Appointments</h2>
+    <h2 style="font-weight:700; font-size:16px; margin-top:2px;">Successfully Added Appointments</h2>
 </div>
 
-<div class="container" style="margin-left:265px; margin-top:0px; width:80%;">
+<div class="container" style="margin-left:255px; margin-top:0px; width:100%;">
     <table class="table">
         <thead class="thead">
             <tr class="list">

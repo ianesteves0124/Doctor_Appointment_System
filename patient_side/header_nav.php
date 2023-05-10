@@ -21,7 +21,7 @@
             <nav class = "navbar">
                 <ul>
                     <li><a href="home_page.php">Home</a></li>
-                    <li><a href="thirdhome_page.php">Top Specialties<i class="fas fa-sort-down"></i></a>
+                    <li><a href="thirdhome_page.php">Top Specialization<i class="fas fa-sort-down"></i></a>
                     <ul>
                         <li><a href = "ts_about_primarycare.php">Primary Care & General Medicine</a></li>
                         <li><a href = "ts_about_obstetrics.php">Obstetrics & Gynecology</a></li>

@@ -81,7 +81,8 @@ include('../database/security.php');
                                 <h3>Professional Experience:</h3>
                                     <h4><?php echo $des ?></h4>
                                 <h3>Clinic Location:</h3>
-                                    <h4><?php echo $addr ?></h4> 
+                                    <h4><?php echo $addr ?></h4>
+                                    <h4><a style = "text-decoration: underline; color: black; font-weight: bold;" href="https://maps.google.com/?q=<?php echo urlencode($addr) ?>" target="_blank">Get Directions</a></h4>
                                 <h3>Local Clinic Hours:</h3>
                                     <h4>Monday - Thursday 08:00 A.M. to 05:00 P.M. | Friday 10:00 A.M. to 07:00 P.M</h4>
                                 <?php if ($sched_row) { // Check if schedule data exists ?>
@@ -140,7 +141,7 @@ include('../database/security.php');
                                           <h3>Email Address:</h3>
                                                     <input type="email" name="patient_email" value = "<?php echo $useremail?>" disabled><br>
                                           <h3>Contact Number:</h3>
-                                                    <input type="tel" name="patient_contact" value = "<?php echo $usercontact?>" required><br>
+                                                    <input type="tel" name="patient_contact" pattern="[0-9]+" value = "<?php echo $usercontact?>" required><br>
                                           <h3>Appointment Date:</h3>
                                                     <input type="date" name="appointment-date" min="2023-04-24" max="2029-12-31" required><br>
                                                 <div>

@@ -45,16 +45,16 @@
         </div>
 
         <center>
-                <div class = "calendar">
-                    <p class = "calendar_header" style="margin-bottom:-5px;"><i class = "far fa-calendar-alt"></i> Today's Date</p>
-                    <p class = "calendar_timezone">
-                        <?php
-                        date_default_timezone_set('Asia/Manila');
-                        $date = date('Y-m-d');
-                        echo $date;
-                        ?>
-                    </p>
-                </div>
+        <div class = "calendar" style="cursor: default;">
+            <p class = "calendar_header"><i class = "far fa-calendar-alt"></i> Today's Date</p>
+            <p class = "calendar_timezone">
+                <?php
+                date_default_timezone_set('Asia/Manila');
+                $date = date('Y-m-d');
+                echo $date;
+                ?>
+            </p>
+        </div>
         </center>
 
         <center>

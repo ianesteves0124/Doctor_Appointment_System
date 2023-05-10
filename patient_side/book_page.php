@@ -32,7 +32,7 @@
         <thead class="thead">
             <tr class="list">
                 <th class="user">Doctor</th>
-                <th class="specialty">Specialty</th>
+                <th class="specialty">Specialization</th>
                 <th class="date">Appointment Date</th>
                 <th class="phone">Doctor Contact</th>
                 <th class="action">Action</th>
@@ -64,7 +64,8 @@
                 echo '<th class="specialty">'. $row['specialty'].'</th>';
                 echo ' <th class="date">'. $calendarDate.'</th>';
                 echo '<th class="phone">'. $row['contact'].'</th>';
-                echo ' <th><a class="button" href="#doc1'.$doc_id.'">View More</a></th>';
+                echo ' <th><a class="button" href="#doc1'.$doc_id.'">View More</a>
+                            <a class="button btn-danger btn-sm" href="">Cancel Booking</a></th>';
                 echo '</tr>';
 
                 echo '

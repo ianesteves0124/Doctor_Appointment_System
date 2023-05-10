@@ -136,6 +136,12 @@ else
                 </td>
             </tr>
 
+            <tr>
+                    <td style="text-align: left; padding-left: 10px; font-size: 13px;">
+                        <a style = "color: white;" href="forgot-pass.php">Forgot Password?</a>
+                    </td>
+                </tr>
+
 
             <tr>
                 <td><br>
