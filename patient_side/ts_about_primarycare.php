@@ -1,7 +1,7 @@
 <title>Primary Care & General Medicine | Top Specialties| Doctor Appointment System</title>
 <?php 
 include('header_nav.php'); 
-include('../database/security.php');
+include('../database/connection.php');
 ?> <!-- TO CALL TOP NAVIGATIONS -->
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ include('../database/security.php');
 
     <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "SELECT * FROM doctor WHERE specialty = 'Primary Care &amp; General Medicine';";
+        $sql = "SELECT * FROM doctor WHERE specialty = 'Primary Care &amp; General Medicine' AND is_disabled = 0;";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))

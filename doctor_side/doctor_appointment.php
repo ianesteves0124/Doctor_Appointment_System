@@ -50,9 +50,11 @@
    <section>
 
    </section>
-   
+    
 <div class="docappoint">
         <h1 style="font-weight:700; font-size:32px; margin-top:1px;">APPOINTMENTS</h1>
+        <button type="button" class="btn btn-primary"> Generate Report </button>
+
 </div>
 <div class="docadapp">
     <h2 style="font-weight:700; font-size:16px; margin-top:3px;">Successfully Added Appointments</h2>

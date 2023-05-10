@@ -26,7 +26,7 @@ include('../database/security.php');
 </div>
 <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "SELECT * FROM doctor WHERE specialty = 'Sports &amp; Rehab';";
+        $sql = "SELECT * FROM doctor WHERE specialty = 'Sports &amp; Rehab' AND is_disabled = 0;";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))
@@ -109,7 +109,6 @@ include('../database/security.php');
 
                     <center>
                                 <?php 
-                                    session_start();
                                     $useremail = $_SESSION['user'];
                                     $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
                                     $usersql = mysqli_query($conn,$patientsql);

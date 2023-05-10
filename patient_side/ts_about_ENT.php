@@ -25,7 +25,7 @@ include('../database/security.php');
 </div>
 <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "SELECT * FROM doctor WHERE specialty = 'Ears, Nose &amp; Throat';";
+        $sql = "SELECT * FROM doctor WHERE specialty = 'Ears, Nose &amp; Throat' AND is_disabled = 0;";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))
