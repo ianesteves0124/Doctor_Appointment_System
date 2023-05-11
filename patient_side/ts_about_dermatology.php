@@ -13,7 +13,7 @@ include('../database/security.php');
 </head>
 <body style="cursor: default;">
 <div class="about">
-    <h1>Top Specialties | About Dermatology</h1>
+    <h1>Top Specialization | About Dermatology</h1>
 </div>
 <div>
     <h1 class = "headertitle">Dermatology</h1>

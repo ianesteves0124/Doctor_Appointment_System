@@ -11,7 +11,7 @@
 <body style="cursor: default; background-color: rgb(240, 240, 240);">
   <?php include('header_nav.php'); ?> <!-- TO CALL TOP NAVIGATIONS -->
     <div class="topspectitle">
-        <h1>TOP SPECIALTIES</h1>
+        <h1>TOP SPECIALIZATION</h1>
         <h2 style="margin-top:10px; margin-left:10px;">These specializations have been in high demand.</h2>
         
 </div>

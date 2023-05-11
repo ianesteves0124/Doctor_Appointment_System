@@ -13,7 +13,7 @@ include('../database/security.php');
 </head>
 <body style="cursor: default;">
 <div class="about">
-    <h1>Top Specialties | About Diet & Nutrition</h1>
+    <h1>Top Specialization | About Diet & Nutrition</h1>
 </div>
 <div>
     <h1 class = "headertitle">Diet & Nutrition</h1>

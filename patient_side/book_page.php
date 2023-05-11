@@ -53,6 +53,7 @@
                 $timestamp = strtotime($row['patient_app-date']);
                 $calendarDate = date('F j, Y', $timestamp);
                 $doc_id = $row['doc_id'];
+                $bookingId = $row['appointment_id'];
                 echo  '<tr class="list">';
                 echo '<th class="user">';
                 echo '<img src="../images/doc profile img 2.png" alt="" class="icon">';
@@ -64,13 +65,13 @@
                 echo '<th class="specialty">'. $row['specialty'].'</th>';
                 echo ' <th class="date">'. $calendarDate.'</th>';
                 echo '<th class="phone">'. $row['contact'].'</th>';
-                echo ' <th><a class="button" href="#doc1'.$doc_id.'">View More</a>
-                            <a class="button btn-danger btn-sm" href="">Cancel Booking</a></th>';
+                echo ' <th><a class="button" href="#.'.$doc_id.'">View More</a>
+                            <a class="button btn-danger btn-sm" href="cancel_booking.php?id='.$bookingId.'">Cancel Booking</a></th>';
                 echo '</tr>';
 
                 echo '
                     <!-- Popup View More -->
-                    <div id="doc1'.$doc_id.'" class="overlay">
+                    <div id=".'.$doc_id.'" class="overlay">
                         <div class="popup">
                             <center>
                                 <h1>DOCTOR INFORMATION</h1>
@@ -102,6 +103,10 @@
                                         <h4>'. $row['patient_address'].'</h4>
                                     <h3>Email:</h3>
                                         <h4>'. $row['patient_email'].'</h4>
+                                </div>
+                                <div>
+                                <br>
+                                <a class="button" href="edit_booking.php?id='.$bookingId.'">Edit Booking Application</a>
                                 </div>
                             </center>
                         </div>

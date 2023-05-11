@@ -13,7 +13,7 @@ include('../database/security.php');
 </head>
 <body style="cursor: default;">
 <div class="about">
-    <h1>Top Specialties | About Alternative Medicine</h1>
+    <h1>Top Specialization | About Alternative Medicine</h1>
 </div>
 <div>
     <h1 class = "headertitle">Alternative Medicine</h1>
@@ -110,6 +110,7 @@ include('../database/security.php');
 
                     <center>
                                 <?php 
+                                    session_start();
                                     $useremail = $_SESSION['user'];
                                     $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
                                     $usersql = mysqli_query($conn,$patientsql);

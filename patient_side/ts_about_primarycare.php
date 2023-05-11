@@ -1,7 +1,7 @@
 <title>Primary Care & General Medicine | Top Specialties| Doctor Appointment System</title>
 <?php 
 include('header_nav.php'); 
-include('../database/connection.php');
+include('../database/security.php');
 ?> <!-- TO CALL TOP NAVIGATIONS -->
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include('../database/connection.php');
 </head>
 <body>
 <div class="about">
-    <h1>Top Specialties | About Primary Care & General Medicine</h1>
+    <h1>Top Specialization | About Primary Care & General Medicine</h1>
 </div>
 
 <div>
@@ -114,6 +114,7 @@ include('../database/connection.php');
 
                     <center>
                                 <?php 
+                                    session_start();
                                     $useremail = $_SESSION['user'];
                                     $patientsql = "SELECT * FROM patient WHERE patient_email = '".$_SESSION['user']."'";
                                     $usersql = mysqli_query($conn,$patientsql);

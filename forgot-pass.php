@@ -5,14 +5,23 @@ if (isset($_POST['update'])) {
     $email = $_POST['useremail'];
     $password = $_POST['userpassword'];
 
-    // Update the password in the database
-    $sql = "UPDATE patient SET password = '$password' WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
+    // Check if the email exists in the database
+    $checkEmailQuery = "SELECT * FROM patient WHERE patient_email = '$email'";
+    $emailResult = mysqli_query($conn, $checkEmailQuery);
 
-    if ($result) {
-        echo "Password updated successfully.";
+    if (mysqli_num_rows($emailResult) > 0) {
+        // Email exists, update the password
+        $updatePasswordQuery = "UPDATE patient SET patient_password = '$password' WHERE patient_email = '$email'";
+        $updateResult = mysqli_query($conn, $updatePasswordQuery);
+
+        if ($updateResult) {
+            echo "<script> alert('Your password updated successfully!'); location.replace('login.php') </script>";
+        } else {
+            echo "Error updating password: " . mysqli_error($conn);
+        }
     } else {
-        echo "Error updating password: " . mysqli_error($conn);
+        // Email does not exist in the database
+        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Email does not exist</label>';
     }
 }
 ?>
@@ -60,10 +69,15 @@ if (isset($_POST['update'])) {
                     <input type="Password" name="userpassword" class="input-text" placeholder="Password" required>
                 </td>
             </tr>
+
+            <tr>
+                <td><br>
+                <?php echo $error ?>
+                </td>
+            </tr>
     
             <tr>
                 <td>
-                    <br>
                     <input type="submit" name = "update" value="Update Password" class="login-btn btn-primary btn"> <br>
                     <input type="submit" value="Cancel" onclick = "location.href = 'login.php';" class="login-btn btn-primary btn">
                 </td>
