@@ -1,11 +1,12 @@
 <?php
 include '../database/connection.php';
-    // Check if the booking ID is provided in the query string
-    if(isset($_GET['id'])) {
-        // Retrieve the booking ID from the query string
-        $bookingId = $_GET['id'];
 
-        $sql = "SELECT * FROM booking WHERE appointment_id = '$bookingId'";
+// Check if the booking ID is provided in the query string
+if (isset($_GET['id'])) {
+    // Retrieve the booking ID from the query string
+    $bookingId = $_GET['id'];
+
+    $sql = "SELECT * FROM booking WHERE appointment_id = '$bookingId'";
 
     // Execute the query
     $result = $conn->query($sql);
@@ -14,9 +15,6 @@ include '../database/connection.php';
     if ($result->num_rows > 0) {
         // Fetch the data for the first row
         $row = $result->fetch_assoc();
-
-        // Close the database connection
-        $conn->close();
 
         // Assign the fetched data to variables
         $patientName = $row['patient_name'];
@@ -28,9 +26,6 @@ include '../database/connection.php';
         $patientContact = $row['patient_contact'];
         $appointmentDate = $row['patient_app-date'];
     } else {
-        // Close the database connection
-        $conn->close();
-
         // Handle the case where no rows were returned
         echo "No patient information found for the given booking ID.";
         exit;
@@ -67,17 +62,20 @@ if (isset($_POST['update'])) {
     // Execute the update query
     if ($conn->query($updateSql) === TRUE) {
         // Booking information updated successfully
-        echo "Booking information updated.";
+        echo "<script> alert('Booking updated successfully!'); location.replace('book_page.php') </script>";
         // Redirect to a success page or perform any other desired actions
         exit;
     } else {
         // Error occurred while updating the booking information
-        echo "Error updating booking information: ";
+        echo "Error updating booking information: " . $error;
         // Redirect to an error page or perform any other desired actions
         exit;
     }
 }
+// Close the database connection
+$conn->close();
 ?>
+
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -130,7 +128,7 @@ if (isset($_POST['update'])) {
                         <div class = "row mb-3">
                             <label class = "col-sm-3 col-form-label">Address:</label>
                             <div class = "col-sm-6">
-                                <input type="text" class = "form-control" name="patient_name" value="<?php echo $patientAddress; ?>"required>
+                                <input type="text" class = "form-control" name="patient_address" value="<?php echo $patientAddress; ?>"required>
                             </div>
                         </div>
 
