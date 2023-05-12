@@ -24,6 +24,9 @@ if (isset($_POST['update'])) {
         $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Email does not exist</label>';
     }
 }
+else{
+    $error='<label for="promter" class="form-label">&nbsp;</label>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
