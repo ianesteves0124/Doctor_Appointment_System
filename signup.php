@@ -46,7 +46,7 @@ if(isset($_POST['register']))
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'das.online2023@gmail.com';
-        $mail->Password = 'ujhjngkccyatcnxh';
+        $mail->Password = 'ptjphzgegunnwvqa';
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPDebug = 2; // enable debug output
