@@ -26,7 +26,12 @@ include('../database/security.php');
 </div>
 <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "SELECT * FROM doctor WHERE specialty = 'Alternative Medicine' AND is_disabled = 0;";
+        $sql = "SELECT *
+                FROM `doctor`
+                WHERE `specialty` = 'Alternative Medicine'
+                OR `specialty2` = 'Alternative Medicine'
+                OR `specialty3` = 'Alternative Medicine'
+                AND is_disabled = 0;";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))
@@ -37,13 +42,14 @@ include('../database/security.php');
             $con = $row['contact'];
             $addr = $row['clinic_address'];
             $spe = $row['specialty'];
-        
+            $spe2 = $row['specialty2'];
+            $spe3 = $row['specialty3'];
         ?>
             <div class="doctor-container">
                 <div class="doctor-info">
                     <img src="../images/doc img.png" alt="Doctor Profile Picture">
                     <h2><?php echo $name ?></h2><br>
-                    <h3><?php echo $spe ?></h3><br>
+                    <h3><?php echo $spe ?>,<?php echo $spe2?>,<?php echo $spe3?></h3><br>
                     <h4><?php echo $des ?></h4><br>
                     <center>
                     <h5>Clinic Location & Schedule:</h5><br>
