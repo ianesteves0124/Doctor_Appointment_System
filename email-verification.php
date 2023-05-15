@@ -30,7 +30,8 @@ if (isset($_POST["verify"]))
             die("Verification code failed.");
         }
  
-        echo "<p>You can login now.</p> <a href='login.php'>HERE</a>";
+        // echo "<p>You can login now.</p> <a href='login.php'>HERE</a>";
+        echo "<script> alert('You can login now.'); location.replace('login.php') </script>";
         exit();
     }
 ?>

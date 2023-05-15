@@ -65,8 +65,10 @@
                 echo '<th class="specialty">'. $row['specialty'].'</th>';
                 echo ' <th class="date">'. $calendarDate.'</th>';
                 echo '<th class="phone">'. $row['contact'].'</th>';
-                echo ' <th><a class="button" href="#.'.$doc_id.'">View More</a>
-                            <a class="button btn-danger btn-sm" href="cancel_booking.php?id='.$bookingId.'">Cancel Booking</a></th>';
+                echo ' <th>
+                        <a class="button" href="#.'.$doc_id.'">View More</a>
+                        <a class="button btn-danger btn-sm" onclick="return confirm(\'Are you sure you want to cancel this booking?\')"  href="cancel_booking.php?id='.$bookingId.'">Cancel Booking</a>
+                       </th>';
                 echo '</tr>';
 
                 echo '

@@ -49,7 +49,7 @@ if(isset($_POST['register']))
         $mail->Password = 'ptjphzgegunnwvqa';
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
-        $mail->SMTPDebug = 2; // enable debug output
+        // $mail->SMTPDebug = 2; // enable debug output
         
 
         //CONTENT
