@@ -89,10 +89,10 @@ $conn->close();
         <body>
             <div class = "container my-5">
                 <div class = "text-center mb-4">
-                    <h2 style = "font-family: monospace;">Edit Booking Application</h2>
+                    <h2 style = "font-family: Arial, Helvetica, sans-serif;">Edit Booking Application</h2>
                 </div>
                 <div class = "content">
-                    <form style = "font-family: monospace;" method="POST" action = "">
+                    <form style = "font-family: Arial, Helvetica, sans-serif;" method="POST" action = "">
                         <div class = "row mb-3">
                             <label class = "col-sm-3 col-form-label">Patient Name:</label>
                             <div class = "col-sm-6">
@@ -110,11 +110,16 @@ $conn->close();
                         <div class = "row mb-3">
                             <label class = "col-sm-3 col-form-label">Gender:</label>
                             <div class = "col-sm-9">
-                                <select class = "col-sm-7" name="patient_gender">
-                                    <option>Select Gender</option>
+                            <select class="col-sm-7" name="patient_gender">
+                                <?php if ($patientGender !== 'male'): ?>
+                                    <option value="male">Female</option>
+                                    <option value="male">Male</option>
+                                <?php endif; ?>
+                                <?php if ($patientGender !== 'female'): ?>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
-                                </select>
+                                <?php endif; ?>
+                            </select>
                             </div>
                         </div>
 
