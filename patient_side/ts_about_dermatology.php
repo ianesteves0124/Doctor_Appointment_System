@@ -26,7 +26,12 @@ include('../database/security.php');
 </div>
 <div class="titlelist" style="text-align:center;"><h1>DOCTORS LIST</h1></div>
         <?php
-        $sql = "";
+        $sql = "SELECT *
+        FROM `doctor`
+        WHERE `specialty` = 'Dermatology'
+        OR `specialty2` = 'Dermatology'
+        OR `specialty3` = 'Dermatology'
+        AND is_disabled = 0;";
         $result = mysqli_query($conn,$sql);
 
         while ($row = mysqli_fetch_assoc($result))
