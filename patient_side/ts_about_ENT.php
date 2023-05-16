@@ -48,7 +48,7 @@ include('../database/security.php');
                 <div class="doctor-info">
                     <img src="../images/doc img.png" alt="Doctor Profile Picture">
                     <h2><?php echo $name ?></h2><br>
-                    <h3><<?php echo $spe ?>,<?php echo $spe2?>,<?php echo $spe3?></h3><br>
+                    <h3><?php echo $spe ?>,<?php echo $spe2?>,<?php echo $spe3?></h3><br>
                     <h4><?php echo $des ?></h4><br>
                     <center>
                     <h5>Clinic Location & Schedule:</h5><br>
